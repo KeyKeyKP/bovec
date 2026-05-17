@@ -1,26 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { LanguageProvider } from "@/components/LanguageContext";
+import { Navbar } from "@/components/Navbar";
+import {
+  HeroSection, AboutSection, RomanticSection, ActivitiesSection,
+  SeasonsSection, BookingSection, LocationSection, Footer,
+} from "@/components/Sections";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Hiša Bovec — Najem hiše v dolini Soče" },
+      { name: "description", content: "Luksuzna hiša v Bovcu, v srcu Triglavskega narodnega parka. Idealno izhodišče za rafting, pohodništvo in pustolovščine v dolini Soče." },
+      { property: "og:title", content: "Hiša Bovec — Najem hiše v dolini Soče" },
+      { property: "og:description", content: "Vaš dom v srcu Triglavskega narodnega parka." },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" },
+      { rel: "preload", href: "/video/bovec-hero.mp4", as: "video", type: "video/mp4" },
+      { rel: "alternate", hrefLang: "sl", href: "/" },
+      { rel: "alternate", hrefLang: "hr", href: "/" },
+      { rel: "alternate", hrefLang: "it", href: "/" },
+      { rel: "alternate", hrefLang: "en", href: "/" },
+      { rel: "alternate", hrefLang: "de", href: "/" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <LanguageProvider>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <RomanticSection />
+        <ActivitiesSection />
+        <SeasonsSection />
+        <BookingSection />
+        <LocationSection />
+      </main>
+      <Footer />
+    </LanguageProvider>
+  );
 }
