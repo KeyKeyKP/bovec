@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import julianAlps from "@/assets/julian-alps.jpg";
+import socaCanyon from "@/assets/soca-canyon.jpg";
+import socaRiver from "@/assets/soca-river.jpg";
 import {
   Waves,
   Mountain,
@@ -115,20 +118,20 @@ export function AboutSection() {
         </div>
         <div className="grid grid-cols-2 gap-2" style={{ gridTemplateRows: "repeat(2, 200px)" }}>
           <img
-            src="https://picsum.photos/seed/bovec1/600/400"
-            alt=""
+            src={socaRiver}
+            alt="Reka Soča"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover"
           />
           <img
-            src="https://picsum.photos/seed/alps3/600/600"
-            alt=""
+            src={julianAlps}
+            alt="Julijske Alpe"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover row-span-2"
           />
           <img
-            src="https://picsum.photos/seed/soca2/600/400"
-            alt=""
+            src={socaCanyon}
+            alt="Korita Soče"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover"
           />
