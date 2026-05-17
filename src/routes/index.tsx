@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider } from "@/components/LanguageContext";
 import { Navbar } from "@/components/Navbar";
+import { VideoPreloader } from "@/components/VideoPreloader";
 import {
   HeroSection, AboutSection, RomanticSection, ActivitiesSection,
   SeasonsSection, BookingSection, LocationSection, Footer,
@@ -20,7 +21,7 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" },
-      { rel: "preload", href: "/video/bovec-hero.mp4", as: "video", type: "video/mp4" },
+      { rel: "preload", href: "/video/bovec-hero.mp4", as: "video", type: "video/mp4", fetchpriority: "high" } as any,
       { rel: "alternate", hrefLang: "sl", href: "/" },
       { rel: "alternate", hrefLang: "hr", href: "/" },
       { rel: "alternate", hrefLang: "it", href: "/" },
@@ -34,17 +35,19 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <LanguageProvider>
-      <Navbar />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <RomanticSection />
-        <ActivitiesSection />
-        <SeasonsSection />
-        <BookingSection />
-        <LocationSection />
-      </main>
-      <Footer />
+      <VideoPreloader>
+        <Navbar />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <RomanticSection />
+          <ActivitiesSection />
+          <SeasonsSection />
+          <BookingSection />
+          <LocationSection />
+        </main>
+        <Footer />
+      </VideoPreloader>
     </LanguageProvider>
   );
 }
