@@ -71,15 +71,18 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #2E9E8F 0%, #3A5A40 50%, #1a4a4a 100%)",
+          backgroundImage: "url(/video/bovec-hero-poster.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           color: "#fff",
           opacity: ready ? 0 : 1,
           pointerEvents: ready ? "none" : "auto",
           transition: "opacity 0.6s ease",
         }}
       >
-        <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "0.02em" }}>Hiša Bovec</div>
-        <div style={{ marginTop: 24, width: 220, height: 4, background: "rgba(255,255,255,0.2)", borderRadius: 999, overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.45)" }} />
+        <div style={{ position: "relative", fontSize: 28, fontWeight: 700, letterSpacing: "0.02em" }}>Hiša Bovec</div>
+        <div style={{ position: "relative", marginTop: 24, width: 220, height: 4, background: "rgba(255,255,255,0.2)", borderRadius: 999, overflow: "hidden" }}>
           <div
             style={{
               height: "100%",
@@ -89,7 +92,7 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
             }}
           />
         </div>
-        <div style={{ marginTop: 12, fontSize: 12, opacity: 0.8 }}>{Math.round(progress)}%</div>
+        <div style={{ position: "relative", marginTop: 12, fontSize: 12, opacity: 0.8 }}>{Math.round(progress)}%</div>
       </div>
     </>
   );

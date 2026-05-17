@@ -54,8 +54,14 @@ export function HeroSection() {
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
       <div
-        className="absolute inset-0 hero-placeholder"
-        style={{ opacity: videoReady ? 0 : 1, transition: "opacity 500ms" }}
+        className="absolute inset-0"
+        style={{
+          opacity: videoReady ? 0 : 1,
+          transition: "opacity 500ms",
+          backgroundImage: "url(/video/bovec-hero-poster.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       />
       <video
         ref={videoRef}
@@ -64,6 +70,7 @@ export function HeroSection() {
         loop
         playsInline
         preload="auto"
+        poster="/video/bovec-hero-poster.jpg"
         onCanPlay={() => setVideoReady(true)}
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: videoReady ? 1 : 0, transition: "opacity 500ms" }}
