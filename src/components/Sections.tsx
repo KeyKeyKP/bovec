@@ -5,6 +5,9 @@ import {
 } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { SEASON_COLORS } from "@/lib/translations";
+import julianAlps from "@/assets/julian-alps.jpg";
+import socaCanyon from "@/assets/soca-canyon.jpg";
+import socaRiver from "@/assets/soca-river.jpg";
 
 const ACT_ICONS = [Waves, Mountain, Bike, Footprints, Fish, Snowflake, Sparkles, BookOpen, Droplets, Wind];
 
@@ -65,9 +68,9 @@ export function AboutSection() {
           <p className="text-lg" style={{ color: "var(--color-text-muted)" }}>{t.about.body2}</p>
         </div>
         <div className="grid grid-cols-2 gap-2" style={{ gridTemplateRows: "repeat(2, 200px)" }}>
-          <img src="https://picsum.photos/seed/bovec1/600/400" alt="" loading="lazy" className="rounded-xl w-full h-full object-cover" />
-          <img src="https://picsum.photos/seed/alps3/600/600" alt="" loading="lazy" className="rounded-xl w-full h-full object-cover row-span-2" />
-          <img src="https://picsum.photos/seed/soca2/600/400" alt="" loading="lazy" className="rounded-xl w-full h-full object-cover" />
+          <img src={socaRiver} alt="Reka Soča pri Bovcu" loading="lazy" className="rounded-xl w-full h-full object-cover" />
+          <img src={julianAlps} alt="Julijske Alpe" loading="lazy" className="rounded-xl w-full h-full object-cover row-span-2" />
+          <img src={socaCanyon} alt="Korita Soče" loading="lazy" className="rounded-xl w-full h-full object-cover" />
         </div>
       </div>
     </section>
