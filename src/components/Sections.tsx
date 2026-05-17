@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import julianAlps from "@/assets/julian-alps.jpg";
 import socaCanyon from "@/assets/soca-canyon.jpg";
 import socaRiver from "@/assets/soca-river.jpg";
+import heroBreka from "@/assets/hero/breka.jpg";
+import heroVirje from "@/assets/hero/virje.jpg";
+import heroValley from "@/assets/hero/valley.jpg";
+import heroHouse1 from "@/assets/hero/house-1.jpg";
+import heroHouse2 from "@/assets/hero/house-2.jpg";
 import {
   Waves,
   Mountain,
@@ -38,48 +43,36 @@ function useReveal<T extends HTMLElement>() {
   return ref;
 }
 
+const HERO_SLIDES = [heroValley, heroBreka, heroVirje, heroHouse1, heroHouse2];
+const HERO_INTERVAL = 4000;
+
 export function HeroSection() {
   const { t } = useLang();
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoReady, setVideoReady] = useState(false);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    // Če je video že v cache (readyState >= 3), ga pokaži takoj
-    if (video.readyState >= 3) {
-      setVideoReady(true);
-      return;
-    }
-    video.load();
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % HERO_SLIDES.length);
+    }, HERO_INTERVAL);
+    return () => clearInterval(id);
   }, []);
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
-      <div
-        className="absolute inset-0"
-        style={{
-          opacity: videoReady ? 0 : 1,
-          transition: "opacity 500ms",
-          backgroundImage: "url(/video/bovec-hero-poster.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster="/video/bovec-hero-poster.jpg"
-        onCanPlay={() => setVideoReady(true)}
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: videoReady ? 1 : 0, transition: "opacity 500ms" }}
-      >
-        <source src="/video/bovec-hero.mp4" type="video/mp4" />
-      </video>
+      {HERO_SLIDES.map((src, i) => (
+        <div
+          key={i}
+          aria-hidden={i !== index}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: i === index ? 1 : 0,
+            transition: "opacity 1.2s ease-in-out",
+          }}
+        />
+      ))}
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55))" }}
