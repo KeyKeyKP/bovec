@@ -20,6 +20,7 @@ export function Navbar() {
     { href: "#home", label: t.nav.home },
     { href: "#about", label: t.nav.about },
     { href: "#activities", label: t.nav.activities },
+    { href: "#gallery", label: t.nav.gallery },
     { href: "#booking", label: t.nav.booking },
     { href: "#contact", label: t.nav.contact },
   ];
@@ -31,7 +32,7 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#home" className="text-xl font-bold" style={{ color: "var(--color-forest)" }}>
-          Hiša Bovec
+          Cottage Kobarid
         </a>
 
         <ul className="hidden md:flex items-center gap-8">

@@ -226,6 +226,42 @@ export function SeasonsSection() {
   );
 }
 
+export function GallerySection() {
+  const { t } = useLang();
+  const ref = useReveal<HTMLDivElement>();
+  const placeholders = Array.from({ length: 8 });
+  return (
+    <section id="gallery" className="py-24 px-6" style={{ background: "var(--color-cream)" }}>
+      <div ref={ref} className="fade-up max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl mb-4" style={{ color: "var(--color-forest)" }}>
+            {t.gallery.title}
+          </h2>
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--color-text-muted)" }}>
+            {t.gallery.subtitle}
+          </p>
+        </div>
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {placeholders.map((_, i) => (
+            <div
+              key={i}
+              className="aspect-[4/3] rounded-xl flex items-center justify-center text-sm"
+              style={{
+                background: "var(--color-soca-light)",
+                color: "var(--color-forest)",
+                border: "1px dashed var(--color-soca)",
+              }}
+              aria-label={`Gallery placeholder ${i + 1}`}
+            >
+              📷 {i + 1}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function BookingSection() {
   const { t } = useLang();
   const ref = useReveal<HTMLDivElement>();

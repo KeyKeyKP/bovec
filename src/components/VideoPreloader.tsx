@@ -81,7 +81,7 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
         }}
       >
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.45)" }} />
-        <div style={{ position: "relative", fontSize: 28, fontWeight: 700, letterSpacing: "0.02em" }}>Hiša Bovec</div>
+        <div style={{ position: "relative", fontSize: 28, fontWeight: 700, letterSpacing: "0.02em" }}>Cottage Kobarid</div>
         <div style={{ position: "relative", marginTop: 24, width: 220, height: 4, background: "rgba(255,255,255,0.2)", borderRadius: 999, overflow: "hidden" }}>
           <div
             style={{
