@@ -11,7 +11,8 @@ export interface ActivityItem {
 }
 
 export interface Translation {
-  nav: { home: string; about: string; activities: string; booking: string; contact: string };
+  nav: { home: string; about: string; activities: string; gallery: string; booking: string; contact: string };
+  gallery: { title: string; subtitle: string };
   hero: { tagline: string; subtitle: string; cta: string };
   about: { title: string; body1: string; body2: string };
   romantic: { title: string; body1: string; body2: string; body3: string };
