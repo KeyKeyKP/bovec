@@ -40,6 +40,7 @@ function Index() {
         <RomanticSection />
         <ActivitiesSection />
         <SeasonsSection />
+        <GallerySection />
         <BookingSection />
         <LocationSection />
       </main>
