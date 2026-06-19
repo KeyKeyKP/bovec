@@ -108,7 +108,8 @@ const buildActivities = (lang: Lang): ActivityItem[] =>
 
 export const translations: Record<Lang, Translation> = {
   sl: {
-    nav: { home: "Domov", about: "O hiši", activities: "Aktivnosti", booking: "Rezerviraj", contact: "Kontakt" },
+    nav: { home: "Domov", about: "O hiši", activities: "Aktivnosti", gallery: "Galerija", booking: "Rezerviraj", contact: "Kontakt" },
+    gallery: { title: "Galerija", subtitle: "Fotografije hiše — zunaj in znotraj." },
     hero: {
       tagline: "Kjer Soča šepeta in gore molčijo",
       subtitle: "Vaš dom v srcu Triglavskega narodnega parka — izhodišče za pustolovščine, pribežališče za dušo.",
@@ -157,7 +158,8 @@ export const translations: Record<Lang, Translation> = {
     meta: { title: "Cottage Kobarid — Najem hiše v dolini Soče", description: "Luksuzna hiša v Bovcu, v srcu Triglavskega narodnega parka. Idealno izhodišče za rafting, pohodništvo in pustolovščine v dolini Soče." },
   },
   hr: {
-    nav: { home: "Početna", about: "O kući", activities: "Aktivnosti", booking: "Rezerviraj", contact: "Kontakt" },
+    nav: { home: "Početna", about: "O kući", activities: "Aktivnosti", gallery: "Galerija", booking: "Rezerviraj", contact: "Kontakt" },
+    gallery: { title: "Galerija", subtitle: "Fotografije kuće — izvana i iznutra." },
     hero: {
       tagline: "Gdje Soča šapuće i planine šute",
       subtitle: "Vaš dom u srcu Triglavskog nacionalnog parka — polazište za avanture, utočište za dušu.",
@@ -206,7 +208,8 @@ export const translations: Record<Lang, Translation> = {
     meta: { title: "Cottage Kobarid — Najam kuće u dolini Soče", description: "Luksuzna kuća u Bovcu, u srcu Triglavskog nacionalnog parka. Idealno polazište za rafting, planinarenje i avanture." },
   },
   it: {
-    nav: { home: "Home", about: "La casa", activities: "Attività", booking: "Prenota", contact: "Contatti" },
+    nav: { home: "Home", about: "La casa", activities: "Attività", gallery: "Galleria", booking: "Prenota", contact: "Contatti" },
+    gallery: { title: "Galleria", subtitle: "Foto della casa — esterni e interni." },
     hero: {
       tagline: "Dove la Soča sussurra e le montagne tacciono",
       subtitle: "La vostra casa nel cuore del Parco Nazionale del Triglav — punto di partenza per avventure, rifugio per l'anima.",
@@ -255,7 +258,8 @@ export const translations: Record<Lang, Translation> = {
     meta: { title: "Cottage Kobarid — Affitto casa nella Valle della Soča", description: "Casa di lusso a Bovec, nel cuore del Parco Nazionale del Triglav. Punto di partenza ideale per rafting, escursioni e avventure." },
   },
   en: {
-    nav: { home: "Home", about: "The House", activities: "Activities", booking: "Book", contact: "Contact" },
+    nav: { home: "Home", about: "The House", activities: "Activities", gallery: "Gallery", booking: "Book", contact: "Contact" },
+    gallery: { title: "Gallery", subtitle: "Photos of the house — outside and inside." },
     hero: {
       tagline: "Where the Soča whispers and mountains stand still",
       subtitle: "Your home in the heart of Triglav National Park — a base for adventure, a refuge for the soul.",
@@ -304,7 +308,8 @@ export const translations: Record<Lang, Translation> = {
     meta: { title: "Cottage Kobarid — House Rental in the Soča Valley", description: "Luxury house in Bovec, in the heart of Triglav National Park. Ideal base for rafting, hiking and adventures in the Soča Valley." },
   },
   de: {
-    nav: { home: "Start", about: "Das Haus", activities: "Aktivitäten", booking: "Buchen", contact: "Kontakt" },
+    nav: { home: "Start", about: "Das Haus", activities: "Aktivitäten", gallery: "Galerie", booking: "Buchen", contact: "Kontakt" },
+    gallery: { title: "Galerie", subtitle: "Fotos des Hauses — außen und innen." },
     hero: {
       tagline: "Wo die Soča flüstert und die Berge schweigen",
       subtitle: "Ihr Zuhause im Herzen des Triglav-Nationalparks — Ausgangspunkt für Abenteuer, Zuflucht für die Seele.",
