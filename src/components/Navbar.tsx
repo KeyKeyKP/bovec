@@ -31,7 +31,7 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#home" className="text-xl font-bold" style={{ color: "var(--color-forest)" }}>
-          Hiša Bovec
+          Cottage Kobarid
         </a>
 
         <ul className="hidden md:flex items-center gap-8">

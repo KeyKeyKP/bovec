@@ -9,9 +9,9 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hiša Bovec — Najem hiše v dolini Soče" },
+      { title: "Cottage Kobarid — Najem hiše v dolini Soče" },
       { name: "description", content: "Luksuzna hiša v Bovcu, v srcu Triglavskega narodnega parka. Idealno izhodišče za rafting, pohodništvo in pustolovščine v dolini Soče." },
-      { property: "og:title", content: "Hiša Bovec — Najem hiše v dolini Soče" },
+      { property: "og:title", content: "Cottage Kobarid — Najem hiše v dolini Soče" },
       { property: "og:description", content: "Vaš dom v srcu Triglavskega narodnega parka." },
       { property: "og:type", content: "website" },
     ],
