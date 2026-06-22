@@ -215,14 +215,16 @@ export const translations: Record<Lang, Translation> = {
     nav: { home: "Home", about: "La casa", activities: "Attività", gallery: "Galleria", booking: "Prenota", contact: "Contatti" },
     gallery: { title: "Galleria", subtitle: "Foto della casa — esterni e interni." },
     hero: {
+      title: "Cottage Kobarid",
       tagline: "Dove la Soča sussurra e le montagne tacciono",
-      subtitle: "La vostra casa nel cuore del Parco Nazionale del Triglav — punto di partenza per avventure, rifugio per l'anima.",
+      subtitle: "La vostra casa nel cuore della Valle dell'Isonzo — punto di partenza per avventure, rifugio per l'anima.",
       cta: "Verifica disponibilità",
     },
     about: {
-      title: "La vostra casa nella Valle della Soča",
-      body1: "Lì dove il fiume Soča tinge il mondo di un turchese straordinario e le montagne si innalzano alte sopra le nuvole, si trova un luogo che non vi lascerà andare tanto facilmente. La casa che vi offriamo non è solo un alloggio — è il punto di partenza per avventure e un silenzioso rifugio per l'anima.",
-      body2: "Bovec, cuore del Parco Nazionale del Triglav, è il luogo che molti cercano tutta la vita. La nostra casa vi accoglie con tutto il comfort di un focolare domestico e tutta la natura selvaggia della Valle della Soča a pochi passi.",
+      title: "Kobarid",
+      body1: "Là dove l'Isonzo svolta nel silenzio e la memoria storica si intreccia con la natura, sorge Caporetto (Kobarid) — un paesino che non chiama a gran voce, eppure ti attira a sé.",
+      body2: "Conosciuto per una delle battaglie più importanti della Prima guerra mondiale, oggi Kobarid respira un'aria del tutto diversa — fresca, di montagna, immersa nel bagliore turchese della Soča. Il museo che vi sorge parla in modo silenzioso e profondo. La cascata di Kozjak è a un solo passo.",
+      body3: "Kobarid non è una destinazione per chi ha fretta. È un luogo dove al mattino il caffè ti si raffredda davanti e per un attimo dimentichi dove eri diretto.",
     },
     romantic: {
       title: "Sentite l'anima di Bovec",
