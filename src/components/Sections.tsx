@@ -21,8 +21,9 @@ import gal12 from "@/assets/gallery/1000074011.jpg.asset.json";
 import gal13 from "@/assets/gallery/1000074006.jpg.asset.json";
 import gal14 from "@/assets/gallery/1000074008.jpg.asset.json";
 import gal15 from "@/assets/gallery/1000074009.jpg.asset.json";
+import gal16 from "@/assets/gallery/terrace-loungers.jpg.asset.json";
 
-const GALLERY_IMAGES = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal11, gal12, gal13, gal14, gal15];
+const GALLERY_IMAGES = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal11, gal12, gal13, gal14, gal15, gal16];
 import {
   Waves,
   Mountain,
@@ -376,11 +377,11 @@ export function Footer() {
     { href: "#contact", label: t.nav.contact },
   ];
   return (
-    <footer style={{ background: "var(--color-charcoal)", color: "#e8e8e6" }} className="pt-16 pb-6 px-6">
+    <footer style={{ background: "var(--color-charcoal)", color: "var(--color-cream)" }} className="pt-16 pb-6 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
           <h3 className="text-white font-bold text-lg mb-4">{t.footer.aboutTitle}</h3>
-          <p className="text-sm" style={{ color: "#bdb9b1" }}>
+          <p className="text-sm" style={{ color: "var(--color-sand)" }}>
             {t.footer.aboutBody}
           </p>
         </div>
@@ -413,7 +414,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             {links.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="hover:text-white transition-colors" style={{ color: "#bdb9b1" }}>
+                <a href={l.href} className="hover:text-white transition-colors" style={{ color: "var(--color-sand)" }}>
                   {l.label}
                 </a>
               </li>
@@ -448,7 +449,7 @@ export function Footer() {
       </div>
       <div
         className="max-w-7xl mx-auto mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs"
-        style={{ borderTop: "1px solid rgba(255,255,255,0.1)", color: "#9c9893" }}
+        style={{ borderTop: "1px solid rgba(255,255,255,0.1)", color: "var(--color-text-muted)" }}
       >
         <p>{t.footer.rights}</p>
         <p>

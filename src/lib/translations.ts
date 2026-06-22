@@ -359,4 +359,4 @@ export const translations: Record<Lang, Translation> = {
   },
 };
 
-export const SEASON_COLORS = ["#7DB87A", "#2E9E8F", "#C8883A", "#6FA8C8"];
+export const SEASON_COLORS = ["#7A9A6B", "#5E8A7A", "#B07D4B", "#7A9AA8"];

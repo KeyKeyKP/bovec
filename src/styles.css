@@ -3,15 +3,16 @@
 @import "tw-animate-css";
 
 @theme inline {
-  --color-cream: #F9F6F0;
+  --color-cream: #F5F1E8;
   --color-white: #FFFFFF;
-  --color-soca: #2E9E8F;
-  --color-soca-light: #E8F7F5;
-  --color-forest: #3A5A40;
-  --color-stone: #8A7E6E;
-  --color-sand: #D4C9B0;
-  --color-charcoal: #2C2C2A;
-  --color-text-muted: #6B6560;
+  --color-soca: #5E7A5E;
+  --color-soca-light: #E8EDE4;
+  --color-forest: #2F4A35;
+  --color-stone: #9A8F7E;
+  --color-sand: #D8CDB5;
+  --color-charcoal: #2E2D2A;
+  --color-text-muted: #6F6A61;
+  --color-wood: #6B4E3D;
   --color-background: var(--color-cream);
   --color-foreground: var(--color-charcoal);
   --color-primary: var(--color-soca);
@@ -22,14 +23,15 @@
 }
 
 :root {
-  --color-cream: #F9F6F0;
-  --color-soca: #2E9E8F;
-  --color-soca-light: #E8F7F5;
-  --color-forest: #3A5A40;
-  --color-stone: #8A7E6E;
-  --color-sand: #D4C9B0;
-  --color-charcoal: #2C2C2A;
-  --color-text-muted: #6B6560;
+  --color-cream: #F5F1E8;
+  --color-soca: #5E7A5E;
+  --color-soca-light: #E8EDE4;
+  --color-forest: #2F4A35;
+  --color-stone: #9A8F7E;
+  --color-sand: #D8CDB5;
+  --color-charcoal: #2E2D2A;
+  --color-text-muted: #6F6A61;
+  --color-wood: #6B4E3D;
 }
 
 @layer base {
@@ -54,7 +56,7 @@
 }
 
 .hero-placeholder {
-  background: linear-gradient(135deg, #2E9E8F 0%, #3A5A40 40%, #1a4a4a 70%, #6FA8C8 100%);
+  background: linear-gradient(135deg, #5E7A5E 0%, #2F4A35 40%, #3A4A3A 70%, #7A8F8A 100%);
   background-size: 300% 300%;
   animation: shimmer 8s ease-in-out infinite;
 }
@@ -93,6 +95,6 @@
   display: inline-block;
 }
 .btn-primary:hover {
-  background-color: #267d72;
+  background-color: #4A604A;
   transform: scale(1.03);
 }
