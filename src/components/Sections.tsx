@@ -16,8 +16,13 @@ import gal7 from "@/assets/gallery/1000073996.jpg.asset.json";
 import gal8 from "@/assets/gallery/1000073995-2.jpg.asset.json";
 import gal9 from "@/assets/gallery/1000073997-2.jpg.asset.json";
 import gal10 from "@/assets/gallery/1000073998.jpg.asset.json";
+import gal11 from "@/assets/gallery/1000073989.jpg.asset.json";
+import gal12 from "@/assets/gallery/1000074011.jpg.asset.json";
+import gal13 from "@/assets/gallery/1000074006.jpg.asset.json";
+import gal14 from "@/assets/gallery/1000074008.jpg.asset.json";
+import gal15 from "@/assets/gallery/1000074009.jpg.asset.json";
 
-const GALLERY_IMAGES = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10];
+const GALLERY_IMAGES = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal11, gal12, gal13, gal14, gal15];
 import {
   Waves,
   Mountain,
