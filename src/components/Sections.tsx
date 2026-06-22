@@ -2,11 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import julianAlps from "@/assets/julian-alps.jpg";
 import socaCanyon from "@/assets/soca-canyon.jpg";
 import socaRiver from "@/assets/soca-river.jpg";
-import heroBreka from "@/assets/hero/breka.jpg";
-import heroVirje from "@/assets/hero/virje.jpg";
-import heroValley from "@/assets/hero/valley.jpg";
-import heroHouse1 from "@/assets/hero/house-1.jpg";
-import heroHouse2 from "@/assets/hero/house-2.jpg";
+import heroOutside1 from "@/assets/hero-house/outside-1.jpg";
+import heroInside1 from "@/assets/hero-house/inside-1.jpg";
+import heroOutside2 from "@/assets/hero-house/outside-2.jpg";
+import heroInside2 from "@/assets/hero-house/inside-2.jpg";
 import {
   Waves,
   Mountain,
