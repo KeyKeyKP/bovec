@@ -146,7 +146,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Rezervirajte neposredno", subtitle: "Preverite razpoložljivost in rezervirajte prek Booking.com", cta: "Odpri na Booking.com" },
     location: {
       title: "Kje nas najdete",
-      body: "Hiša se nahaja v Bovcu, v samem srcu doline Soče, obdana z Julijskimi Alpami in Triglavskim narodnim parkom. Do Trbiža (IT) je 45 minut, do Kobarida 30 minut, do Tolmina pa 45 minut vožnje. Letališče Ljubljana je oddaljeno približno 2 uri.",
+      body: "Hiša se nahaja v Kobaridu, v srcu soške doline, obdana z Julijskimi Alpami in Triglavskim narodnim parkom. Do Bovca je 30 minut, do Tolmina 20 minut, do Trbiža (IT) pa približno uro vožnje. Letališče Ljubljana je oddaljeno približno 2 uri.",
     },
     footer: {
       aboutTitle: "O nas",
@@ -198,7 +198,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Rezervirajte izravno", subtitle: "Provjerite dostupnost i rezervirajte putem Booking.com", cta: "Otvori na Booking.com" },
     location: {
       title: "Gdje nas pronaći",
-      body: "Kuća se nalazi u Bovcu, u samom srcu doline Soče, okružena Julijskim Alpama i Triglavskim nacionalnim parkom. Do Tarvisia (IT) je 45 minuta, do Kobarida 30 minuta, do Tolmina 45 minuta vožnje. Zračna luka Ljubljana udaljena je oko 2 sata.",
+      body: "Kuća se nalazi u Kobaridu, u srcu doline Soče, okružena Julijskim Alpama i Triglavskim nacionalnim parkom. Do Bovca je 30 minuta, do Tolmina 20 minuta, a do Tarvisia (IT) otprilike sat vremena vožnje. Zračna luka Ljubljana udaljena je oko 2 sata.",
     },
     footer: {
       aboutTitle: "O nama",
@@ -250,7 +250,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Prenota direttamente", subtitle: "Verifica la disponibilità e prenota tramite Booking.com", cta: "Apri su Booking.com" },
     location: {
       title: "Dove trovarci",
-      body: "La casa si trova a Bovec, nel cuore stesso della Valle della Soča, circondata dalle Alpi Giulie e dal Parco Nazionale del Triglav. Tarvisio (IT) dista 45 minuti, Kobarid 30 minuti, Tolmino 45 minuti. L'aeroporto di Lubiana è a circa 2 ore.",
+      body: "La casa si trova a Kobarid (Caporetto), nel cuore della Valle dell'Isonzo, circondata dalle Alpi Giulie e dal Parco Nazionale del Triglav. Bovec dista 30 minuti, Tolmino 20 minuti e Tarvisio (IT) circa un'ora di auto. L'aeroporto di Lubiana è a circa 2 ore.",
     },
     footer: {
       aboutTitle: "Chi siamo",
@@ -302,7 +302,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Book Directly", subtitle: "Check availability and book via Booking.com", cta: "Open on Booking.com" },
     location: {
       title: "Where to Find Us",
-      body: "The house is in Bovec, in the very heart of the Soča Valley, surrounded by the Julian Alps and Triglav National Park. Tarvisio (IT) is 45 minutes, Kobarid 30 minutes, and Tolmin 45 minutes by car. Ljubljana airport is about 2 hours away.",
+      body: "The house is in Kobarid, in the heart of the Soča Valley, surrounded by the Julian Alps and Triglav National Park. Bovec is 30 minutes away, Tolmin 20 minutes, and Tarvisio (IT) about an hour by car. Ljubljana airport is about 2 hours away.",
     },
     footer: {
       aboutTitle: "About us",
@@ -354,7 +354,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Direkt buchen", subtitle: "Verfügbarkeit prüfen und über Booking.com buchen", cta: "Auf Booking.com öffnen" },
     location: {
       title: "Wo Sie uns finden",
-      body: "Das Haus liegt in Bovec, im Herzen des Soča-Tals, umgeben von den Julischen Alpen und dem Triglav-Nationalpark. Tarvis (IT) ist 45 Minuten entfernt, Kobarid 30 Minuten, Tolmin 45 Minuten. Der Flughafen Ljubljana ist etwa 2 Stunden entfernt.",
+      body: "Das Haus liegt in Kobarid, im Herzen des Soča-Tals, umgeben von den Julischen Alpen und dem Triglav-Nationalpark. Bovec ist 30 Minuten entfernt, Tolmin 20 Minuten und Tarvis (IT) etwa eine Stunde mit dem Auto. Der Flughafen Ljubljana ist etwa 2 Stunden entfernt.",
     },
     footer: {
       aboutTitle: "Über uns",
