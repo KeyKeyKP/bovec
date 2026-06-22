@@ -354,7 +354,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Direkt buchen", subtitle: "Verfügbarkeit prüfen und über Booking.com buchen", cta: "Auf Booking.com öffnen" },
     location: {
       title: "Wo Sie uns finden",
-      body: "Das Haus liegt in Bovec, im Herzen des Soča-Tals, umgeben von den Julischen Alpen und dem Triglav-Nationalpark. Tarvis (IT) ist 45 Minuten entfernt, Kobarid 30 Minuten, Tolmin 45 Minuten. Der Flughafen Ljubljana ist etwa 2 Stunden entfernt.",
+      body: "Das Haus liegt in Kobarid, im Herzen des Soča-Tals, umgeben von den Julischen Alpen und dem Triglav-Nationalpark. Bovec ist 30 Minuten entfernt, Tolmin 20 Minuten und Tarvis (IT) etwa eine Stunde mit dem Auto. Der Flughafen Ljubljana ist etwa 2 Stunden entfernt.",
     },
     footer: {
       aboutTitle: "Über uns",
