@@ -146,7 +146,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Rezervirajte neposredno", subtitle: "Preverite razpoložljivost in rezervirajte prek Booking.com", cta: "Odpri na Booking.com" },
     location: {
       title: "Kje nas najdete",
-      body: "Hiša se nahaja v Bovcu, v samem srcu doline Soče, obdana z Julijskimi Alpami in Triglavskim narodnim parkom. Do Trbiža (IT) je 45 minut, do Kobarida 30 minut, do Tolmina pa 45 minut vožnje. Letališče Ljubljana je oddaljeno približno 2 uri.",
+      body: "Hiša se nahaja v Kobaridu, v srcu soške doline, obdana z Julijskimi Alpami in Triglavskim narodnim parkom. Do Bovca je 30 minut, do Tolmina 20 minut, do Trbiža (IT) pa približno uro vožnje. Letališče Ljubljana je oddaljeno približno 2 uri.",
     },
     footer: {
       aboutTitle: "O nas",
