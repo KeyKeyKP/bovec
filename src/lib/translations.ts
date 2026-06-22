@@ -198,7 +198,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Rezervirajte izravno", subtitle: "Provjerite dostupnost i rezervirajte putem Booking.com", cta: "Otvori na Booking.com" },
     location: {
       title: "Gdje nas pronaći",
-      body: "Kuća se nalazi u Bovcu, u samom srcu doline Soče, okružena Julijskim Alpama i Triglavskim nacionalnim parkom. Do Tarvisia (IT) je 45 minuta, do Kobarida 30 minuta, do Tolmina 45 minuta vožnje. Zračna luka Ljubljana udaljena je oko 2 sata.",
+      body: "Kuća se nalazi u Kobaridu, u srcu doline Soče, okružena Julijskim Alpama i Triglavskim nacionalnim parkom. Do Bovca je 30 minuta, do Tolmina 20 minuta, a do Tarvisia (IT) otprilike sat vremena vožnje. Zračna luka Ljubljana udaljena je oko 2 sata.",
     },
     footer: {
       aboutTitle: "O nama",
