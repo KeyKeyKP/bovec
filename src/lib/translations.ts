@@ -163,14 +163,16 @@ export const translations: Record<Lang, Translation> = {
     nav: { home: "Početna", about: "O kući", activities: "Aktivnosti", gallery: "Galerija", booking: "Rezerviraj", contact: "Kontakt" },
     gallery: { title: "Galerija", subtitle: "Fotografije kuće — izvana i iznutra." },
     hero: {
+      title: "Cottage Kobarid",
       tagline: "Gdje Soča šapuće i planine šute",
-      subtitle: "Vaš dom u srcu Triglavskog nacionalnog parka — polazište za avanture, utočište za dušu.",
+      subtitle: "Vaš dom u srcu doline Soče — polazište za avanture, utočište za dušu.",
       cta: "Provjeri dostupnost",
     },
     about: {
-      title: "Vaš dom u dolini Soče",
-      body1: "Tamo gdje rijeka Soča boji svijet nevjerojatnom tirkiznom bojom i planine sežu visoko iznad oblaka, leži mjesto koje vas neće tek tako pustiti. Kuća koju vam nudimo nije samo smještaj — ona je polazište za avanture i tiho utočište za dušu.",
-      body2: "Bovec, srce Triglavskog nacionalnog parka, mjesto je koje mnogi traže cijeli život. Naša kuća dočekuje vas s udobnošću doma i divljinom doline Soče pred pragom.",
+      title: "Kobarid",
+      body1: "Tamo gdje Soča skreće u tišinu i povijesno sjećanje se prepliće s prirodom, leži Kobarid — selo koje ne zove glasno, a ipak te povuče u sebe.",
+      body2: "Poznat po jednoj od najvažnijih bitaka Prvog svjetskog rata, danas Kobarid diše posve drukčiji zrak — svjež, planinski, natopljen tirkiznim sjajem Soče. Muzej koji ovdje stoji govori tiho i duboko. Slap Kozjak udaljen je tek jedan korak.",
+      body3: "Kobarid nije destinacija za žurbu. To je mjesto gdje ti se ujutro kava ohladi pred tobom i nakratko zaboraviš kamo si uopće krenuo.",
     },
     romantic: {
       title: "Osjetite dušu Bovca",
