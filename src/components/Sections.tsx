@@ -42,7 +42,7 @@ function useReveal<T extends HTMLElement>() {
   return ref;
 }
 
-const HERO_SLIDES = [heroValley, heroBreka, heroVirje, heroHouse1, heroHouse2];
+const HERO_SLIDES = [heroOutside1, heroInside1, heroOutside2, heroInside2];
 const HERO_INTERVAL = 4000;
 
 export function HeroSection() {
