@@ -132,9 +132,14 @@ export function AboutSection() {
           <p className="mb-5 text-lg" style={{ color: "var(--color-charcoal)" }}>
             {t.about.body1}
           </p>
-          <p className="text-lg" style={{ color: "var(--color-text-muted)" }}>
+          <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
             {t.about.body2}
           </p>
+          {t.about.body3 && (
+            <p className="text-lg" style={{ color: "var(--color-text-muted)" }}>
+              {t.about.body3}
+            </p>
+          )}
         </div>
         <div className="grid grid-cols-2 gap-2" style={{ gridTemplateRows: "repeat(2, 200px)" }}>
           <img
