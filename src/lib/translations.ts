@@ -302,7 +302,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Book Directly", subtitle: "Check availability and book via Booking.com", cta: "Open on Booking.com" },
     location: {
       title: "Where to Find Us",
-      body: "The house is in Bovec, in the very heart of the Soča Valley, surrounded by the Julian Alps and Triglav National Park. Tarvisio (IT) is 45 minutes, Kobarid 30 minutes, and Tolmin 45 minutes by car. Ljubljana airport is about 2 hours away.",
+      body: "The house is in Kobarid, in the heart of the Soča Valley, surrounded by the Julian Alps and Triglav National Park. Bovec is 30 minutes away, Tolmin 20 minutes, and Tarvisio (IT) about an hour by car. Ljubljana airport is about 2 hours away.",
     },
     footer: {
       aboutTitle: "About us",
