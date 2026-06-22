@@ -102,9 +102,12 @@ export function HeroSection() {
         style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55))" }}
       />
       <div className="relative h-full flex flex-col items-center justify-center text-center px-6 text-white max-w-4xl mx-auto">
-        <h1 className="font-bold text-[32px] md:text-[52px] leading-tight" style={{ letterSpacing: "0.01em" }}>
-          {t.hero.tagline}
+        <h1 className="font-bold text-[40px] md:text-[68px] leading-tight" style={{ letterSpacing: "0.01em" }}>
+          {t.hero.title}
         </h1>
+        <p className="mt-3 italic text-xl md:text-2xl font-light opacity-95" style={{ letterSpacing: "0.01em" }}>
+          {t.hero.tagline}
+        </p>
         <p className="mt-6 max-w-2xl text-lg md:text-xl font-light" style={{ lineHeight: 1.6 }}>
           {t.hero.subtitle}
         </p>
