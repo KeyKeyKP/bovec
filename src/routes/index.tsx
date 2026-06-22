@@ -3,7 +3,7 @@ import { LanguageProvider } from "@/components/LanguageContext";
 import { Navbar } from "@/components/Navbar";
 import {
   HeroSection, AboutSection, RomanticSection, ActivitiesSection,
-  SeasonsSection, GallerySection, BookingSection, LocationSection, Footer,
+  SeasonsSection, GallerySection, LocationSection, Footer,
 } from "@/components/Sections";
 
 export const Route = createFileRoute("/")({
@@ -41,7 +41,6 @@ function Index() {
         <ActivitiesSection />
         <SeasonsSection />
         <GallerySection />
-        <BookingSection />
         <LocationSection />
       </main>
       <Footer />

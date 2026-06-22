@@ -46,7 +46,6 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  MessageCircle,
 } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { SEASON_COLORS } from "@/lib/translations";
