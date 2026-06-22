@@ -267,14 +267,16 @@ export const translations: Record<Lang, Translation> = {
     nav: { home: "Home", about: "The House", activities: "Activities", gallery: "Gallery", booking: "Book", contact: "Contact" },
     gallery: { title: "Gallery", subtitle: "Photos of the house — outside and inside." },
     hero: {
+      title: "Cottage Kobarid",
       tagline: "Where the Soča whispers and mountains stand still",
-      subtitle: "Your home in the heart of Triglav National Park — a base for adventure, a refuge for the soul.",
+      subtitle: "Your home in the heart of the Soča Valley — a base for adventure, a refuge for the soul.",
       cta: "Check Availability",
     },
     about: {
-      title: "Your Home in the Soča Valley",
-      body1: "Where the river Soča paints the world an extraordinary turquoise and mountains rise high above the clouds, lies a place that won't let you go easily. The house we offer you is not just accommodation — it is a starting point for adventures and a quiet refuge for the soul.",
-      body2: "Bovec, the heart of Triglav National Park, is a place many search for their whole lives. Our house greets you with all the comfort of a home and all the wildness of the Soča Valley right at the doorstep.",
+      title: "Kobarid",
+      body1: "Where the Soča bends into silence and historical memory weaves itself into nature, lies Kobarid — a village that does not call out loud, yet still draws you in.",
+      body2: "Known for one of the most important battles of the First World War, today Kobarid breathes an entirely different air — fresh, alpine, steeped in the turquoise glow of the Soča. The museum that stands here speaks quietly and deeply. The Kozjak waterfall is just a single step away.",
+      body3: "Kobarid is not a destination for rushing. It is a place where your morning coffee goes cold in front of you and for a moment you forget where you were even heading.",
     },
     romantic: {
       title: "Feel the Soul of Bovec",
