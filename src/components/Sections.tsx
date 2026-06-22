@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import julianAlps from "@/assets/julian-alps.jpg";
 import socaCanyon from "@/assets/soca-canyon.jpg";
 import socaRiver from "@/assets/soca-river.jpg";
@@ -46,6 +46,9 @@ import {
   MapPin,
   Facebook,
   Instagram,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { SEASON_COLORS } from "@/lib/translations";
@@ -261,6 +264,34 @@ export function SeasonsSection() {
 export function GallerySection() {
   const { t } = useLang();
   const ref = useReveal<HTMLDivElement>();
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const close = useCallback(() => setLightboxIndex(null), []);
+  const prev = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length)),
+    []
+  );
+  const next = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % GALLERY_IMAGES.length)),
+    []
+  );
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") prev();
+      else if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightboxIndex, close, prev, next]);
+
   return (
     <section id="gallery" className="py-24 px-6" style={{ background: "var(--color-cream)" }}>
       <div ref={ref} className="fade-up max-w-7xl mx-auto">
@@ -274,10 +305,13 @@ export function GallerySection() {
         </div>
         <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {GALLERY_IMAGES.map((img, i) => (
-            <div
+            <button
+              type="button"
               key={i}
-              className="aspect-[4/3] rounded-xl overflow-hidden group"
+              onClick={() => setLightboxIndex(i)}
+              className="aspect-[4/3] rounded-xl overflow-hidden group cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-offset-2"
               style={{ background: "var(--color-soca-light)" }}
+              aria-label={`Odpri fotografijo ${i + 1}`}
             >
               <img
                 src={img.url}
@@ -285,10 +319,53 @@ export function GallerySection() {
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-in fade-in"
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); close(); }}
+            className="absolute top-4 right-4 md:top-6 md:right-6 text-white/90 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+            aria-label="Zapri"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-white p-2 md:p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+            aria-label="Prejšnja"
+          >
+            <ChevronLeft className="w-7 h-7 md:w-8 md:h-8" />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-white p-2 md:p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+            aria-label="Naslednja"
+          >
+            <ChevronRight className="w-7 h-7 md:w-8 md:h-8" />
+          </button>
+          <img
+            src={GALLERY_IMAGES[lightboxIndex].url}
+            alt={`Cottage Kobarid ${lightboxIndex + 1}`}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+          />
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm tabular-nums">
+            {lightboxIndex + 1} / {GALLERY_IMAGES.length}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
