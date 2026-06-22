@@ -250,7 +250,7 @@ export const translations: Record<Lang, Translation> = {
     booking: { title: "Prenota direttamente", subtitle: "Verifica la disponibilità e prenota tramite Booking.com", cta: "Apri su Booking.com" },
     location: {
       title: "Dove trovarci",
-      body: "La casa si trova a Bovec, nel cuore stesso della Valle della Soča, circondata dalle Alpi Giulie e dal Parco Nazionale del Triglav. Tarvisio (IT) dista 45 minuti, Kobarid 30 minuti, Tolmino 45 minuti. L'aeroporto di Lubiana è a circa 2 ore.",
+      body: "La casa si trova a Kobarid (Caporetto), nel cuore della Valle dell'Isonzo, circondata dalle Alpi Giulie e dal Parco Nazionale del Triglav. Bovec dista 30 minuti, Tolmino 20 minuti e Tarvisio (IT) circa un'ora di auto. L'aeroporto di Lubiana è a circa 2 ore.",
     },
     footer: {
       aboutTitle: "Chi siamo",
