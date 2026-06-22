@@ -319,14 +319,16 @@ export const translations: Record<Lang, Translation> = {
     nav: { home: "Start", about: "Das Haus", activities: "Aktivitäten", gallery: "Galerie", booking: "Buchen", contact: "Kontakt" },
     gallery: { title: "Galerie", subtitle: "Fotos des Hauses — außen und innen." },
     hero: {
+      title: "Cottage Kobarid",
       tagline: "Wo die Soča flüstert und die Berge schweigen",
-      subtitle: "Ihr Zuhause im Herzen des Triglav-Nationalparks — Ausgangspunkt für Abenteuer, Zuflucht für die Seele.",
+      subtitle: "Ihr Zuhause im Herzen des Soča-Tals — Ausgangspunkt für Abenteuer, Zuflucht für die Seele.",
       cta: "Verfügbarkeit prüfen",
     },
     about: {
-      title: "Ihr Zuhause im Soča-Tal",
-      body1: "Dort, wo der Fluss Soča die Welt in ein außergewöhnliches Türkis taucht und die Berge hoch über die Wolken ragen, liegt ein Ort, der Sie nicht so leicht loslässt. Das Haus, das wir Ihnen anbieten, ist nicht nur eine Unterkunft — es ist ein Ausgangspunkt für Abenteuer und ein stilles Refugium für die Seele.",
-      body2: "Bovec, das Herz des Triglav-Nationalparks, ist ein Ort, den viele ihr ganzes Leben suchen. Unser Haus empfängt Sie mit allem Komfort eines Heimes und der ganzen Wildheit des Soča-Tals vor der Tür.",
+      title: "Kobarid",
+      body1: "Dort, wo die Soča in die Stille einbiegt und historische Erinnerung sich mit der Natur verflicht, liegt Kobarid — ein Dorf, das nicht laut ruft und einen dennoch in seinen Bann zieht.",
+      body2: "Bekannt durch eine der bedeutendsten Schlachten des Ersten Weltkriegs, atmet Kobarid heute eine ganz andere Luft — frisch, alpin, getränkt im türkisen Glanz der Soča. Das Museum, das hier steht, spricht leise und tief. Der Kozjak-Wasserfall liegt nur einen Schritt entfernt.",
+      body3: "Kobarid ist kein Ort für Hektik. Es ist ein Ort, an dem dir morgens der Kaffee vor dir kalt wird und du für einen Moment vergisst, wohin du überhaupt wolltest.",
     },
     romantic: {
       title: "Spüren Sie die Seele von Bovec",
