@@ -46,6 +46,9 @@ import {
   MapPin,
   Facebook,
   Instagram,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { SEASON_COLORS } from "@/lib/translations";
