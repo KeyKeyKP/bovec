@@ -28,8 +28,10 @@ import gal19 from "@/assets/gallery/1000073993-interior.jpg.asset.json";
 import gal20 from "@/assets/gallery/1000073992-interior.jpg.asset.json";
 import gal21 from "@/assets/gallery/1000073989-interior.jpg.asset.json";
 import gal22 from "@/assets/gallery/1000073990-interior.jpg.asset.json";
+import gal23 from "@/assets/gallery/1000073999-interior.jpg.asset.json";
+import gal24 from "@/assets/gallery/1000074000-interior.jpg.asset.json";
 
-const GALLERY_IMAGES = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal11, gal12, gal13, gal14, gal15, gal16, gal17, gal18, gal19, gal20, gal21, gal22];
+const GALLERY_IMAGES = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal11, gal12, gal13, gal14, gal15, gal16, gal17, gal18, gal19, gal20, gal21, gal22, gal23, gal24];
 import {
   Waves,
   Mountain,
@@ -44,7 +46,6 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  MessageCircle,
 } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { SEASON_COLORS } from "@/lib/translations";
@@ -107,7 +108,7 @@ export function HeroSection() {
         <p className="mt-6 max-w-2xl text-lg md:text-xl font-light" style={{ lineHeight: 1.6 }}>
           {t.hero.subtitle}
         </p>
-        <a href="#booking" className="btn-primary mt-10">
+        <a href="#contact" className="btn-primary mt-10">
           {t.hero.cta}
         </a>
       </div>
@@ -284,41 +285,6 @@ export function GallerySection() {
   );
 }
 
-export function BookingSection() {
-  const { t } = useLang();
-  const ref = useReveal<HTMLDivElement>();
-  return (
-    <section id="booking" className="py-24 px-6 bg-white">
-      <div ref={ref} className="fade-up max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl mb-4" style={{ color: "var(--color-forest)" }}>
-          {t.booking.title}
-        </h2>
-        <p className="mb-10 text-lg" style={{ color: "var(--color-text-muted)" }}>
-          {t.booking.subtitle}
-        </p>
-        {/* TODO: Replace src with actual Booking.com property URL */}
-        <div className="rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08)] max-w-4xl mx-auto">
-          <iframe
-            src="https://www.booking.com/searchresults.html?ss=Bovec%2C+Slovenia"
-            width="100%"
-            height={520}
-            loading="lazy"
-            title="Booking.com reservation"
-            style={{ border: "none", display: "block" }}
-          />
-        </div>
-        <a
-          href="https://www.booking.com/searchresults.html?ss=Bovec%2C+Slovenia"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary mt-8"
-        >
-          {t.booking.cta}
-        </a>
-      </div>
-    </section>
-  );
-}
 
 export function LocationSection() {
   const { t } = useLang();
@@ -331,6 +297,11 @@ export function LocationSection() {
             {t.location.title}
           </h2>
           <p className="text-lg mb-8">{t.location.body}</p>
+          <div className="space-y-3 mb-8 text-base">
+            <p><strong>Email:</strong> <a href="mailto:cottage_kobarid@gmail.com" className="hover:underline">cottage_kobarid@gmail.com</a></p>
+            <p><strong>GSM Alen:</strong> <a href="tel:+38641322720" className="hover:underline">00386 41 322 720</a></p>
+            <p><strong>GSM Danijela:</strong> <a href="tel:+38640789122" className="hover:underline">00386 40 789 122</a></p>
+          </div>
           <div className="flex flex-wrap gap-3">
             {[
               { icon: "🚗", label: "Kobarid — 30 min" },
@@ -354,10 +325,10 @@ export function LocationSection() {
         >
           <MapPin size={48} style={{ color: "var(--color-soca)" }} />
           <p className="mt-4 font-semibold" style={{ color: "var(--color-forest)" }}>
-            Bovec, Slovenija
+            Kobarid, Slovenija
           </p>
           <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
-            46.3369° N, 13.5521° E
+            Soška dolina
           </p>
         </div>
       </div>
@@ -366,20 +337,12 @@ export function LocationSection() {
 }
 
 export function Footer() {
-  const { t, lang } = useLang();
-  useEffect(() => {
-    const u = "info";
-    const d = "bocevhisa.si";
-    document.querySelectorAll<HTMLAnchorElement>("[data-mail]").forEach((el) => {
-      el.href = `mailto:${u}@${d}`;
-      el.textContent = `${u}@${d}`;
-    });
-  }, [lang]);
+  const { t } = useLang();
   const links = [
     { href: "#home", label: t.nav.home },
     { href: "#about", label: t.nav.about },
     { href: "#activities", label: t.nav.activities },
-    { href: "#booking", label: t.nav.booking },
+    { href: "#gallery", label: t.nav.gallery },
     { href: "#contact", label: t.nav.contact },
   ];
   return (
@@ -394,25 +357,10 @@ export function Footer() {
         <div>
           <h3 className="text-white font-bold text-lg mb-4">{t.footer.contactTitle}</h3>
           <ul className="space-y-2 text-sm">
-            <li>📍 Bovec, Slovenija</li>
-            <li>
-              ✉️{" "}
-              <a data-mail href="#" className="hover:underline">
-                info
-              </a>
-            </li>
-            <li>📞 +386 XX XXX XXXX</li>
-            <li>
-              <a
-                href="https://wa.me/386000000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-full text-white font-semibold text-sm"
-                style={{ background: "#25D366" }}
-              >
-                <MessageCircle size={16} /> WhatsApp
-              </a>
-            </li>
+            <li>📍 Kobarid, Slovenija</li>
+            <li>✉️ <a href="mailto:cottage_kobarid@gmail.com" className="hover:underline">cottage_kobarid@gmail.com</a></li>
+            <li>📞 Alen: <a href="tel:+38641322720" className="hover:underline">00386 41 322 720</a></li>
+            <li>📞 Danijela: <a href="tel:+38640789122" className="hover:underline">00386 40 789 122</a></li>
           </ul>
         </div>
         <div>
