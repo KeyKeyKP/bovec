@@ -150,7 +150,7 @@ export const translations: Record<Lang, Translation> = {
     },
     footer: {
       aboutTitle: "O nas",
-      aboutBody: "Hiša v Bovcu je vaš dom sredi Julijskih Alp — idealno izhodišče za odkrivanje čudes doline Soče. Ponosni smo, da vsakemu gostu zagotovimo nepozabno izkušnjo.",
+      aboutBody: "Hiša v Kobaridu je vaš dom sredi Julijskih Alp — idealno izhodišče za odkrivanje čudes doline Soče. Ponosni smo, da vsakemu gostu zagotovimo nepozabno izkušnjo.",
       contactTitle: "Kontakt",
       quickLinksTitle: "Hitre povezave",
       socialTitle: "Sledite nam",
@@ -202,7 +202,7 @@ export const translations: Record<Lang, Translation> = {
     },
     footer: {
       aboutTitle: "O nama",
-      aboutBody: "Kuća u Bovcu vaš je dom usred Julijskih Alpa — idealno polazište za otkrivanje čuda doline Soče.",
+      aboutBody: "Kuća u Kobaridu vaš je dom usred Julijskih Alpa — idealno polazište za otkrivanje čuda doline Soče.",
       contactTitle: "Kontakt",
       quickLinksTitle: "Brze poveznice",
       socialTitle: "Pratite nas",
@@ -254,7 +254,7 @@ export const translations: Record<Lang, Translation> = {
     },
     footer: {
       aboutTitle: "Chi siamo",
-      aboutBody: "La casa a Bovec è la vostra casa nel cuore delle Alpi Giulie — punto di partenza ideale per scoprire le meraviglie della Valle della Soča.",
+      aboutBody: "La casa a Kobarid è la vostra casa nel cuore delle Alpi Giulie — punto di partenza ideale per scoprire le meraviglie della Valle della Soča.",
       contactTitle: "Contatti",
       quickLinksTitle: "Link rapidi",
       socialTitle: "Seguici",
@@ -306,7 +306,7 @@ export const translations: Record<Lang, Translation> = {
     },
     footer: {
       aboutTitle: "About us",
-      aboutBody: "The house in Bovec is your home in the heart of the Julian Alps — the ideal base for exploring the wonders of the Soča Valley.",
+      aboutBody: "The house in Kobarid is your home in the heart of the Julian Alps — the ideal base for exploring the wonders of the Soča Valley.",
       contactTitle: "Contact",
       quickLinksTitle: "Quick links",
       socialTitle: "Follow us",
@@ -358,7 +358,7 @@ export const translations: Record<Lang, Translation> = {
     },
     footer: {
       aboutTitle: "Über uns",
-      aboutBody: "Das Haus in Bovec ist Ihr Zuhause im Herzen der Julischen Alpen — idealer Ausgangspunkt für die Erkundung des Soča-Tals.",
+      aboutBody: "Das Haus in Kobarid ist Ihr Zuhause im Herzen der Julischen Alpen — idealer Ausgangspunkt für die Erkundung des Soča-Tals.",
       contactTitle: "Kontakt",
       quickLinksTitle: "Schnelllinks",
       socialTitle: "Folgen Sie uns",
