@@ -240,7 +240,6 @@ export function SeasonsSection() {
 export function GallerySection() {
   const { t } = useLang();
   const ref = useReveal<HTMLDivElement>();
-  const placeholders = Array.from({ length: 8 });
   return (
     <section id="gallery" className="py-24 px-6" style={{ background: "var(--color-cream)" }}>
       <div ref={ref} className="fade-up max-w-7xl mx-auto">
@@ -253,18 +252,18 @@ export function GallerySection() {
           </p>
         </div>
         <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {placeholders.map((_, i) => (
+          {GALLERY_IMAGES.map((img, i) => (
             <div
               key={i}
-              className="aspect-[4/3] rounded-xl flex items-center justify-center text-sm"
-              style={{
-                background: "var(--color-soca-light)",
-                color: "var(--color-forest)",
-                border: "1px dashed var(--color-soca)",
-              }}
-              aria-label={`Gallery placeholder ${i + 1}`}
+              className="aspect-[4/3] rounded-xl overflow-hidden group"
+              style={{ background: "var(--color-soca-light)" }}
             >
-              📷 {i + 1}
+              <img
+                src={img.url}
+                alt={`Cottage Kobarid ${i + 1}`}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
           ))}
         </div>
