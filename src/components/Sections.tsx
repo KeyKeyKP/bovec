@@ -6,6 +6,18 @@ import heroOutside1 from "@/assets/hero-house/outside-1.jpg";
 import heroInside1 from "@/assets/hero-house/inside-1.jpg";
 import heroOutside2 from "@/assets/hero-house/outside-2.jpg";
 import heroInside2 from "@/assets/hero-house/inside-2.jpg";
+import gal1 from "@/assets/gallery/1000074002.jpg.asset.json";
+import gal2 from "@/assets/gallery/1000074001.jpg.asset.json";
+import gal3 from "@/assets/gallery/1000074000.jpg.asset.json";
+import gal4 from "@/assets/gallery/1000074003.jpg.asset.json";
+import gal5 from "@/assets/gallery/1000074004-2.jpg.asset.json";
+import gal6 from "@/assets/gallery/1000073991.jpg.asset.json";
+import gal7 from "@/assets/gallery/1000073996.jpg.asset.json";
+import gal8 from "@/assets/gallery/1000073995-2.jpg.asset.json";
+import gal9 from "@/assets/gallery/1000073997-2.jpg.asset.json";
+import gal10 from "@/assets/gallery/1000073998.jpg.asset.json";
+
+const GALLERY_IMAGES = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10];
 import {
   Waves,
   Mountain,
