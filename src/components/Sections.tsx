@@ -73,8 +73,18 @@ export function HeroSection() {
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${heroPoster.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
       <video
         src={heroVideo.url}
+        poster={heroPoster.url}
         autoPlay
         muted
         loop
@@ -82,6 +92,7 @@ export function HeroSection() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       />
+
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55))" }}
