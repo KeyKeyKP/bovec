@@ -37,7 +37,7 @@ function Index() {
       <main>
         <HeroSection />
         <AboutSection />
-        <RomanticSection />
+        
         <ActivitiesSection />
         <SeasonsSection />
         <GallerySection />
