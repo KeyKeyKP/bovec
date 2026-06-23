@@ -279,10 +279,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Check Availability",
     },
     about: {
-      title: "Kobarid",
-      body1: "Where the Soča bends into silence and historical memory weaves itself into nature, lies Kobarid — a village that does not call out loud, yet still draws you in.",
-      body2: "Known for one of the most important battles of the First World War, today Kobarid breathes an entirely different air — fresh, alpine, steeped in the turquoise glow of the Soča. The museum that stands here speaks quietly and deeply. The Kozjak waterfall is just a single step away.",
-      body3: "Kobarid is not a destination for rushing. It is a place where your morning coffee goes cold in front of you and for a moment you forget where you were even heading.",
+      title: "Cottage Kobarid",
+      body1: "The holiday cottage is located just 1 km from Kobarid, on the peaceful edge of the village next to the forest. In 2021 it was completely renovated and modernly furnished, offering guests full comfort for a relaxed and unforgettable holiday.",
+      body2: "Its special feature is an exceptionally quiet setting in the embrace of nature, where instead of the bustle of the city you are accompanied only by birdsong, the murmur of a nearby stream and the soothing sounds of the forest. From the upper terrace, a wonderful view opens onto Mount Krn and the surrounding hills and valley.",
+      body3: "For pleasant gatherings outdoors there is a covered terrace at the back of the house, a pergola with a seating set in front, an outdoor grill and a fire pit area. On the upper terrace, you can enjoy your morning coffee or an evening sunset surrounded by pristine nature and breathtaking views.",
+      body4: "Kobarid and its surroundings offer numerous opportunities for an active holiday: bike rental, rafting, canyoning, paragliding, fishing and much more. Lovers of a quieter break can explore forest trails or cool off in the nearby Nadiža river.",
+      body5: "Among the most popular attractions are the Kozjak Waterfall, the Kobarid Museum and the Italian Charnel House in Kobarid. The wider area captivates with its rich First World War heritage, emerald rivers and untouched nature, offering countless opportunities for exploration, sport and complete relaxation.",
     },
     romantic: {
       title: "Feel the Soul of Bovec",
