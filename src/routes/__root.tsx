@@ -90,6 +90,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "preload",
+        as: "video",
+        href: "/__l5e/assets-v1/ffd7bbd2-c8b6-496d-92f7-265864d1554f/hero.mp4",
+        type: "video/mp4",
+      },
     ],
   }),
   shellComponent: RootShell,

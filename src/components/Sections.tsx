@@ -2,10 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import julianAlps from "@/assets/julian-alps.jpg";
 import socaCanyon from "@/assets/soca-canyon.jpg";
 import socaRiver from "@/assets/soca-river.jpg";
-import heroOutside1 from "@/assets/hero-house/outside-1.jpg";
-import heroInside1 from "@/assets/hero-house/inside-1.jpg";
-import heroOutside2 from "@/assets/hero-house/outside-2.jpg";
-import heroInside2 from "@/assets/hero-house/inside-2.jpg";
+import heroVideo from "@/assets/hero.mp4.asset.json";
 import gal1 from "@/assets/gallery/1000073996-exterior.jpg.asset.json";
 import gal2 from "@/assets/gallery/1000074002-exterior.jpg.asset.json";
 import gal3 from "@/assets/gallery/1000074001-exterior.jpg.asset.json";
@@ -70,40 +67,25 @@ function useReveal<T extends HTMLElement>() {
   return ref;
 }
 
-const HERO_SLIDES = [heroOutside1, heroInside1, heroOutside2, heroInside2];
-const HERO_INTERVAL = 4000;
-
 export function HeroSection() {
   const { t } = useLang();
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((i) => (i + 1) % HERO_SLIDES.length);
-    }, HERO_INTERVAL);
-    return () => clearInterval(id);
-  }, []);
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
-      {HERO_SLIDES.map((src, i) => (
-        <div
-          key={i}
-          aria-hidden={i !== index}
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(${src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: i === index ? 1 : 0,
-            transition: "opacity 1.2s ease-in-out",
-          }}
-        />
-      ))}
+      <video
+        src={heroVideo.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55))" }}
       />
+
       <div className="relative h-full flex flex-col items-center justify-center text-center px-6 text-white max-w-4xl mx-auto">
         <h1 className="font-bold text-[40px] md:text-[68px] leading-tight" style={{ letterSpacing: "0.01em" }}>
           {t.hero.title}
