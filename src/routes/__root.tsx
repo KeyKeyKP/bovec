@@ -92,8 +92,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "preload",
+        as: "image",
+        href: "/__l5e/assets-v1/c67c9079-9491-4c39-ba47-35c1d3918543/hero-poster.jpg",
+        fetchpriority: "high",
+      },
+      {
+        rel: "preload",
         as: "video",
-        href: "/__l5e/assets-v1/ffd7bbd2-c8b6-496d-92f7-265864d1554f/hero.mp4",
+        href: "/__l5e/assets-v1/d1291bdd-8941-4db4-a772-c8bbe41d56bd/hero.mp4",
         type: "video/mp4",
       },
     ],

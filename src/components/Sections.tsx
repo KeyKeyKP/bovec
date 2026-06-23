@@ -3,6 +3,7 @@ import julianAlps from "@/assets/julian-alps.jpg";
 import socaCanyon from "@/assets/soca-canyon.jpg";
 import socaRiver from "@/assets/soca-river.jpg";
 import heroVideo from "@/assets/hero.mp4.asset.json";
+import heroPoster from "@/assets/hero-poster.jpg.asset.json";
 import gal1 from "@/assets/gallery/1000073996-exterior.jpg.asset.json";
 import gal2 from "@/assets/gallery/1000074002-exterior.jpg.asset.json";
 import gal3 from "@/assets/gallery/1000074001-exterior.jpg.asset.json";
@@ -72,8 +73,18 @@ export function HeroSection() {
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${heroPoster.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
       <video
         src={heroVideo.url}
+        poster={heroPoster.url}
         autoPlay
         muted
         loop
@@ -81,6 +92,7 @@ export function HeroSection() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       />
+
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55))" }}
