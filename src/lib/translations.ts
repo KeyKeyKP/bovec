@@ -14,7 +14,7 @@ export interface Translation {
   nav: { home: string; about: string; activities: string; gallery: string; booking: string; contact: string };
   gallery: { title: string; subtitle: string };
   hero: { title: string; tagline: string; subtitle: string; cta: string };
-  about: { title: string; body1: string; body2: string; body3?: string };
+  about: { title: string; body1: string; body2: string; body3?: string; body4?: string; body5?: string };
   romantic: { title: string; body1: string; body2: string; body3: string };
   activities: { title: string; subtitle: string; items: ActivityItem[] };
   seasons: { title: string; body: string; cards: SeasonCard[] };
@@ -117,10 +117,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Preveri razpoložljivost",
     },
     about: {
-      title: "Kobarid",
-      body1: "Tam, kjer Soča zavije v tišino in zgodovinski spomin se splete z naravo, leži Kobarid — vasica, ki ne kliče na glas, pa te vseeno potegne vase.",
-      body2: "Znan po eni najpomembnejših bitk prve svetovne vojne, danes Kobarid diha povsem drugačen zrak — svež, gorski, namočen v turkizni blesk Soče. Muzej, ki tu stoji, govori tiho in globoko. Slap Kozjak je en sam korak proč.",
-      body3: "Kobarid ni destinacija za hitenje. Je kraj, kjer zjutraj zmrzneš kavo pred sabo in za hip pozabiš, kam si sploh namenjen.",
+      title: "Cottage Kobarid",
+      body1: "Počitniška hišica se nahaja le 1 km od Kobarida, na mirnem robu vasi ob gozdu. Leta 2021 je bila popolnoma obnovljena in sodobno opremljena, zato gostom nudi popolno udobje za sproščene in nepozabne počitnice.",
+      body2: "Njena posebnost je izjemno mirna lega v objemu narave, kjer vas namesto mestnega vrveža spremljajo le petje ptic, šumenje bližnjega potoka in pomirjujoči zvoki gozda. Z zgornje terase se odpira čudovit pogled na Krn ter okoliške hribe in dolino.",
+      body3: "Za prijetno druženje na prostem so na voljo pokrita terasa za hišo, pergola s sedežno garnituro pred hišo, zunanji žar ter prostor za posedanje ob ognju. Na zgornji terasi lahko ob jutranji kavi ali večernem sončnem zahodu uživate v neokrnjeni naravi in osupljivih razgledih.",
+      body4: "Kobarid in njegova okolica ponujata številne možnosti za aktivno preživljanje prostega časa: najem koles, rafting, kanjoning, jadralno padalstvo, ribolov in še mnogo več. Ljubitelji mirnejšega oddiha lahko raziskujejo gozdne poti ali se osvežijo v bližnji reki Nadiži.",
+      body5: "Med najbolj priljubljenimi znamenitostmi so Slap Kozjak, Kobariški muzej ter Italijanska kostnica Kobarid. Širša okolica navdušuje z bogato dediščino prve svetovne vojne, smaragdnimi rekami in neokrnjeno naravo, ki ponuja nešteto možnosti za raziskovanje, športne aktivnosti in popoln oddih.",
     },
     romantic: {
       title: "Občutite dušo Bovca",
@@ -130,12 +132,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "Kaj lahko počnete",
-      subtitle: "Dolina Soče in okolica Bovca ponujata aktivnosti za vse letne čase in vse okuse.",
+      subtitle: "Dolina Soče in okolica Kobarida ponujata aktivnosti za vse letne čase in vse okuse.",
       items: buildActivities("sl"),
     },
     seasons: {
       title: "Kdaj priti",
-      body: "Bovec vas razvaja skozi vse leto. Pomlad prinese zelenje in poln pretok Soče — idealen čas za rafting in prve gorske pohode. Poletje je čas za kopalce, pustolovce in tiste, ki iščejo svežino nad morjem vročine. Jesen zlati gozdove in prinaša mir — manj turistov, več prostora za vas. Zima pa odkrije tihi čar zasneženih gora in smučarskih pobočij Kanina.",
+      body: "Kobarid vas razvaja skozi vse leto. Pomlad prinese zelenje in poln pretok Soče — idealen čas za rafting in prve gorske pohode. Poletje je čas za kopalce, pustolovce in tiste, ki iščejo svežino nad morjem vročine. Jesen zlati gozdove in prinaša mir — manj turistov, več prostora za vas. Zima pa odkrije tihi čar zasneženih gora in smučarskih pobočij Kanina.",
       cards: [
         { name: "Pomlad", highlight: "Zelenje, polna Soča in prvi pohodi v gore." },
         { name: "Poletje", highlight: "Kopanje, rafting in dolgi sončni dnevi." },
@@ -169,10 +171,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Provjeri dostupnost",
     },
     about: {
-      title: "Kobarid",
-      body1: "Tamo gdje Soča skreće u tišinu i povijesno sjećanje se prepliće s prirodom, leži Kobarid — selo koje ne zove glasno, a ipak te povuče u sebe.",
-      body2: "Poznat po jednoj od najvažnijih bitaka Prvog svjetskog rata, danas Kobarid diše posve drukčiji zrak — svjež, planinski, natopljen tirkiznim sjajem Soče. Muzej koji ovdje stoji govori tiho i duboko. Slap Kozjak udaljen je tek jedan korak.",
-      body3: "Kobarid nije destinacija za žurbu. To je mjesto gdje ti se ujutro kava ohladi pred tobom i nakratko zaboraviš kamo si uopće krenuo.",
+      title: "Cottage Kobarid",
+      body1: "Kuća za odmor nalazi se samo 1 km od Kobarida, na mirnom rubu sela uz šumu. Godine 2021. je u potpunosti obnovljena i moderno opremljena te gostima pruža potpunu udobnost za opušten i nezaboravan odmor.",
+      body2: "Njezina posebnost je iznimno mirna lokacija u zagrljaju prirode, gdje vas umjesto gradske vreve prate samo pjev ptica, žubor obližnjeg potoka i smirujući zvuci šume. S gornje terase pruža se prekrasan pogled na Krn te okolne brežuljke i dolinu.",
+      body3: "Za ugodno druženje na otvorenom dostupni su natkrivena terasa iza kuće, pergola sa sjedećom garniturom ispred kuće, vanjski roštilj te prostor za sjedenje uz vatru. Na gornjoj terasi možete uz jutarnju kavu ili večernji zalazak sunca uživati u netaknutoj prirodi i zadivljujućim pogledima.",
+      body4: "Kobarid i okolica nude brojne mogućnosti za aktivan odmor: najam bicikala, rafting, kanjoning, paragliding, ribolov i još mnogo toga. Ljubitelji mirnijeg odmora mogu istraživati šumske staze ili se osvježiti u obližnjoj rijeci Nadiži.",
+      body5: "Među najpopularnijim znamenitostima su slap Kozjak, Kobaridski muzej te Talijanska kostnica u Kobaridu. Šira okolica oduševljava bogatom baštinom Prvog svjetskog rata, smaragdnim rijekama i netaknutom prirodom, koja nudi bezbroj mogućnosti za istraživanje, sportske aktivnosti i potpuni odmor.",
     },
     romantic: {
       title: "Osjetite dušu Bovca",
@@ -182,12 +186,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "Što možete raditi",
-      subtitle: "Dolina Soče i okolica Bovca nude aktivnosti za sva godišnja doba i sve ukuse.",
+      subtitle: "Dolina Soče i okolica Kobarida nude aktivnosti za sva godišnja doba i sve ukuse.",
       items: buildActivities("hr"),
     },
     seasons: {
       title: "Kada doći",
-      body: "Bovec vas razmazuje tijekom cijele godine. Proljeće donosi zelenilo i puni protok Soče — idealno vrijeme za rafting i prve gorske ture. Ljeto je vrijeme za kupače, pustolove i one koji traže svježinu iznad mora vrućine. Jesen pozlaćuje šume i donosi mir — manje turista, više prostora za vas. Zima otkriva tihu čar zasniježenih planina i skijaških padina Kanina.",
+      body: "Kobarid vas razmazuje tijekom cijele godine. Proljeće donosi zelenilo i puni protok Soče — idealno vrijeme za rafting i prve gorske ture. Ljeto je vrijeme za kupače, pustolove i one koji traže svježinu iznad mora vrućine. Jesen pozlaćuje šume i donosi mir — manje turista, više prostora za vas. Zima otkriva tihu čar zasniježenih planina i skijaških padina Kanina.",
       cards: [
         { name: "Proljeće", highlight: "Zelenilo, puna Soča i prvi gorski usponi." },
         { name: "Ljeto", highlight: "Kupanje, rafting i dugi sunčani dani." },
@@ -221,10 +225,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Verifica disponibilità",
     },
     about: {
-      title: "Kobarid",
-      body1: "Là dove l'Isonzo svolta nel silenzio e la memoria storica si intreccia con la natura, sorge Caporetto (Kobarid) — un paesino che non chiama a gran voce, eppure ti attira a sé.",
-      body2: "Conosciuto per una delle battaglie più importanti della Prima guerra mondiale, oggi Kobarid respira un'aria del tutto diversa — fresca, di montagna, immersa nel bagliore turchese della Soča. Il museo che vi sorge parla in modo silenzioso e profondo. La cascata di Kozjak è a un solo passo.",
-      body3: "Kobarid non è una destinazione per chi ha fretta. È un luogo dove al mattino il caffè ti si raffredda davanti e per un attimo dimentichi dove eri diretto.",
+      title: "Cottage Kobarid",
+      body1: "La casa vacanze si trova a soli 1 km da Kobarid (Caporetto), sul tranquillo margine del villaggio accanto al bosco. Nel 2021 è stata completamente ristrutturata e arredata con stile moderno, offrendo agli ospiti il massimo comfort per una vacanza rilassata e indimenticabile.",
+      body2: "La sua particolarità è la posizione estremamente tranquilla, immersa nella natura, dove al posto del trambusto cittadino vi accompagnano solo il canto degli uccelli, il mormorio del vicino ruscello e i suoni rilassanti del bosco. Dalla terrazza superiore si apre una splendida vista sul monte Krn, sulle colline circostanti e sulla valle.",
+      body3: "Per piacevoli momenti all'aperto sono a disposizione una terrazza coperta sul retro della casa, una pergola con divani davanti, un barbecue esterno e uno spazio per sedersi attorno al fuoco. Sulla terrazza superiore potete godervi il caffè del mattino o il tramonto serale circondati da natura incontaminata e panorami mozzafiato.",
+      body4: "Kobarid e i suoi dintorni offrono numerose possibilità per trascorrere il tempo libero in modo attivo: noleggio biciclette, rafting, canyoning, parapendio, pesca e molto altro. Gli amanti di una vacanza più tranquilla possono esplorare i sentieri nel bosco o rinfrescarsi nel vicino fiume Natisone (Nadiža).",
+      body5: "Tra le attrazioni più popolari ci sono la cascata di Kozjak, il Museo di Caporetto e l'Ossario italiano di Caporetto. La zona più ampia affascina con la ricca eredità della Prima guerra mondiale, fiumi color smeraldo e natura incontaminata, che offre infinite possibilità di esplorazione, attività sportive e completo relax.",
     },
     romantic: {
       title: "Sentite l'anima di Bovec",
@@ -234,12 +240,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "Cosa potete fare",
-      subtitle: "La Valle della Soča e i dintorni di Bovec offrono attività per tutte le stagioni e tutti i gusti.",
+      subtitle: "La Valle della Soča e i dintorni di Kobarid offrono attività per tutte le stagioni e tutti i gusti.",
       items: buildActivities("it"),
     },
     seasons: {
       title: "Quando venire",
-      body: "Bovec vi coccola tutto l'anno. La primavera porta il verde e la piena della Soča — il momento ideale per il rafting e le prime escursioni in montagna. L'estate è il tempo dei bagnanti, degli avventurieri e di chi cerca frescura sopra il mare di caldo. L'autunno indora i boschi e porta pace — meno turisti, più spazio per voi. L'inverno svela il fascino silenzioso delle montagne innevate e delle piste del Canin.",
+      body: "Kobarid vi coccola tutto l'anno. La primavera porta il verde e la piena della Soča — il momento ideale per il rafting e le prime escursioni in montagna. L'estate è il tempo dei bagnanti, degli avventurieri e di chi cerca frescura sopra il mare di caldo. L'autunno indora i boschi e porta pace — meno turisti, più spazio per voi. L'inverno svela il fascino silenzioso delle montagne innevate e delle piste del Canin.",
       cards: [
         { name: "Primavera", highlight: "Verde, Soča piena e prime escursioni." },
         { name: "Estate", highlight: "Bagni, rafting e lunghe giornate di sole." },
@@ -273,10 +279,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Check Availability",
     },
     about: {
-      title: "Kobarid",
-      body1: "Where the Soča bends into silence and historical memory weaves itself into nature, lies Kobarid — a village that does not call out loud, yet still draws you in.",
-      body2: "Known for one of the most important battles of the First World War, today Kobarid breathes an entirely different air — fresh, alpine, steeped in the turquoise glow of the Soča. The museum that stands here speaks quietly and deeply. The Kozjak waterfall is just a single step away.",
-      body3: "Kobarid is not a destination for rushing. It is a place where your morning coffee goes cold in front of you and for a moment you forget where you were even heading.",
+      title: "Cottage Kobarid",
+      body1: "The holiday cottage is located just 1 km from Kobarid, on the peaceful edge of the village next to the forest. In 2021 it was completely renovated and modernly furnished, offering guests full comfort for a relaxed and unforgettable holiday.",
+      body2: "Its special feature is an exceptionally quiet setting in the embrace of nature, where instead of the bustle of the city you are accompanied only by birdsong, the murmur of a nearby stream and the soothing sounds of the forest. From the upper terrace, a wonderful view opens onto Mount Krn and the surrounding hills and valley.",
+      body3: "For pleasant gatherings outdoors there is a covered terrace at the back of the house, a pergola with a seating set in front, an outdoor grill and a fire pit area. On the upper terrace, you can enjoy your morning coffee or an evening sunset surrounded by pristine nature and breathtaking views.",
+      body4: "Kobarid and its surroundings offer numerous opportunities for an active holiday: bike rental, rafting, canyoning, paragliding, fishing and much more. Lovers of a quieter break can explore forest trails or cool off in the nearby Nadiža river.",
+      body5: "Among the most popular attractions are the Kozjak Waterfall, the Kobarid Museum and the Italian Charnel House in Kobarid. The wider area captivates with its rich First World War heritage, emerald rivers and untouched nature, offering countless opportunities for exploration, sport and complete relaxation.",
     },
     romantic: {
       title: "Feel the Soul of Bovec",
@@ -286,12 +294,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "What You Can Do",
-      subtitle: "The Soča Valley and the Bovec area offer activities for all seasons and all tastes.",
+      subtitle: "The Soča Valley and the Kobarid area offer activities for all seasons and all tastes.",
       items: buildActivities("en"),
     },
     seasons: {
       title: "When to Come",
-      body: "Bovec pampers you all year round. Spring brings greenery and the full flow of the Soča — ideal for rafting and the first mountain hikes. Summer is for bathers, adventurers and those seeking coolness above a sea of heat. Autumn gilds the forests and brings peace — fewer tourists, more space for you. Winter reveals the quiet charm of snow-capped mountains and the ski slopes of Kanin.",
+      body: "Kobarid pampers you all year round. Spring brings greenery and the full flow of the Soča — ideal for rafting and the first mountain hikes. Summer is for bathers, adventurers and those seeking coolness above a sea of heat. Autumn gilds the forests and brings peace — fewer tourists, more space for you. Winter reveals the quiet charm of snow-capped mountains and the ski slopes of Kanin.",
       cards: [
         { name: "Spring", highlight: "Greenery, a full Soča and first mountain hikes." },
         { name: "Summer", highlight: "Swimming, rafting and long sunny days." },
@@ -325,10 +333,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Verfügbarkeit prüfen",
     },
     about: {
-      title: "Kobarid",
-      body1: "Dort, wo die Soča in die Stille einbiegt und historische Erinnerung sich mit der Natur verflicht, liegt Kobarid — ein Dorf, das nicht laut ruft und einen dennoch in seinen Bann zieht.",
-      body2: "Bekannt durch eine der bedeutendsten Schlachten des Ersten Weltkriegs, atmet Kobarid heute eine ganz andere Luft — frisch, alpin, getränkt im türkisen Glanz der Soča. Das Museum, das hier steht, spricht leise und tief. Der Kozjak-Wasserfall liegt nur einen Schritt entfernt.",
-      body3: "Kobarid ist kein Ort für Hektik. Es ist ein Ort, an dem dir morgens der Kaffee vor dir kalt wird und du für einen Moment vergisst, wohin du überhaupt wolltest.",
+      title: "Cottage Kobarid",
+      body1: "Das Ferienhaus liegt nur 1 km von Kobarid entfernt, am ruhigen Rand des Dorfes am Wald. 2021 wurde es vollständig renoviert und modern eingerichtet und bietet seinen Gästen vollen Komfort für einen entspannten und unvergesslichen Urlaub.",
+      body2: "Seine Besonderheit ist die außergewöhnlich ruhige Lage inmitten der Natur, wo Sie statt Stadttrubel nur Vogelgesang, das Plätschern des nahen Baches und die beruhigenden Geräusche des Waldes begleiten. Von der oberen Terrasse öffnet sich ein wunderschöner Blick auf den Krn sowie die umliegenden Berge und das Tal.",
+      body3: "Für gemütliches Beisammensein im Freien stehen eine überdachte Terrasse hinter dem Haus, eine Pergola mit Sitzgarnitur vor dem Haus, ein Außengrill sowie ein Sitzbereich am Feuer zur Verfügung. Auf der oberen Terrasse können Sie bei Morgenkaffee oder Abendsonnenuntergang unberührte Natur und atemberaubende Aussichten genießen.",
+      body4: "Kobarid und seine Umgebung bieten zahlreiche Möglichkeiten für aktive Freizeitgestaltung: Fahrradverleih, Rafting, Canyoning, Gleitschirmfliegen, Angeln und vieles mehr. Liebhaber ruhigerer Erholung können Waldwege erkunden oder sich im nahen Fluss Nadiža erfrischen.",
+      body5: "Zu den beliebtesten Sehenswürdigkeiten zählen der Kozjak-Wasserfall, das Kobarid-Museum sowie das italienische Beinhaus in Kobarid. Die weitere Umgebung begeistert mit dem reichen Erbe des Ersten Weltkriegs, smaragdgrünen Flüssen und unberührter Natur, die unzählige Möglichkeiten für Erkundung, sportliche Aktivitäten und vollkommene Erholung bietet.",
     },
     romantic: {
       title: "Spüren Sie die Seele von Bovec",
@@ -338,12 +348,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "Was Sie unternehmen können",
-      subtitle: "Das Soča-Tal und die Umgebung von Bovec bieten Aktivitäten für alle Jahreszeiten und Geschmäcker.",
+      subtitle: "Das Soča-Tal und die Umgebung von Kobarid bieten Aktivitäten für alle Jahreszeiten und Geschmäcker.",
       items: buildActivities("de"),
     },
     seasons: {
       title: "Wann kommen",
-      body: "Bovec verwöhnt Sie das ganze Jahr. Der Frühling bringt Grün und den vollen Lauf der Soča — ideal für Rafting und erste Bergwanderungen. Der Sommer ist die Zeit für Badegäste, Abenteurer und alle, die Frische über dem Hitze-Meer suchen. Der Herbst vergoldet die Wälder und bringt Ruhe — weniger Touristen, mehr Platz für Sie. Der Winter offenbart den stillen Zauber verschneiter Berge und der Skipisten des Kanin.",
+      body: "Kobarid verwöhnt Sie das ganze Jahr. Der Frühling bringt Grün und den vollen Lauf der Soča — ideal für Rafting und erste Bergwanderungen. Der Sommer ist die Zeit für Badegäste, Abenteurer und alle, die Frische über dem Hitze-Meer suchen. Der Herbst vergoldet die Wälder und bringt Ruhe — weniger Touristen, mehr Platz für Sie. Der Winter offenbart den stillen Zauber verschneiter Berge und der Skipisten des Kanin.",
       cards: [
         { name: "Frühling", highlight: "Grün, volle Soča und erste Bergtouren." },
         { name: "Sommer", highlight: "Baden, Rafting und lange Sonnentage." },

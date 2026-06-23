@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LanguageProvider } from "@/components/LanguageContext";
 import { Navbar } from "@/components/Navbar";
 import {
-  HeroSection, AboutSection, RomanticSection, ActivitiesSection,
+  HeroSection, AboutSection, ActivitiesSection,
   SeasonsSection, GallerySection, LocationSection, Footer,
 } from "@/components/Sections";
 
@@ -37,7 +37,7 @@ function Index() {
       <main>
         <HeroSection />
         <AboutSection />
-        <RomanticSection />
+        
         <ActivitiesSection />
         <SeasonsSection />
         <GallerySection />
