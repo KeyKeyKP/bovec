@@ -333,10 +333,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Verfügbarkeit prüfen",
     },
     about: {
-      title: "Kobarid",
-      body1: "Dort, wo die Soča in die Stille einbiegt und historische Erinnerung sich mit der Natur verflicht, liegt Kobarid — ein Dorf, das nicht laut ruft und einen dennoch in seinen Bann zieht.",
-      body2: "Bekannt durch eine der bedeutendsten Schlachten des Ersten Weltkriegs, atmet Kobarid heute eine ganz andere Luft — frisch, alpin, getränkt im türkisen Glanz der Soča. Das Museum, das hier steht, spricht leise und tief. Der Kozjak-Wasserfall liegt nur einen Schritt entfernt.",
-      body3: "Kobarid ist kein Ort für Hektik. Es ist ein Ort, an dem dir morgens der Kaffee vor dir kalt wird und du für einen Moment vergisst, wohin du überhaupt wolltest.",
+      title: "Cottage Kobarid",
+      body1: "Das Ferienhaus liegt nur 1 km von Kobarid entfernt, am ruhigen Rand des Dorfes am Wald. 2021 wurde es vollständig renoviert und modern eingerichtet und bietet seinen Gästen vollen Komfort für einen entspannten und unvergesslichen Urlaub.",
+      body2: "Seine Besonderheit ist die außergewöhnlich ruhige Lage inmitten der Natur, wo Sie statt Stadttrubel nur Vogelgesang, das Plätschern des nahen Baches und die beruhigenden Geräusche des Waldes begleiten. Von der oberen Terrasse öffnet sich ein wunderschöner Blick auf den Krn sowie die umliegenden Berge und das Tal.",
+      body3: "Für gemütliches Beisammensein im Freien stehen eine überdachte Terrasse hinter dem Haus, eine Pergola mit Sitzgarnitur vor dem Haus, ein Außengrill sowie ein Sitzbereich am Feuer zur Verfügung. Auf der oberen Terrasse können Sie bei Morgenkaffee oder Abendsonnenuntergang unberührte Natur und atemberaubende Aussichten genießen.",
+      body4: "Kobarid und seine Umgebung bieten zahlreiche Möglichkeiten für aktive Freizeitgestaltung: Fahrradverleih, Rafting, Canyoning, Gleitschirmfliegen, Angeln und vieles mehr. Liebhaber ruhigerer Erholung können Waldwege erkunden oder sich im nahen Fluss Nadiža erfrischen.",
+      body5: "Zu den beliebtesten Sehenswürdigkeiten zählen der Kozjak-Wasserfall, das Kobarid-Museum sowie das italienische Beinhaus in Kobarid. Die weitere Umgebung begeistert mit dem reichen Erbe des Ersten Weltkriegs, smaragdgrünen Flüssen und unberührter Natur, die unzählige Möglichkeiten für Erkundung, sportliche Aktivitäten und vollkommene Erholung bietet.",
     },
     romantic: {
       title: "Spüren Sie die Seele von Bovec",
