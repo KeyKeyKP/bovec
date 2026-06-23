@@ -132,12 +132,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "Kaj lahko počnete",
-      subtitle: "Dolina Soče in okolica Bovca ponujata aktivnosti za vse letne čase in vse okuse.",
+      subtitle: "Dolina Soče in okolica Kobarida ponujata aktivnosti za vse letne čase in vse okuse.",
       items: buildActivities("sl"),
     },
     seasons: {
       title: "Kdaj priti",
-      body: "Bovec vas razvaja skozi vse leto. Pomlad prinese zelenje in poln pretok Soče — idealen čas za rafting in prve gorske pohode. Poletje je čas za kopalce, pustolovce in tiste, ki iščejo svežino nad morjem vročine. Jesen zlati gozdove in prinaša mir — manj turistov, več prostora za vas. Zima pa odkrije tihi čar zasneženih gora in smučarskih pobočij Kanina.",
+      body: "Kobarid vas razvaja skozi vse leto. Pomlad prinese zelenje in poln pretok Soče — idealen čas za rafting in prve gorske pohode. Poletje je čas za kopalce, pustolovce in tiste, ki iščejo svežino nad morjem vročine. Jesen zlati gozdove in prinaša mir — manj turistov, več prostora za vas. Zima pa odkrije tihi čar zasneženih gora in smučarskih pobočij Kanina.",
       cards: [
         { name: "Pomlad", highlight: "Zelenje, polna Soča in prvi pohodi v gore." },
         { name: "Poletje", highlight: "Kopanje, rafting in dolgi sončni dnevi." },
@@ -186,12 +186,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "Što možete raditi",
-      subtitle: "Dolina Soče i okolica Bovca nude aktivnosti za sva godišnja doba i sve ukuse.",
+      subtitle: "Dolina Soče i okolica Kobarida nude aktivnosti za sva godišnja doba i sve ukuse.",
       items: buildActivities("hr"),
     },
     seasons: {
       title: "Kada doći",
-      body: "Bovec vas razmazuje tijekom cijele godine. Proljeće donosi zelenilo i puni protok Soče — idealno vrijeme za rafting i prve gorske ture. Ljeto je vrijeme za kupače, pustolove i one koji traže svježinu iznad mora vrućine. Jesen pozlaćuje šume i donosi mir — manje turista, više prostora za vas. Zima otkriva tihu čar zasniježenih planina i skijaških padina Kanina.",
+      body: "Kobarid vas razmazuje tijekom cijele godine. Proljeće donosi zelenilo i puni protok Soče — idealno vrijeme za rafting i prve gorske ture. Ljeto je vrijeme za kupače, pustolove i one koji traže svježinu iznad mora vrućine. Jesen pozlaćuje šume i donosi mir — manje turista, više prostora za vas. Zima otkriva tihu čar zasniježenih planina i skijaških padina Kanina.",
       cards: [
         { name: "Proljeće", highlight: "Zelenilo, puna Soča i prvi gorski usponi." },
         { name: "Ljeto", highlight: "Kupanje, rafting i dugi sunčani dani." },
@@ -240,12 +240,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "Cosa potete fare",
-      subtitle: "La Valle della Soča e i dintorni di Bovec offrono attività per tutte le stagioni e tutti i gusti.",
+      subtitle: "La Valle della Soča e i dintorni di Kobarid offrono attività per tutte le stagioni e tutti i gusti.",
       items: buildActivities("it"),
     },
     seasons: {
       title: "Quando venire",
-      body: "Bovec vi coccola tutto l'anno. La primavera porta il verde e la piena della Soča — il momento ideale per il rafting e le prime escursioni in montagna. L'estate è il tempo dei bagnanti, degli avventurieri e di chi cerca frescura sopra il mare di caldo. L'autunno indora i boschi e porta pace — meno turisti, più spazio per voi. L'inverno svela il fascino silenzioso delle montagne innevate e delle piste del Canin.",
+      body: "Kobarid vi coccola tutto l'anno. La primavera porta il verde e la piena della Soča — il momento ideale per il rafting e le prime escursioni in montagna. L'estate è il tempo dei bagnanti, degli avventurieri e di chi cerca frescura sopra il mare di caldo. L'autunno indora i boschi e porta pace — meno turisti, più spazio per voi. L'inverno svela il fascino silenzioso delle montagne innevate e delle piste del Canin.",
       cards: [
         { name: "Primavera", highlight: "Verde, Soča piena e prime escursioni." },
         { name: "Estate", highlight: "Bagni, rafting e lunghe giornate di sole." },
@@ -294,12 +294,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "What You Can Do",
-      subtitle: "The Soča Valley and the Bovec area offer activities for all seasons and all tastes.",
+      subtitle: "The Soča Valley and the Kobarid area offer activities for all seasons and all tastes.",
       items: buildActivities("en"),
     },
     seasons: {
       title: "When to Come",
-      body: "Bovec pampers you all year round. Spring brings greenery and the full flow of the Soča — ideal for rafting and the first mountain hikes. Summer is for bathers, adventurers and those seeking coolness above a sea of heat. Autumn gilds the forests and brings peace — fewer tourists, more space for you. Winter reveals the quiet charm of snow-capped mountains and the ski slopes of Kanin.",
+      body: "Kobarid pampers you all year round. Spring brings greenery and the full flow of the Soča — ideal for rafting and the first mountain hikes. Summer is for bathers, adventurers and those seeking coolness above a sea of heat. Autumn gilds the forests and brings peace — fewer tourists, more space for you. Winter reveals the quiet charm of snow-capped mountains and the ski slopes of Kanin.",
       cards: [
         { name: "Spring", highlight: "Greenery, a full Soča and first mountain hikes." },
         { name: "Summer", highlight: "Swimming, rafting and long sunny days." },
@@ -348,12 +348,12 @@ export const translations: Record<Lang, Translation> = {
     },
     activities: {
       title: "Was Sie unternehmen können",
-      subtitle: "Das Soča-Tal und die Umgebung von Bovec bieten Aktivitäten für alle Jahreszeiten und Geschmäcker.",
+      subtitle: "Das Soča-Tal und die Umgebung von Kobarid bieten Aktivitäten für alle Jahreszeiten und Geschmäcker.",
       items: buildActivities("de"),
     },
     seasons: {
       title: "Wann kommen",
-      body: "Bovec verwöhnt Sie das ganze Jahr. Der Frühling bringt Grün und den vollen Lauf der Soča — ideal für Rafting und erste Bergwanderungen. Der Sommer ist die Zeit für Badegäste, Abenteurer und alle, die Frische über dem Hitze-Meer suchen. Der Herbst vergoldet die Wälder und bringt Ruhe — weniger Touristen, mehr Platz für Sie. Der Winter offenbart den stillen Zauber verschneiter Berge und der Skipisten des Kanin.",
+      body: "Kobarid verwöhnt Sie das ganze Jahr. Der Frühling bringt Grün und den vollen Lauf der Soča — ideal für Rafting und erste Bergwanderungen. Der Sommer ist die Zeit für Badegäste, Abenteurer und alle, die Frische über dem Hitze-Meer suchen. Der Herbst vergoldet die Wälder und bringt Ruhe — weniger Touristen, mehr Platz für Sie. Der Winter offenbart den stillen Zauber verschneiter Berge und der Skipisten des Kanin.",
       cards: [
         { name: "Frühling", highlight: "Grün, volle Soča und erste Bergtouren." },
         { name: "Sommer", highlight: "Baden, Rafting und lange Sonnentage." },
