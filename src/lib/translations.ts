@@ -117,10 +117,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Preveri razpoložljivost",
     },
     about: {
-      title: "Kobarid",
-      body1: "Tam, kjer Soča zavije v tišino in zgodovinski spomin se splete z naravo, leži Kobarid — vasica, ki ne kliče na glas, pa te vseeno potegne vase.",
-      body2: "Znan po eni najpomembnejših bitk prve svetovne vojne, danes Kobarid diha povsem drugačen zrak — svež, gorski, namočen v turkizni blesk Soče. Muzej, ki tu stoji, govori tiho in globoko. Slap Kozjak je en sam korak proč.",
-      body3: "Kobarid ni destinacija za hitenje. Je kraj, kjer zjutraj zmrzneš kavo pred sabo in za hip pozabiš, kam si sploh namenjen.",
+      title: "Cottage Kobarid",
+      body1: "Počitniška hišica se nahaja le 1 km od Kobarida, na mirnem robu vasi ob gozdu. Leta 2021 je bila popolnoma obnovljena in sodobno opremljena, zato gostom nudi popolno udobje za sproščene in nepozabne počitnice.",
+      body2: "Njena posebnost je izjemno mirna lega v objemu narave, kjer vas namesto mestnega vrveža spremljajo le petje ptic, šumenje bližnjega potoka in pomirjujoči zvoki gozda. Z zgornje terase se odpira čudovit pogled na Krn ter okoliške hribe in dolino.",
+      body3: "Za prijetno druženje na prostem so na voljo pokrita terasa za hišo, pergola s sedežno garnituro pred hišo, zunanji žar ter prostor za posedanje ob ognju. Na zgornji terasi lahko ob jutranji kavi ali večernem sončnem zahodu uživate v neokrnjeni naravi in osupljivih razgledih.",
+      body4: "Kobarid in njegova okolica ponujata številne možnosti za aktivno preživljanje prostega časa: najem koles, rafting, kanjoning, jadralno padalstvo, ribolov in še mnogo več. Ljubitelji mirnejšega oddiha lahko raziskujejo gozdne poti ali se osvežijo v bližnji reki Nadiži.",
+      body5: "Med najbolj priljubljenimi znamenitostmi so Slap Kozjak, Kobariški muzej ter Italijanska kostnica Kobarid. Širša okolica navdušuje z bogato dediščino prve svetovne vojne, smaragdnimi rekami in neokrnjeno naravo, ki ponuja nešteto možnosti za raziskovanje, športne aktivnosti in popoln oddih.",
     },
     romantic: {
       title: "Občutite dušo Bovca",
