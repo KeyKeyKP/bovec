@@ -393,15 +393,20 @@ export function LocationSection() {
           </h2>
           <p className="text-lg mb-8">{t.location.body}</p>
           <div className="space-y-3 mb-8 text-base">
+            <p className="not-italic">
+              <strong>Cottage Kobarid</strong><br />
+              Mlinsko 18<br />
+              5222 Kobarid
+            </p>
             <p><strong>Email:</strong> <a href="mailto:cottage_kobarid@gmail.com" className="hover:underline">cottage_kobarid@gmail.com</a></p>
             <p><strong>GSM Alen:</strong> <a href="tel:+38641322720" className="hover:underline">00386 41 322 720</a></p>
             <p><strong>GSM Danijela:</strong> <a href="tel:+38640789122" className="hover:underline">00386 40 789 122</a></p>
           </div>
           <div className="flex flex-wrap gap-3">
             {[
-              { icon: "🚗", label: "Kobarid — 30 min" },
-              { icon: "🚗", label: "Tolmin — 45 min" },
-              { icon: "🚗", label: "Tarvisio — 45 min" },
+              { icon: "🚗", label: "Bovec — 30 min" },
+              { icon: "🚗", label: "Tolmin — 20 min" },
+              { icon: "🚗", label: "Tarvisio — ~1h" },
               { icon: "✈️", label: "Ljubljana Airport — ~2h" },
             ].map((b) => (
               <span
@@ -414,17 +419,17 @@ export function LocationSection() {
             ))}
           </div>
         </div>
-        <div
-          className="rounded-2xl flex flex-col items-center justify-center min-h-[320px]"
-          style={{ background: "var(--color-soca-light)" }}
-        >
-          <MapPin size={48} style={{ color: "var(--color-soca)" }} />
-          <p className="mt-4 font-semibold" style={{ color: "var(--color-forest)" }}>
-            Kobarid, Slovenija
-          </p>
-          <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
-            Soška dolina
-          </p>
+        <div className="rounded-2xl overflow-hidden min-h-[320px] h-full shadow-lg">
+          <iframe
+            title="Cottage Kobarid — Mlinsko 18, 5222 Kobarid"
+            src="https://www.google.com/maps?q=Mlinsko+18,+5222+Kobarid,+Slovenija&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, minHeight: 320 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
       </div>
     </section>
