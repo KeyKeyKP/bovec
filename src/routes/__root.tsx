@@ -99,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "preload",
         as: "video",
-        href: "/__l5e/assets-v1/d1291bdd-8941-4db4-a772-c8bbe41d56bd/hero.mp4",
+        href: "/__l5e/assets-v1/8f19783e-f025-4f9b-beb9-d7955408b01a/hero.mp4",
         type: "video/mp4",
       },
     ],
