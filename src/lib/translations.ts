@@ -225,10 +225,12 @@ export const translations: Record<Lang, Translation> = {
       cta: "Verifica disponibilità",
     },
     about: {
-      title: "Kobarid",
-      body1: "Là dove l'Isonzo svolta nel silenzio e la memoria storica si intreccia con la natura, sorge Caporetto (Kobarid) — un paesino che non chiama a gran voce, eppure ti attira a sé.",
-      body2: "Conosciuto per una delle battaglie più importanti della Prima guerra mondiale, oggi Kobarid respira un'aria del tutto diversa — fresca, di montagna, immersa nel bagliore turchese della Soča. Il museo che vi sorge parla in modo silenzioso e profondo. La cascata di Kozjak è a un solo passo.",
-      body3: "Kobarid non è una destinazione per chi ha fretta. È un luogo dove al mattino il caffè ti si raffredda davanti e per un attimo dimentichi dove eri diretto.",
+      title: "Cottage Kobarid",
+      body1: "La casa vacanze si trova a soli 1 km da Kobarid (Caporetto), sul tranquillo margine del villaggio accanto al bosco. Nel 2021 è stata completamente ristrutturata e arredata con stile moderno, offrendo agli ospiti il massimo comfort per una vacanza rilassata e indimenticabile.",
+      body2: "La sua particolarità è la posizione estremamente tranquilla, immersa nella natura, dove al posto del trambusto cittadino vi accompagnano solo il canto degli uccelli, il mormorio del vicino ruscello e i suoni rilassanti del bosco. Dalla terrazza superiore si apre una splendida vista sul monte Krn, sulle colline circostanti e sulla valle.",
+      body3: "Per piacevoli momenti all'aperto sono a disposizione una terrazza coperta sul retro della casa, una pergola con divani davanti, un barbecue esterno e uno spazio per sedersi attorno al fuoco. Sulla terrazza superiore potete godervi il caffè del mattino o il tramonto serale circondati da natura incontaminata e panorami mozzafiato.",
+      body4: "Kobarid e i suoi dintorni offrono numerose possibilità per trascorrere il tempo libero in modo attivo: noleggio biciclette, rafting, canyoning, parapendio, pesca e molto altro. Gli amanti di una vacanza più tranquilla possono esplorare i sentieri nel bosco o rinfrescarsi nel vicino fiume Natisone (Nadiža).",
+      body5: "Tra le attrazioni più popolari ci sono la cascata di Kozjak, il Museo di Caporetto e l'Ossario italiano di Caporetto. La zona più ampia affascina con la ricca eredità della Prima guerra mondiale, fiumi color smeraldo e natura incontaminata, che offre infinite possibilità di esplorazione, attività sportive e completo relax.",
     },
     romantic: {
       title: "Sentite l'anima di Bovec",
