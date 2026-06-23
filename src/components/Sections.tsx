@@ -139,8 +139,18 @@ export function AboutSection() {
             {t.about.body2}
           </p>
           {t.about.body3 && (
-            <p className="text-lg" style={{ color: "var(--color-text-muted)" }}>
+            <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
               {t.about.body3}
+            </p>
+          )}
+          {t.about.body4 && (
+            <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
+              {t.about.body4}
+            </p>
+          )}
+          {t.about.body5 && (
+            <p className="text-lg" style={{ color: "var(--color-text-muted)" }}>
+              {t.about.body5}
             </p>
           )}
         </div>
