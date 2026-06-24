@@ -113,7 +113,7 @@ export function AboutSection() {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="about" className="py-24 px-6" style={{ background: "var(--color-cream)" }}>
-      <div ref={ref} className="fade-up max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div ref={ref} className="fade-up max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         <div>
           <h2 className="text-3xl md:text-4xl mb-6" style={{ color: "var(--color-forest)" }}>
             {t.about.title}
@@ -155,7 +155,7 @@ export function AboutSection() {
             </p>
           )}
         </div>
-        <div className="grid grid-cols-2 gap-2" style={{ gridTemplateRows: "repeat(2, 200px)" }}>
+        <div className="grid grid-cols-2 gap-3 md:sticky md:top-24" style={{ gridTemplateRows: "repeat(2, minmax(0, 320px))" }}>
           <img
             src={socaRiver}
             alt="Reka Soča"
@@ -175,6 +175,7 @@ export function AboutSection() {
             className="rounded-xl w-full h-full object-cover"
           />
         </div>
+
       </div>
     </section>
   );
