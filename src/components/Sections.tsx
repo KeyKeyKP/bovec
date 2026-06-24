@@ -93,22 +93,14 @@ export function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55))" }}
-      />
-
-      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 text-white max-w-4xl mx-auto">
-        <h1 className="font-bold text-[40px] md:text-[68px] leading-tight" style={{ letterSpacing: "0.01em" }}>
-          {t.hero.title}
-        </h1>
-        <p className="mt-3 italic text-xl md:text-2xl font-light opacity-95" style={{ letterSpacing: "0.01em" }}>
+      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 text-white max-w-4xl mx-auto" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.45)" }}>
+        <p className="italic text-xl md:text-2xl font-light opacity-95" style={{ letterSpacing: "0.01em" }}>
           {t.hero.tagline}
         </p>
         <p className="mt-6 max-w-2xl text-lg md:text-xl font-light" style={{ lineHeight: 1.6 }}>
           {t.hero.subtitle}
         </p>
-        <a href="#contact" className="btn-primary mt-10">
+        <a href="#contact" className="btn-primary mt-40 md:mt-48">
           {t.hero.cta}
         </a>
       </div>
