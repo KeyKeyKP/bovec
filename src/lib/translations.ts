@@ -8,6 +8,7 @@ export interface SeasonCard {
 export interface ActivityItem {
   name: string;
   description: string;
+  places?: string[];
 }
 
 export interface Translation {
@@ -33,11 +34,11 @@ export interface Translation {
 }
 
 const activitiesNames = {
-  sl: ["Rafting & Kajakaštvo","Soteskanje","Kolesarjenje & MTB","Pohodništvo","Ribolov","Smučanje na Kaninu","Tolmin in sotočje","Kobarid & Pot miru","Slap Boka","Padalstvo & zmajarstvo"],
-  hr: ["Rafting & Kajakaštvo","Kanjoning","Biciklizam & MTB","Planinarenje","Ribolov","Skijanje na Kaninu","Tolmin i sutok","Kobarid & Put mira","Vodopad Boka","Paraglajding"],
-  it: ["Rafting e kayak","Canyoning","Ciclismo e MTB","Escursionismo","Pesca","Sci al Canin","Tolmin e confluenza","Caporetto e Sentiero della Pace","Cascata Boka","Parapendio"],
-  en: ["Rafting & Kayaking","Canyoning","Cycling & MTB","Hiking","Fishing","Skiing at Kanin","Tolmin & Confluence","Kobarid & Walk of Peace","Boka Waterfall","Paragliding"],
-  de: ["Rafting & Kajak","Canyoning","Radfahren & MTB","Wandern","Angeln","Skifahren am Kanin","Tolmin & Zusammenfluss","Kobarid & Friedensweg","Boka-Wasserfall","Gleitschirmfliegen"],
+  sl: ["Rafting & Kajakaštvo","Soteskanje","Kolesarjenje & MTB","Pohodništvo","Ribolov","Smučanje na Kaninu","Kobarid in sotočje","Kobarid & Pot miru","Slapovi","Padalstvo & zmajarstvo"],
+  hr: ["Rafting & Kajakaštvo","Kanjoning","Biciklizam & MTB","Planinarenje","Ribolov","Skijanje na Kaninu","Kobarid i sutok","Kobarid & Put mira","Slapovi","Paraglajding"],
+  it: ["Rafting e kayak","Canyoning","Ciclismo e MTB","Escursionismo","Pesca","Sci al Canin","Caporetto e confluenza","Caporetto e Sentiero della Pace","Cascate","Parapendio"],
+  en: ["Rafting & Kayaking","Canyoning","Cycling & MTB","Hiking","Fishing","Skiing at Kanin","Kobarid & Confluence","Kobarid & Walk of Peace","Waterfalls","Paragliding"],
+  de: ["Rafting & Kajak","Canyoning","Radfahren & MTB","Wandern","Angeln","Skifahren am Kanin","Kobarid & Zusammenfluss","Kobarid & Friedensweg","Wasserfälle","Gleitschirmfliegen"],
 };
 
 const activitiesDesc: Record<Lang, string[]> = {
@@ -48,9 +49,9 @@ const activitiesDesc: Record<Lang, string[]> = {
     "Vzponi na Kanin, Rombon ali pot vzdolž Soče. Triglavski narodni park nudi steze za začetnike in izkušene gorniki enako.",
     "Soška postrv je ena najbolj cenjenih med ribiči. Fly-fishing v kristalno čisti reki je tukaj prava umetnost.",
     "Čezmejno smučišče Bovec–Kanin je najvišje ležeče smučišče v Sloveniji z izjemnimi razgledi na Jadran in Alpe.",
-    "Sotočje Soče in Tolminke, Tolminska korita in Tolminska gorge — naravni biseri, vredni ogleda vsak letni čas.",
+    "Sotočje Soče in Tolminke, soteske in skriti kotički — naravni biseri, vredni ogleda v vsakem letnem času.",
     "Muzej Kobarid (Nagrada Sveta Evrope), Napoleonov most in Pot miru — edinstvena mešanica narave in zgodovine prve svetovne vojne.",
-    "Najvišji stalni slap v Sloveniji (144 m) je le kratek izlet od Bovca. Posebno impresiven v pomladanskih mesecih.",
+    "Posočje je polno slapov — od mogočnih do skritih biserov v gozdu. Posebej impresivni so v pomladanskih mesecih.",
     "Termika nad Bovškim poljem privablja padalce iz vse Evrope. Let nad dolino Soče je izkušnja, ki ostane za vedno.",
   ],
   hr: [
@@ -60,9 +61,9 @@ const activitiesDesc: Record<Lang, string[]> = {
     "Usponi na Kanin, Rombon ili staza uz Sočo. Triglavski nacionalni park nudi staze za početnike i iskusne planinare podjednako.",
     "Soška pastrva jedna je od najcjenjenijih među ribiočima. Fly-fishing u kristalno čistoj rijeci ovdje je prava umjetnost.",
     "Prekogranično skijalište Bovec–Kanin najviše je skijalište u Sloveniji s izvanrednim pogledom na Jadran i Alpe.",
-    "Sutok Soče i Tolminke, Tolminska korita i Tolminska gorge — prirodni dragulji vrijedni posjeta u svako godišnje doba.",
+    "Sutok Soče i Tolminke, kanjoni i skriveni kutci — prirodni dragulji vrijedni posjeta u svako godišnje doba.",
     "Muzej Kobarid (Nagrada Vijeća Europe), Napoleonov most i Put mira — jedinstvena mješavina prirode i povijesti Prvog svjetskog rata.",
-    "Najviši stalni slap u Sloveniji (144 m) nalazi se samo kratak izlet od Bovca. Posebno impresivan u proljetnim mjesecima.",
+    "Posočje je puno slapova — od moćnih do skrivenih bisera u šumi. Posebno su impresivni u proljetnim mjesecima.",
     "Termika nad Bovškim poljem privlači jedriličare iz cijele Europe. Let iznad doline Soče iskustvo je koje ostaje zauvijek.",
   ],
   it: [
@@ -72,9 +73,9 @@ const activitiesDesc: Record<Lang, string[]> = {
     "Ascese al Canin, al Rombon o il sentiero lungo la Soča. Il Parco Nazionale del Triglav offre percorsi per principianti ed esperti.",
     "La trota della Soča è una delle più apprezzate dai pescatori. Il fly-fishing nel fiume cristallino è qui una vera arte.",
     "La stazione sciistica transfrontaliera Bovec–Canin è la più alta in Slovenia, con viste eccezionali sull'Adriatico e sulle Alpi.",
-    "La confluenza di Soča e Tolminka, la gola di Tolmin — gioielli naturali da visitare in ogni stagione.",
+    "La confluenza dell'Isonzo e del Tolminka, gole e angoli nascosti — gioielli naturali da visitare in ogni stagione.",
     "Il Museo di Caporetto (Premio del Consiglio d'Europa), il Ponte di Napoleone e il Sentiero della Pace — un mix unico di natura e storia della Prima Guerra Mondiale.",
-    "La cascata permanente più alta della Slovenia (144 m) si trova a breve distanza da Bovec. Particolarmente impressionante nei mesi primaverili.",
+    "La valle dell'Isonzo è ricca di cascate — da quelle imponenti a gioielli nascosti nel bosco. Particolarmente impressionanti in primavera.",
     "La termica sopra la piana di Bovec attira parapendisti da tutta Europa. Volare sopra la Valle della Soča è un'esperienza che rimane per sempre.",
   ],
   en: [
@@ -84,9 +85,9 @@ const activitiesDesc: Record<Lang, string[]> = {
     "Ascend Kanin, Rombon or walk the path along the Soča. Triglav National Park offers trails for beginners and experienced hikers alike.",
     "The Soča trout is one of the most prized among anglers. Fly-fishing in the crystal-clear river is a true art here.",
     "The cross-border Bovec–Kanin ski resort is the highest in Slovenia with exceptional views of the Adriatic and the Alps.",
-    "The confluence of the Soča and Tolminka, Tolmin Gorge — natural gems worth visiting in any season.",
+    "The confluence of the Soča and Tolminka, gorges and hidden corners — natural gems worth visiting in any season.",
     "The Kobarid Museum (Council of Europe Award), Napoleon's Bridge and the Walk of Peace — a unique blend of nature and WWI history.",
-    "Slovenia's highest permanent waterfall (144 m) is just a short trip from Bovec. Particularly impressive in the spring months.",
+    "The Soča region is full of waterfalls — from mighty ones to hidden gems in the forest. Particularly impressive in the spring months.",
     "The thermals above the Bovec plain attract paragliders from all over Europe. Flying above the Soča valley is an experience that stays with you forever.",
   ],
   de: [
@@ -96,15 +97,47 @@ const activitiesDesc: Record<Lang, string[]> = {
     "Aufstieg auf Kanin, Rombon oder Wanderweg entlang der Soča. Der Triglav-Nationalpark bietet Wege für Anfänger und erfahrene Bergwanderer.",
     "Die Soča-Forelle ist eine der begehrtesten unter Anglern. Fly-Fishing im kristallklaren Fluss ist hier eine wahre Kunst.",
     "Das grenzüberschreitende Skigebiet Bovec–Kanin ist das höchstgelegene in Slowenien mit außergewöhnlichem Blick auf die Adria und die Alpen.",
-    "Der Zusammenfluss von Soča und Tolminka, die Tolminer Schlucht — Naturjuwelen, die zu jeder Jahreszeit einen Besuch wert sind.",
+    "Der Zusammenfluss von Soča und Tolminka, Schluchten und versteckte Winkel — Naturjuwelen, die zu jeder Jahreszeit einen Besuch wert sind.",
     "Das Kobarid-Museum (Europarat-Preis), Napoleons Brücke und der Friedensweg — eine einzigartige Verbindung von Natur und Geschichte des Ersten Weltkriegs.",
-    "Sloweniens höchster permanenter Wasserfall (144 m) liegt nur einen kurzen Ausflug von Bovec entfernt. Besonders beeindruckend in den Frühlingsmonaten.",
+    "Das Soča-Tal ist voller Wasserfälle — von mächtigen bis zu versteckten Juwelen im Wald. Besonders beeindruckend in den Frühlingsmonaten.",
     "Die Thermik über der Bovec-Ebene zieht Gleitschirmflieger aus ganz Europa an. Ein Flug über das Soča-Tal ist ein Erlebnis, das für immer bleibt.",
   ],
 };
 
+const activitiesPlaces: Record<Lang, Record<number, string[]>> = {
+  sl: {
+    3: ["Gora Krn 2244 m", "Mangart – najvišja cesta v Sloveniji 2679 m", "Gora Kanin z žičnico 2300 m", "Napoleonov most", "Pot gamsa – začetek pri naši hiši v gozdu"],
+    6: ["Velika Soška soteska", "Šunikov vodni gaj", "Izvir Soče", "Tolminska korita", "Reka Nadiža za kopanje", "Reka Soča"],
+    8: ["Slap Boka", "Slap Kozjak", "Slapovi Drežnice"],
+  },
+  hr: {
+    3: ["Planina Krn 2244 m", "Mangart – najviša cesta u Sloveniji 2679 m", "Planina Kanin sa žičarom 2300 m", "Napoleonov most", "Staza divokoze – početak kod naše kuće u šumi"],
+    6: ["Velika Soška soteska", "Šunikov vodni gaj", "Izvor Soče", "Tolminska korita", "Rijeka Nadiža za kupanje", "Rijeka Soča"],
+    8: ["Slap Boka", "Slap Kozjak", "Slapovi Drežnice"],
+  },
+  it: {
+    3: ["Monte Krn 2244 m", "Mangart – la strada più alta della Slovenia 2679 m", "Monte Canin con funivia 2300 m", "Ponte di Napoleone", "Sentiero del camoscio – inizia accanto alla nostra casa nel bosco"],
+    6: ["Grande gola dell'Isonzo", "Bosco d'acqua di Šunik", "Sorgente dell'Isonzo", "Gole del Tolminka", "Fiume Nadiža per il bagno", "Fiume Isonzo"],
+    8: ["Cascata Boka", "Cascata Kozjak", "Cascate di Drežnica"],
+  },
+  en: {
+    3: ["Mt Krn 2244 m", "Mangart – Slovenia's highest road 2679 m", "Mt Kanin with cable car 2300 m", "Napoleon's Bridge", "Chamois Trail – starts at our house in the forest"],
+    6: ["Great Soča Gorge", "Šunik Water Grove", "Source of the Soča", "Tolmin Gorges", "Nadiža River for swimming", "Soča River"],
+    8: ["Boka Waterfall", "Kozjak Waterfall", "Drežnica Waterfalls"],
+  },
+  de: {
+    3: ["Berg Krn 2244 m", "Mangart – Sloweniens höchste Straße 2679 m", "Berg Kanin mit Seilbahn 2300 m", "Napoleonbrücke", "Gämsenpfad – Beginn an unserem Haus im Wald"],
+    6: ["Große Soča-Schlucht", "Šunik-Wasserhain", "Soča-Quelle", "Tolmin-Schluchten", "Fluss Nadiža zum Baden", "Fluss Soča"],
+    8: ["Boka-Wasserfall", "Kozjak-Wasserfall", "Drežnica-Wasserfälle"],
+  },
+};
+
 const buildActivities = (lang: Lang): ActivityItem[] =>
-  activitiesNames[lang].map((name, i) => ({ name, description: activitiesDesc[lang][i] }));
+  activitiesNames[lang].map((name, i) => ({
+    name,
+    description: activitiesDesc[lang][i],
+    places: activitiesPlaces[lang][i],
+  }));
 
 export const translations: Record<Lang, Translation> = {
   sl: {
