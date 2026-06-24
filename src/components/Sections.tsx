@@ -217,16 +217,6 @@ export function ActivitiesSection() {
                 <p className="mt-2 text-sm" style={{ color: "var(--color-text-muted)", lineHeight: 1.6 }}>
                   {item.description}
                 </p>
-                {item.places && item.places.length > 0 && (
-                  <ul className="mt-3 space-y-1 text-sm" style={{ color: "var(--color-charcoal)" }}>
-                    {item.places.map((p, j) => (
-                      <li key={j} className="flex gap-2">
-                        <span style={{ color: "var(--color-soca)" }}>•</span>
-                        <span>{p}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </div>
             );
           })}
