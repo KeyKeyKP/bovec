@@ -8,6 +8,7 @@ export interface SeasonCard {
 export interface ActivityItem {
   name: string;
   description: string;
+  places?: string[];
 }
 
 export interface Translation {
