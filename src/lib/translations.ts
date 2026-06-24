@@ -8,8 +8,8 @@ export interface SeasonCard {
 export interface ActivityItem {
   name: string;
   description: string;
-  places?: string[];
 }
+
 
 export interface Translation {
   nav: { home: string; about: string; activities: string; gallery: string; booking: string; contact: string };
@@ -104,40 +104,12 @@ const activitiesDesc: Record<Lang, string[]> = {
   ],
 };
 
-const activitiesPlaces: Record<Lang, Record<number, string[]>> = {
-  sl: {
-    3: ["Gora Krn 2244 m", "Mangart – najvišja cesta v Sloveniji 2679 m", "Gora Kanin z žičnico 2300 m", "Napoleonov most", "Pot gamsa – začetek pri naši hiši v gozdu"],
-    6: ["Velika Soška soteska", "Šunikov vodni gaj", "Izvir Soče", "Tolminska korita", "Reka Nadiža za kopanje", "Reka Soča"],
-    8: ["Slap Boka", "Slap Kozjak", "Slapovi Drežnice"],
-  },
-  hr: {
-    3: ["Planina Krn 2244 m", "Mangart – najviša cesta u Sloveniji 2679 m", "Planina Kanin sa žičarom 2300 m", "Napoleonov most", "Staza divokoze – početak kod naše kuće u šumi"],
-    6: ["Velika Soška soteska", "Šunikov vodni gaj", "Izvor Soče", "Tolminska korita", "Rijeka Nadiža za kupanje", "Rijeka Soča"],
-    8: ["Slap Boka", "Slap Kozjak", "Slapovi Drežnice"],
-  },
-  it: {
-    3: ["Monte Krn 2244 m", "Mangart – la strada più alta della Slovenia 2679 m", "Monte Canin con funivia 2300 m", "Ponte di Napoleone", "Sentiero del camoscio – inizia accanto alla nostra casa nel bosco"],
-    6: ["Grande gola dell'Isonzo", "Bosco d'acqua di Šunik", "Sorgente dell'Isonzo", "Gole del Tolminka", "Fiume Nadiža per il bagno", "Fiume Isonzo"],
-    8: ["Cascata Boka", "Cascata Kozjak", "Cascate di Drežnica"],
-  },
-  en: {
-    3: ["Mt Krn 2244 m", "Mangart – Slovenia's highest road 2679 m", "Mt Kanin with cable car 2300 m", "Napoleon's Bridge", "Chamois Trail – starts at our house in the forest"],
-    6: ["Great Soča Gorge", "Šunik Water Grove", "Source of the Soča", "Tolmin Gorges", "Nadiža River for swimming", "Soča River"],
-    8: ["Boka Waterfall", "Kozjak Waterfall", "Drežnica Waterfalls"],
-  },
-  de: {
-    3: ["Berg Krn 2244 m", "Mangart – Sloweniens höchste Straße 2679 m", "Berg Kanin mit Seilbahn 2300 m", "Napoleonbrücke", "Gämsenpfad – Beginn an unserem Haus im Wald"],
-    6: ["Große Soča-Schlucht", "Šunik-Wasserhain", "Soča-Quelle", "Tolmin-Schluchten", "Fluss Nadiža zum Baden", "Fluss Soča"],
-    8: ["Boka-Wasserfall", "Kozjak-Wasserfall", "Drežnica-Wasserfälle"],
-  },
-};
-
 const buildActivities = (lang: Lang): ActivityItem[] =>
   activitiesNames[lang].map((name, i) => ({
     name,
     description: activitiesDesc[lang][i],
-    places: activitiesPlaces[lang][i],
   }));
+
 
 export const translations: Record<Lang, Translation> = {
   sl: {
