@@ -8,7 +8,9 @@ export interface SeasonCard {
 export interface ActivityItem {
   name: string;
   description: string;
+  bullets?: string[];
 }
+
 
 
 export interface Translation {
@@ -104,11 +106,41 @@ const activitiesDesc: Record<Lang, string[]> = {
   ],
 };
 
+const activitiesBullets: Record<Lang, Record<number, string[]>> = {
+  sl: {
+    3: ["Velika soška soteska", "Šunikov vodni gaj", "Izvir Soče", "Gora Krn 2244 m", "Mangart – najvišja cesta v Sloveniji 2679 m", "Gora Kanin z žičnico 2300 m"],
+    6: ["Tolminska korita", "Reka Nadiža", "Reka Soča", "Napoleonov most"],
+    8: ["Slap Boka", "Slap Kozjak", "Slapovi Drežnice"],
+  },
+  hr: {
+    3: ["Velika soška soteska", "Šunikov vodeni gaj", "Izvor Soče", "Planina Krn 2244 m", "Mangart – najviša cesta u Sloveniji 2679 m", "Planina Kanin sa žičarom 2300 m"],
+    6: ["Tolminski korita", "Rijeka Nadiža", "Rijeka Soča", "Napoleonov most"],
+    8: ["Slap Boka", "Slap Kozjak", "Slapovi Drežnice"],
+  },
+  it: {
+    3: ["Grande Gola dell'Isonzo", "Bosco d'acqua di Šunik", "Sorgente dell'Isonzo", "Monte Krn 2244 m", "Mangart – la strada più alta della Slovenia 2679 m", "Monte Canin con funivia 2300 m"],
+    6: ["Gole di Tolmino", "Fiume Nadiža", "Fiume Isonzo", "Ponte di Napoleone"],
+    8: ["Cascata Boka", "Cascata Kozjak", "Cascate di Drežnica"],
+  },
+  en: {
+    3: ["Great Soča Gorge", "Šunik Water Grove", "Soča Spring", "Mount Krn 2244 m", "Mangart – highest road in Slovenia 2679 m", "Mount Kanin with cable car 2300 m"],
+    6: ["Tolmin Gorges", "Nadiža River", "Soča River", "Napoleon Bridge"],
+    8: ["Boka Waterfall", "Kozjak Waterfall", "Drežnica Waterfalls"],
+  },
+  de: {
+    3: ["Große Soča-Schlucht", "Šunik-Wasserhain", "Soča-Quelle", "Berg Krn 2244 m", "Mangart – höchste Straße Sloweniens 2679 m", "Berg Kanin mit Seilbahn 2300 m"],
+    6: ["Tolmin-Klammen", "Fluss Nadiža", "Fluss Soča", "Napoleon-Brücke"],
+    8: ["Boka-Wasserfall", "Kozjak-Wasserfall", "Drežnica-Wasserfälle"],
+  },
+};
+
 const buildActivities = (lang: Lang): ActivityItem[] =>
   activitiesNames[lang].map((name, i) => ({
     name,
     description: activitiesDesc[lang][i],
+    bullets: activitiesBullets[lang][i],
   }));
+
 
 
 export const translations: Record<Lang, Translation> = {
