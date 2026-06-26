@@ -233,6 +233,14 @@ export function ActivitiesSection() {
                 <p className="mt-2 text-sm" style={{ color: "var(--color-text-muted)", lineHeight: 1.6 }}>
                   {item.description}
                 </p>
+                {item.bullets && item.bullets.length > 0 && (
+                  <ul className="mt-3 text-sm list-disc pl-5 space-y-1" style={{ color: "var(--color-text-muted)" }}>
+                    {item.bullets.map((b, j) => (
+                      <li key={j}>{b}</li>
+                    ))}
+                  </ul>
+                )}
+
               </div>
             );
           })}
