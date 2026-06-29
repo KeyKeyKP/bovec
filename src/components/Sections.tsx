@@ -301,7 +301,44 @@ export function SeasonsSection() {
   );
 }
 
+export function NearbySection() {
+  const { lang } = useLang();
+  const ref = useReveal<HTMLDivElement>();
+  const copy = NEARBY_TITLES[lang] ?? NEARBY_TITLES.en;
+  return (
+    <section className="py-24 px-6 bg-white">
+      <div ref={ref} className="fade-up max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl mb-4" style={{ color: "var(--color-forest)" }}>
+            {copy.title}
+          </h2>
+          <p className="max-w-2xl mx-auto text-lg" style={{ color: "var(--color-text-muted)" }}>
+            {copy.subtitle}
+          </p>
+        </div>
+        <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+          {NEARBY_PLACES.map((p) => (
+            <figure key={p.name} className="relative aspect-[4/5] rounded-xl overflow-hidden group">
+              <img
+                src={p.img.url}
+                alt={p.name}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <figcaption className="absolute bottom-3 left-4 right-4 text-white font-semibold text-base md:text-lg" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
+                {p.name}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function GallerySection() {
+
   const { t } = useLang();
   const ref = useReveal<HTMLDivElement>();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
