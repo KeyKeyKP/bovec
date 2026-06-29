@@ -3,7 +3,7 @@ import { LanguageProvider } from "@/components/LanguageContext";
 import { Navbar } from "@/components/Navbar";
 import {
   HeroSection, AboutSection, ActivitiesSection,
-  SeasonsSection, GallerySection, LocationSection, Footer,
+  SeasonsSection, NearbySection, GallerySection, LocationSection, Footer,
 } from "@/components/Sections";
 
 export const Route = createFileRoute("/")({
