@@ -29,7 +29,7 @@ import gal22 from "@/assets/gallery/1000073990-interior.jpg.asset.json";
 import gal23 from "@/assets/gallery/1000073999-interior.jpg.asset.json";
 import gal24 from "@/assets/gallery/1000074000-interior.jpg.asset.json";
 
-const GALLERY_IMAGES = [gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12, gal13, gal14, gal15, gal16, gal17, gal18, gal19, gal20, gal21, gal22, gal23, gal24];
+const GALLERY_IMAGES = [gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12, gal13, gal14, gal15, gal16, gal17, gal18, gal19, gal24, gal23, gal22, gal21, gal20];
 import {
   Waves,
   Mountain,
