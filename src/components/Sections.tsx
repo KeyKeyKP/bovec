@@ -28,26 +28,38 @@ import gal21 from "@/assets/gallery/1000073989-interior.jpg.asset.json";
 import gal22 from "@/assets/gallery/1000073990-interior.jpg.asset.json";
 import gal23 from "@/assets/gallery/1000073999-interior.jpg.asset.json";
 import gal24 from "@/assets/gallery/1000074000-interior.jpg.asset.json";
-import nearbyKrampez from "@/assets/nearby/krampez.jpg.asset.json";
-import nearbyKozjak from "@/assets/nearby/kozjak.jpg.asset.json";
-import nearbySoca from "@/assets/nearby/soca.jpg.asset.json";
-import nearbyTolmin from "@/assets/nearby/tolmin.jpg.asset.json";
+import nearbyKobarid from "@/assets/nearby/kobarid.jpg.asset.json";
+import nearbyBoka from "@/assets/nearby/boka.jpg.asset.json";
+import nearbySocaGorge1 from "@/assets/nearby/soca-gorge-1.jpg.asset.json";
+import nearbySocaRiver from "@/assets/nearby/soca-river.jpg.asset.json";
+import nearbyVirje from "@/assets/nearby/virje.jpg.asset.json";
+import nearbyMuseum from "@/assets/nearby/museum.jpg.asset.json";
+import nearbyKluze from "@/assets/nearby/kluze.jpg.asset.json";
+import nearbyNapoleon from "@/assets/nearby/napoleon.jpg.asset.json";
+import nearbyMangart from "@/assets/nearby/mangart.jpg.asset.json";
+import nearbySocaGorge2 from "@/assets/nearby/soca-gorge-2.jpg.asset.json";
 
 const GALLERY_IMAGES = [gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12, gal13, gal14, gal15, gal16, gal17, gal18, gal19, gal20, gal23, gal24, gal21, gal22];
 
 const NEARBY_TITLES: Record<string, { title: string; subtitle: string }> = {
-  sl: { title: "V bližini", subtitle: "Naravni biseri, ki jih obiščete v nekaj minutah vožnje od hiše." },
-  hr: { title: "U blizini", subtitle: "Prirodni dragulji nadohvat ruke, samo nekoliko minuta vožnje od kuće." },
-  it: { title: "Nei dintorni", subtitle: "Gioielli naturali a pochi minuti d'auto dalla casa." },
-  en: { title: "Nearby", subtitle: "Natural gems just a short drive from the cottage." },
-  de: { title: "In der Nähe", subtitle: "Naturjuwelen, nur wenige Autominuten vom Haus entfernt." },
+  sl: { title: "V bližini", subtitle: "Izbrani izleti, razgledi in naravne znamenitosti v okolici Cottage Kobarid." },
+  hr: { title: "U blizini", subtitle: "Odabrani izleti, vidikovci i prirodne znamenitosti u okolici Cottage Kobarid." },
+  it: { title: "Nei dintorni", subtitle: "Escursioni, panorami e luoghi naturali scelti nei dintorni di Cottage Kobarid." },
+  en: { title: "Nearby", subtitle: "Selected sights, viewpoints, and natural attractions around Cottage Kobarid." },
+  de: { title: "In der Nähe", subtitle: "Ausgewählte Ausflüge, Aussichtspunkte und Naturhighlights rund um Cottage Kobarid." },
 };
 
 const NEARBY_PLACES = [
-  { img: nearbySoca, name: "Reka Soča" },
-  { img: nearbyTolmin, name: "Tolminska korita" },
-  { img: nearbyKozjak, name: "Slap Kozjak" },
-  { img: nearbyKrampez, name: "Slap Krampež" },
+  { img: nearbyKobarid, name: "Kobarid" },
+  { img: nearbyBoka, name: "Slap Boka" },
+  { img: nearbySocaGorge1, name: "Soška korita" },
+  { img: nearbySocaRiver, name: "Reka Soča" },
+  { img: nearbyVirje, name: "Slap Virje" },
+  { img: nearbyMuseum, name: "Kobariški muzej" },
+  { img: nearbyKluze, name: "Trdnjava Kluže" },
+  { img: nearbyNapoleon, name: "Napoleonov most" },
+  { img: nearbyMangart, name: "Mangart" },
+  { img: nearbySocaGorge2, name: "Soška korita" },
 ];
 
 import {
@@ -316,9 +328,9 @@ export function NearbySection() {
             {copy.subtitle}
           </p>
         </div>
-        <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
-          {NEARBY_PLACES.map((p) => (
-            <figure key={p.name} className="relative aspect-[4/5] rounded-xl overflow-hidden group">
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+          {NEARBY_PLACES.map((p, index) => (
+            <figure key={`${p.name}-${index}`} className="relative aspect-[4/5] rounded-xl overflow-hidden group">
               <img
                 src={p.img.url}
                 alt={p.name}
