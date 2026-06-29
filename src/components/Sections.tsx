@@ -28,8 +28,28 @@ import gal21 from "@/assets/gallery/1000073989-interior.jpg.asset.json";
 import gal22 from "@/assets/gallery/1000073990-interior.jpg.asset.json";
 import gal23 from "@/assets/gallery/1000073999-interior.jpg.asset.json";
 import gal24 from "@/assets/gallery/1000074000-interior.jpg.asset.json";
+import nearbyKrampez from "@/assets/nearby/krampez.jpg.asset.json";
+import nearbyKozjak from "@/assets/nearby/kozjak.jpg.asset.json";
+import nearbySoca from "@/assets/nearby/soca.jpg.asset.json";
+import nearbyTolmin from "@/assets/nearby/tolmin.jpg.asset.json";
 
 const GALLERY_IMAGES = [gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12, gal13, gal14, gal15, gal16, gal17, gal18, gal19, gal20, gal23, gal24, gal21, gal22];
+
+const NEARBY_TITLES: Record<string, { title: string; subtitle: string }> = {
+  sl: { title: "V bližini", subtitle: "Naravni biseri, ki jih obiščete v nekaj minutah vožnje od hiše." },
+  hr: { title: "U blizini", subtitle: "Prirodni dragulji nadohvat ruke, samo nekoliko minuta vožnje od kuće." },
+  it: { title: "Nei dintorni", subtitle: "Gioielli naturali a pochi minuti d'auto dalla casa." },
+  en: { title: "Nearby", subtitle: "Natural gems just a short drive from the cottage." },
+  de: { title: "In der Nähe", subtitle: "Naturjuwelen, nur wenige Autominuten vom Haus entfernt." },
+};
+
+const NEARBY_PLACES = [
+  { img: nearbySoca, name: "Reka Soča" },
+  { img: nearbyTolmin, name: "Tolminska korita" },
+  { img: nearbyKozjak, name: "Slap Kozjak" },
+  { img: nearbyKrampez, name: "Slap Krampež" },
+];
+
 import {
   Waves,
   Mountain,
