@@ -40,6 +40,7 @@ function Index() {
         
         <ActivitiesSection />
         <SeasonsSection />
+        <NearbySection />
         <GallerySection />
         <LocationSection />
       </main>
