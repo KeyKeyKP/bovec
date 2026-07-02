@@ -40,16 +40,16 @@ import nearbyMangart from "@/assets/nearby/mangart.jpg.asset.json";
 import nearbySocaGorge2 from "@/assets/nearby/soca-gorge-2.jpg.asset.json";
 
 const GALLERY_IMAGES = [
-  // First 4: house exterior (kept)
+  // First 4 stay: house exterior + aerial view
   gal3, gal4, gal5, gal6,
-  // Interior: rooms
-  gal13, gal14, gal15, gal16,
-  // Kitchen & bathroom moved one row up
-  gal23, gal24, gal21, gal22,
-  // Remaining rooms one row down
-  gal17, gal18, gal19, gal20,
-  // 8 surroundings moved to end
+  // 8 greenery/exterior placed right after the aerial (top-down) image
   gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12,
+  // Interior: living rooms
+  gal13, gal14, gal15, gal16,
+  // Kitchen & bathroom
+  gal23, gal24, gal21, gal22,
+  // Bedrooms
+  gal17, gal18, gal19, gal20,
 ];
 
 const NEARBY_TITLES: Record<string, { title: string; subtitle: string }> = {
