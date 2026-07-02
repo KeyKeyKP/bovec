@@ -29,34 +29,35 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-shadow ${scrolled ? "shadow-[0_1px_12px_rgba(0,0,0,0.08)]" : ""}`}
       style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(12px)" }}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="text-xl font-bold" style={{ color: "var(--color-forest)" }}>
-          Cottage Kobarid
-        </a>
+      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+        <div className="flex items-center gap-5">
+          <a href="#home" className="text-xl font-bold whitespace-nowrap" style={{ color: "var(--color-forest)" }}>
+            Cottage Kobarid
+          </a>
+          <div className="hidden md:flex items-center gap-2 text-sm">
+            {LANGS.map((l, i) => (
+              <span key={l} className="flex items-center gap-2">
+                <button
+                  onClick={() => setLang(l)}
+                  className={`uppercase tracking-wider font-semibold transition-colors ${lang === l ? "underline" : ""}`}
+                  style={{ color: lang === l ? "var(--color-soca)" : "var(--color-text-muted)" }}
+                  aria-label={`Switch to ${l}`}
+                >
+                  {l}
+                </button>
+                {i < LANGS.length - 1 && <span style={{ color: "var(--color-sand)" }}>·</span>}
+              </span>
+            ))}
+          </div>
+        </div>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-8 ml-auto">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="nav-link">{l.label}</a>
             </li>
           ))}
         </ul>
-
-        <div className="hidden md:flex items-center gap-2 text-sm">
-          {LANGS.map((l, i) => (
-            <span key={l} className="flex items-center gap-2">
-              <button
-                onClick={() => setLang(l)}
-                className={`uppercase tracking-wider font-semibold transition-colors ${lang === l ? "underline" : ""}`}
-                style={{ color: lang === l ? "var(--color-soca)" : "var(--color-text-muted)" }}
-                aria-label={`Switch to ${l}`}
-              >
-                {l}
-              </button>
-              {i < LANGS.length - 1 && <span style={{ color: "var(--color-sand)" }}>·</span>}
-            </span>
-          ))}
-        </div>
 
         <button
           className="md:hidden"

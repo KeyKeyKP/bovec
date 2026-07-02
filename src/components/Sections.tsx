@@ -39,7 +39,18 @@ import nearbyNapoleon from "@/assets/nearby/napoleon.jpg.asset.json";
 import nearbyMangart from "@/assets/nearby/mangart.jpg.asset.json";
 import nearbySocaGorge2 from "@/assets/nearby/soca-gorge-2.jpg.asset.json";
 
-const GALLERY_IMAGES = [gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12, gal13, gal14, gal15, gal16, gal17, gal18, gal19, gal20, gal23, gal24, gal21, gal22];
+const GALLERY_IMAGES = [
+  // First 4: house exterior (kept)
+  gal3, gal4, gal5, gal6,
+  // Interior: rooms
+  gal13, gal14, gal15, gal16,
+  // Kitchen & bathroom moved one row up
+  gal23, gal24, gal21, gal22,
+  // Remaining rooms one row down
+  gal17, gal18, gal19, gal20,
+  // 8 surroundings moved to end
+  gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12,
+];
 
 const NEARBY_TITLES: Record<string, { title: string; subtitle: string }> = {
   sl: { title: "V bližini", subtitle: "Izbrani izleti, razgledi in naravne znamenitosti v okolici Cottage Kobarid." },
@@ -79,6 +90,8 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { SEASON_COLORS } from "@/lib/translations";
@@ -102,6 +115,19 @@ function useReveal<T extends HTMLElement>() {
 
 export function HeroSection() {
   const { t } = useLang();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const nextMuted = !v.muted;
+    v.muted = nextMuted;
+    if (!nextMuted) {
+      v.play().catch(() => {});
+    }
+    setMuted(nextMuted);
+  };
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
@@ -115,6 +141,7 @@ export function HeroSection() {
         }}
       />
       <video
+        ref={videoRef}
         src={heroVideo.url}
         poster={heroPoster.url}
         autoPlay
@@ -124,6 +151,15 @@ export function HeroSection() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       />
+
+      <button
+        type="button"
+        onClick={toggleMute}
+        aria-label={muted ? "Vklopi zvok" : "Izklopi zvok"}
+        className="absolute bottom-6 right-6 z-10 p-3 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white transition"
+      >
+        {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+      </button>
 
       <div className="relative h-full flex flex-col items-center text-center px-6 text-white max-w-4xl mx-auto pt-[55vh] md:pt-[60vh]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.45)" }}>
         <p className="italic text-xl md:text-2xl font-light opacity-95" style={{ letterSpacing: "0.01em" }}>
@@ -189,20 +225,20 @@ export function AboutSection() {
         </div>
         <div className="grid grid-cols-2 gap-3 md:sticky md:top-24" style={{ gridTemplateRows: "repeat(2, minmax(0, 320px))" }}>
           <img
-            src={socaRiver}
-            alt="Reka Soča"
+            src={gal3.url}
+            alt="Cottage Kobarid — zunanjost"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover"
           />
           <img
-            src={julianAlps}
-            alt="Julijske Alpe"
+            src={gal13.url}
+            alt="Cottage Kobarid — dnevni prostor"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover row-span-2"
           />
           <img
-            src={socaCanyon}
-            alt="Korita Soče"
+            src={gal23.url}
+            alt="Cottage Kobarid — kuhinja"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover"
           />
