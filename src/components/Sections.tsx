@@ -180,7 +180,7 @@ export function AboutSection() {
   const { t } = useLang();
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="about" className="py-24 px-6" style={{ background: "var(--color-cream)" }}>
+    <section id="about" className="pt-24 pb-10 px-6" style={{ background: "var(--color-cream)" }}>
       <div ref={ref} className="fade-up max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl mb-6" style={{ color: "var(--color-forest)" }}>
           {t.about.title}
@@ -371,7 +371,7 @@ export function GallerySection() {
   }, [lightboxIndex, close, prev, next]);
 
   return (
-    <section id="gallery" className="py-24 px-6" style={{ background: "var(--color-cream)" }}>
+    <section id="gallery" className="pt-10 pb-24 px-6" style={{ background: "var(--color-cream)" }}>
       <div ref={ref} className="fade-up max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl mb-4" style={{ color: "var(--color-forest)" }}>
