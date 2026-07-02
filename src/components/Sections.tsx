@@ -181,69 +181,22 @@ export function AboutSection() {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="about" className="py-24 px-6" style={{ background: "var(--color-cream)" }}>
-      <div ref={ref} className="fade-up max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-        <div>
-          <h2 className="text-3xl md:text-4xl mb-6" style={{ color: "var(--color-forest)" }}>
-            {t.about.title}
-          </h2>
-          <p className="mb-5 text-lg" style={{ color: "var(--color-charcoal)" }}>
-            {t.about.body1}
-          </p>
-          <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
-            {t.about.body2}
-          </p>
-          {t.about.body3 && (
-            <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
-              {t.about.body3}
-            </p>
-          )}
-          {t.about.body4 && (
-            <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
-              {t.about.body4}
-            </p>
-          )}
-          {t.about.body5 && (
-            <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
-              {t.about.body5}
-            </p>
-          )}
-          {t.about.body6 && (
-            <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
-              {t.about.body6}
-            </p>
-          )}
-          {t.about.body7 && (
-            <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
-              {t.about.body7}
-            </p>
-          )}
-          {t.about.body8 && (
-            <p className="text-lg" style={{ color: "var(--color-text-muted)" }}>
-              {t.about.body8}
-            </p>
-          )}
-        </div>
-        <div className="grid grid-cols-2 gap-3 md:sticky md:top-24" style={{ gridTemplateRows: "repeat(2, minmax(0, 320px))" }}>
-          <img
-            src={gal3.url}
-            alt="Cottage Kobarid — zunanjost"
-            loading="lazy"
-            className="rounded-xl w-full h-full object-cover"
-          />
-          <img
-            src={gal13.url}
-            alt="Cottage Kobarid — dnevni prostor"
-            loading="lazy"
-            className="rounded-xl w-full h-full object-cover row-span-2"
-          />
-          <img
-            src={gal23.url}
-            alt="Cottage Kobarid — kuhinja"
-            loading="lazy"
-            className="rounded-xl w-full h-full object-cover"
-          />
-        </div>
-
+      <div ref={ref} className="fade-up max-w-4xl mx-auto">
+        <h2 className="text-3xl md:text-4xl mb-6" style={{ color: "var(--color-forest)" }}>
+          {t.about.title}
+        </h2>
+        <p className="mb-5 text-lg" style={{ color: "var(--color-charcoal)" }}>
+          {t.about.body1}
+        </p>
+        <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>
+          {t.about.body2}
+        </p>
+        {t.about.body3 && <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>{t.about.body3}</p>}
+        {t.about.body4 && <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>{t.about.body4}</p>}
+        {t.about.body5 && <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>{t.about.body5}</p>}
+        {t.about.body6 && <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>{t.about.body6}</p>}
+        {t.about.body7 && <p className="mb-5 text-lg" style={{ color: "var(--color-text-muted)" }}>{t.about.body7}</p>}
+        {t.about.body8 && <p className="text-lg" style={{ color: "var(--color-text-muted)" }}>{t.about.body8}</p>}
       </div>
     </section>
   );
