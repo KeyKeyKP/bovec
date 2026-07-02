@@ -39,7 +39,18 @@ import nearbyNapoleon from "@/assets/nearby/napoleon.jpg.asset.json";
 import nearbyMangart from "@/assets/nearby/mangart.jpg.asset.json";
 import nearbySocaGorge2 from "@/assets/nearby/soca-gorge-2.jpg.asset.json";
 
-const GALLERY_IMAGES = [gal3, gal4, gal5, gal6, gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12, gal13, gal14, gal15, gal16, gal17, gal18, gal19, gal20, gal23, gal24, gal21, gal22];
+const GALLERY_IMAGES = [
+  // First 4: house exterior (kept)
+  gal3, gal4, gal5, gal6,
+  // Interior: rooms
+  gal13, gal14, gal15, gal16,
+  // Kitchen & bathroom moved one row up
+  gal23, gal24, gal21, gal22,
+  // Remaining rooms one row down
+  gal17, gal18, gal19, gal20,
+  // 8 surroundings moved to end
+  gal7, gal8, gal9, gal10, gal1, gal2, gal11, gal12,
+];
 
 const NEARBY_TITLES: Record<string, { title: string; subtitle: string }> = {
   sl: { title: "V bližini", subtitle: "Izbrani izleti, razgledi in naravne znamenitosti v okolici Cottage Kobarid." },
