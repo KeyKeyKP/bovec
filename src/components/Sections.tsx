@@ -115,6 +115,19 @@ function useReveal<T extends HTMLElement>() {
 
 export function HeroSection() {
   const { t } = useLang();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const nextMuted = !v.muted;
+    v.muted = nextMuted;
+    if (!nextMuted) {
+      v.play().catch(() => {});
+    }
+    setMuted(nextMuted);
+  };
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
@@ -128,6 +141,7 @@ export function HeroSection() {
         }}
       />
       <video
+        ref={videoRef}
         src={heroVideo.url}
         poster={heroPoster.url}
         autoPlay
@@ -137,6 +151,15 @@ export function HeroSection() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       />
+
+      <button
+        type="button"
+        onClick={toggleMute}
+        aria-label={muted ? "Vklopi zvok" : "Izklopi zvok"}
+        className="absolute bottom-6 right-6 z-10 p-3 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white transition"
+      >
+        {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+      </button>
 
       <div className="relative h-full flex flex-col items-center text-center px-6 text-white max-w-4xl mx-auto pt-[55vh] md:pt-[60vh]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.45)" }}>
         <p className="italic text-xl md:text-2xl font-light opacity-95" style={{ letterSpacing: "0.01em" }}>
