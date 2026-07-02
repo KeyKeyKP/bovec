@@ -145,7 +145,7 @@ export function HeroSection() {
         src={heroVideo.url}
         poster={heroPoster.url}
         autoPlay
-        muted
+        muted={muted}
         loop
         playsInline
         preload="auto"
