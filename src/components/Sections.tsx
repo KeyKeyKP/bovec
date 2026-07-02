@@ -116,7 +116,17 @@ function useReveal<T extends HTMLElement>() {
 export function HeroSection() {
   const { t } = useLang();
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const onPlay = () => setPlaying(true);
+    v.addEventListener("play", onPlay);
+    if (!v.paused) setPlaying(true);
+    return () => v.removeEventListener("play", onPlay);
+  }, []);
 
   const toggleMute = () => {
     const v = videoRef.current;
@@ -133,7 +143,7 @@ export function HeroSection() {
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
       <div
         aria-hidden
-        className="absolute inset-0"
+        className={`absolute inset-0 transition-opacity duration-700 ${playing ? "opacity-0" : "opacity-100"}`}
         style={{
           backgroundImage: `url(${heroPoster.url})`,
           backgroundSize: "cover",
