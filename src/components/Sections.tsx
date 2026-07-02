@@ -225,20 +225,20 @@ export function AboutSection() {
         </div>
         <div className="grid grid-cols-2 gap-3 md:sticky md:top-24" style={{ gridTemplateRows: "repeat(2, minmax(0, 320px))" }}>
           <img
-            src={socaRiver}
-            alt="Reka Soča"
+            src={gal3.url}
+            alt="Cottage Kobarid — zunanjost"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover"
           />
           <img
-            src={julianAlps}
-            alt="Julijske Alpe"
+            src={gal13.url}
+            alt="Cottage Kobarid — dnevni prostor"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover row-span-2"
           />
           <img
-            src={socaCanyon}
-            alt="Korita Soče"
+            src={gal23.url}
+            alt="Cottage Kobarid — kuhinja"
             loading="lazy"
             className="rounded-xl w-full h-full object-cover"
           />
