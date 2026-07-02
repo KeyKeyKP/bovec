@@ -80,15 +80,6 @@ export function Navbar() {
           </ul>
         </div>
       )}
-          <ul className="flex flex-col px-6 py-4 gap-4">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="nav-link" onClick={() => setOpen(false)}>{l.label}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </header>
   );
 }
