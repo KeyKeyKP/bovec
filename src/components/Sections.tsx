@@ -116,7 +116,7 @@ function useReveal<T extends HTMLElement>() {
 export function HeroSection() {
   const { t } = useLang();
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
 
   const toggleMute = () => {
     const v = videoRef.current;
