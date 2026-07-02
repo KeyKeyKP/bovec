@@ -37,11 +37,10 @@ function Index() {
       <main>
         <HeroSection />
         <AboutSection />
-        
+        <GallerySection />
         <ActivitiesSection />
         <SeasonsSection />
         <NearbySection />
-        <GallerySection />
         <LocationSection />
       </main>
       <Footer />
