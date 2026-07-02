@@ -306,6 +306,34 @@ export function NearbySection() {
   const { lang } = useLang();
   const ref = useReveal<HTMLDivElement>();
   const copy = NEARBY_TITLES[lang] ?? NEARBY_TITLES.en;
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const close = useCallback(() => setLightboxIndex(null), []);
+  const prev = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + NEARBY_PLACES.length) % NEARBY_PLACES.length)),
+    []
+  );
+  const next = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % NEARBY_PLACES.length)),
+    []
+  );
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") prev();
+      else if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightboxIndex, close, prev, next]);
+
   return (
     <section className="py-24 px-6 bg-white">
       <div ref={ref} className="fade-up max-w-7xl mx-auto">
@@ -319,7 +347,13 @@ export function NearbySection() {
         </div>
         <div className="grid gap-4 grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
           {NEARBY_PLACES.map((p, index) => (
-            <figure key={`${p.name}-${index}`} className="relative aspect-[4/5] rounded-xl overflow-hidden group">
+            <button
+              type="button"
+              key={`${p.name}-${index}`}
+              onClick={() => setLightboxIndex(index)}
+              className="relative aspect-[4/5] rounded-xl overflow-hidden group cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-offset-2 text-left"
+              aria-label={`Odpri fotografijo: ${p.name}`}
+            >
               <img
                 src={p.img.url}
                 alt={p.name}
@@ -330,10 +364,57 @@ export function NearbySection() {
               <figcaption className="absolute bottom-3 left-4 right-4 text-white font-semibold text-base md:text-lg" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
                 {p.name}
               </figcaption>
-            </figure>
+            </button>
           ))}
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-in fade-in"
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); close(); }}
+            className="absolute top-4 right-4 md:top-6 md:right-6 text-white/90 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+            aria-label="Zapri"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-white p-2 md:p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+            aria-label="Prejšnja"
+          >
+            <ChevronLeft className="w-7 h-7 md:w-8 md:h-8" />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-white p-2 md:p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+            aria-label="Naslednja"
+          >
+            <ChevronRight className="w-7 h-7 md:w-8 md:h-8" />
+          </button>
+          <figure onClick={(e) => e.stopPropagation()} className="flex flex-col items-center">
+            <img
+              src={NEARBY_PLACES[lightboxIndex].img.url}
+              alt={NEARBY_PLACES[lightboxIndex].name}
+              className="max-w-[95vw] max-h-[85vh] object-contain rounded-lg shadow-2xl"
+            />
+            <figcaption className="mt-3 text-white/90 font-semibold">
+              {NEARBY_PLACES[lightboxIndex].name}
+            </figcaption>
+          </figure>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm tabular-nums">
+            {lightboxIndex + 1} / {NEARBY_PLACES.length}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
