@@ -149,7 +149,7 @@ export function HeroSection() {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover scale-[1.6] md:scale-100 origin-center"
       />
 
       <button
