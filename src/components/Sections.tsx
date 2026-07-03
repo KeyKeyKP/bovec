@@ -122,8 +122,10 @@ export function HeroSection() {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
+    v.muted = true;
     const onPlay = () => setPlaying(true);
     v.addEventListener("play", onPlay);
+    v.play().catch(() => {});
     if (!v.paused) setPlaying(true);
     return () => v.removeEventListener("play", onPlay);
   }, []);
@@ -141,14 +143,20 @@ export function HeroSection() {
       window.removeEventListener("click", enableAudio, true);
       window.removeEventListener("touchstart", enableAudio, true);
       window.removeEventListener("keydown", enableAudio, true);
+      window.removeEventListener("scroll", enableAudio, true);
+      window.removeEventListener("wheel", enableAudio, true);
     };
     window.addEventListener("click", enableAudio, true);
     window.addEventListener("touchstart", enableAudio, true);
     window.addEventListener("keydown", enableAudio, true);
+    window.addEventListener("scroll", enableAudio, true);
+    window.addEventListener("wheel", enableAudio, true);
     return () => {
       window.removeEventListener("click", enableAudio, true);
       window.removeEventListener("touchstart", enableAudio, true);
       window.removeEventListener("keydown", enableAudio, true);
+      window.removeEventListener("scroll", enableAudio, true);
+      window.removeEventListener("wheel", enableAudio, true);
     };
   }, []);
 
