@@ -1,14 +1,24 @@
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Menu } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import type { Lang } from "@/lib/translations";
 
 const LANGS: Lang[] = ["sl", "hr", "it", "en", "de"];
 
+const FLAGS: Record<Lang, string> = {
+  sl: "🇸🇮",
+  hr: "🇭🇷",
+  it: "🇮🇹",
+  en: "🇬🇧",
+  de: "🇩🇪",
+};
+
 export function Navbar() {
   const { lang, setLang, t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
