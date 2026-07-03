@@ -71,6 +71,21 @@ export function Navbar() {
 
       {open && (
         <div className="md:hidden bg-white border-t" style={{ borderColor: "var(--color-sand)" }}>
+          <div className="flex items-center gap-3 px-6 pt-4">
+            {LANGS.map((l, i) => (
+              <span key={l} className="flex items-center gap-3">
+                <button
+                  onClick={() => setLang(l)}
+                  className={`uppercase tracking-wider font-semibold transition-colors ${lang === l ? "underline" : ""}`}
+                  style={{ color: lang === l ? "var(--color-soca)" : "var(--color-text-muted)" }}
+                  aria-label={`Switch to ${l}`}
+                >
+                  {l}
+                </button>
+                {i < LANGS.length - 1 && <span style={{ color: "var(--color-sand)" }}>·</span>}
+              </span>
+            ))}
+          </div>
           <ul className="flex flex-col px-6 py-4 gap-4">
             {links.map((l) => (
               <li key={l.href}>
