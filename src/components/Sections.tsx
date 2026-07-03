@@ -135,11 +135,15 @@ export function HeroSection() {
     const a = audioRef.current;
     if (!a) return;
     a.volume = 0.5;
+    a.muted = true;
+    a.play().catch(() => {});
     let triggered = false;
     const start = () => {
       if (triggered) return;
       triggered = true;
+      a.muted = false;
       a.play().catch(() => {});
+      setMuted(false);
       window.removeEventListener("click", start, true);
       window.removeEventListener("touchstart", start, true);
       window.removeEventListener("keydown", start, true);
