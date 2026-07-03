@@ -167,7 +167,7 @@ export function HeroSection() {
       } else {
         onOk();
       }
-    }
+    };
     window.addEventListener("click", start, true);
     window.addEventListener("touchstart", start, true);
     window.addEventListener("keydown", start, true);
