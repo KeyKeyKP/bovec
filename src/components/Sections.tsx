@@ -113,61 +113,58 @@ function useReveal<T extends HTMLElement>() {
   return ref;
 }
 
+import glasbaAsset from "@/assets/glasba.mp3.asset.json";
+
 export function HeroSection() {
   const { t } = useLang();
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [muted, setMuted] = useState(true);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [muted, setMuted] = useState(false);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    v.muted = true;
     const onPlay = () => setPlaying(true);
     v.addEventListener("play", onPlay);
-    v.play().catch(() => {});
     if (!v.paused) setPlaying(true);
     return () => v.removeEventListener("play", onPlay);
   }, []);
 
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
+    const a = audioRef.current;
+    if (!a) return;
+    a.volume = 0.5;
     let triggered = false;
-    const enableAudio = () => {
+    const start = () => {
       if (triggered) return;
       triggered = true;
-      v.muted = false;
-      v.play().catch(() => {});
-      setMuted(false);
-      window.removeEventListener("click", enableAudio, true);
-      window.removeEventListener("touchstart", enableAudio, true);
-      window.removeEventListener("keydown", enableAudio, true);
-      window.removeEventListener("scroll", enableAudio, true);
-      window.removeEventListener("wheel", enableAudio, true);
+      a.play().catch(() => {});
+      window.removeEventListener("click", start, true);
+      window.removeEventListener("touchstart", start, true);
+      window.removeEventListener("keydown", start, true);
+      window.removeEventListener("scroll", start, true);
+      window.removeEventListener("wheel", start, true);
     };
-    window.addEventListener("click", enableAudio, true);
-    window.addEventListener("touchstart", enableAudio, true);
-    window.addEventListener("keydown", enableAudio, true);
-    window.addEventListener("scroll", enableAudio, true);
-    window.addEventListener("wheel", enableAudio, true);
+    window.addEventListener("click", start, true);
+    window.addEventListener("touchstart", start, true);
+    window.addEventListener("keydown", start, true);
+    window.addEventListener("scroll", start, true);
+    window.addEventListener("wheel", start, true);
     return () => {
-      window.removeEventListener("click", enableAudio, true);
-      window.removeEventListener("touchstart", enableAudio, true);
-      window.removeEventListener("keydown", enableAudio, true);
-      window.removeEventListener("scroll", enableAudio, true);
-      window.removeEventListener("wheel", enableAudio, true);
+      window.removeEventListener("click", start, true);
+      window.removeEventListener("touchstart", start, true);
+      window.removeEventListener("keydown", start, true);
+      window.removeEventListener("scroll", start, true);
+      window.removeEventListener("wheel", start, true);
     };
   }, []);
 
   const toggleMute = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    const nextMuted = !v.muted;
-    v.muted = nextMuted;
-    if (!nextMuted) {
-      v.play().catch(() => {});
-    }
+    const a = audioRef.current;
+    if (!a) return;
+    const nextMuted = !a.muted;
+    a.muted = nextMuted;
     setMuted(nextMuted);
   };
 
@@ -187,12 +184,13 @@ export function HeroSection() {
         src={heroVideo.url}
         poster={heroPoster.url}
         autoPlay
-        muted={muted}
+        muted
         loop
         playsInline
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover scale-[1.6] md:scale-100 origin-center"
       />
+      <audio ref={audioRef} src={glasbaAsset.url} loop preload="auto" />
 
       <button
         type="button"
@@ -217,6 +215,7 @@ export function HeroSection() {
     </section>
   );
 }
+
 
 export function AboutSection() {
   const { t } = useLang();
