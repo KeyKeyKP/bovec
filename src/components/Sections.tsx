@@ -137,32 +137,46 @@ export function HeroSection() {
     a.volume = 0.5;
     a.muted = true;
     a.play().catch(() => {});
-    let triggered = false;
-    const start = () => {
-      if (triggered) return;
-      triggered = true;
-      a.muted = false;
-      a.play().catch(() => {});
-      setMuted(false);
+    let done = false;
+    const cleanup = () => {
       window.removeEventListener("click", start, true);
       window.removeEventListener("touchstart", start, true);
       window.removeEventListener("keydown", start, true);
       window.removeEventListener("scroll", start, true);
       window.removeEventListener("wheel", start, true);
+      window.removeEventListener("pointerdown", start, true);
+    };
+    const start = () => {
+      if (done) return;
+      // Synchronously within the gesture: unmute + play.
+      a.muted = false;
+      const p = a.play();
+      const onOk = () => {
+        if (done) return;
+        done = true;
+        setMuted(false);
+        cleanup();
+      };
+      const onFail = () => {
+        // Not a valid user activation (e.g. scroll/wheel in Chrome). Revert and wait for next event.
+        a.muted = true;
+        a.play().catch(() => {});
+      };
+      if (p && typeof p.then === "function") {
+        p.then(onOk).catch(onFail);
+      } else {
+        onOk();
+      }
     };
     window.addEventListener("click", start, true);
     window.addEventListener("touchstart", start, true);
     window.addEventListener("keydown", start, true);
+    window.addEventListener("pointerdown", start, true);
     window.addEventListener("scroll", start, true);
     window.addEventListener("wheel", start, true);
-    return () => {
-      window.removeEventListener("click", start, true);
-      window.removeEventListener("touchstart", start, true);
-      window.removeEventListener("keydown", start, true);
-      window.removeEventListener("scroll", start, true);
-      window.removeEventListener("wheel", start, true);
-    };
+    return cleanup;
   }, []);
+
 
   const toggleMute = () => {
     const a = audioRef.current;
