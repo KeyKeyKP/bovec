@@ -128,6 +128,30 @@ export function HeroSection() {
     return () => v.removeEventListener("play", onPlay);
   }, []);
 
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    let triggered = false;
+    const enableAudio = () => {
+      if (triggered) return;
+      triggered = true;
+      v.muted = false;
+      v.play().catch(() => {});
+      setMuted(false);
+      window.removeEventListener("click", enableAudio, true);
+      window.removeEventListener("touchstart", enableAudio, true);
+      window.removeEventListener("keydown", enableAudio, true);
+    };
+    window.addEventListener("click", enableAudio, true);
+    window.addEventListener("touchstart", enableAudio, true);
+    window.addEventListener("keydown", enableAudio, true);
+    return () => {
+      window.removeEventListener("click", enableAudio, true);
+      window.removeEventListener("touchstart", enableAudio, true);
+      window.removeEventListener("keydown", enableAudio, true);
+    };
+  }, []);
+
   const toggleMute = () => {
     const v = videoRef.current;
     if (!v) return;
