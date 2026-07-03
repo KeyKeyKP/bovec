@@ -79,14 +79,43 @@ export function Navbar() {
           ))}
         </ul>
 
-        <button
-          className="md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          style={{ color: "var(--color-charcoal)" }}
-        >
-          {open ? <Menu size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-3 ml-auto">
+          <div ref={langRef} className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="text-2xl leading-none"
+              aria-label="Izberi jezik"
+              aria-expanded={langOpen}
+            >
+              {FLAGS[lang]}
+            </button>
+            {langOpen && (
+              <div
+                className="absolute top-full right-0 mt-2 flex gap-2 rounded-lg bg-white shadow-lg border px-2 py-2 z-50"
+                style={{ borderColor: "var(--color-sand)" }}
+              >
+                {LANGS.map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => { setLang(l); setLangOpen(false); }}
+                    className={`text-xl leading-none rounded px-1 py-0.5 transition-colors ${lang === l ? "bg-[var(--color-soca-light)]" : "hover:bg-[var(--color-cream)]"}`}
+                    aria-label={`Switch to ${l}`}
+                  >
+                    {FLAGS[l]}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            style={{ color: "var(--color-charcoal)" }}
+          >
+            <Menu size={24} />
+          </button>
+        </div>
       </nav>
 
       {open && (
