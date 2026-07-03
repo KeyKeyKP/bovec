@@ -1,19 +1,39 @@
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Menu } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import type { Lang } from "@/lib/translations";
 
 const LANGS: Lang[] = ["sl", "hr", "it", "en", "de"];
 
+const FLAGS: Record<Lang, string> = {
+  sl: "🇸🇮",
+  hr: "🇭🇷",
+  it: "🇮🇹",
+  en: "🇬🇧",
+  de: "🇩🇪",
+};
+
 export function Navbar() {
   const { lang, setLang, t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
   }, []);
 
   const links = [
@@ -59,33 +79,47 @@ export function Navbar() {
           ))}
         </ul>
 
-        <button
-          className="md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          style={{ color: "var(--color-charcoal)" }}
-        >
-          {open ? <Menu size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-3 ml-auto">
+          <div ref={langRef} className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="text-2xl leading-none"
+              aria-label="Izberi jezik"
+              aria-expanded={langOpen}
+            >
+              {FLAGS[lang]}
+            </button>
+            {langOpen && (
+              <div
+                className="absolute top-full right-0 mt-2 flex gap-2 rounded-lg bg-white shadow-lg border px-2 py-2 z-50"
+                style={{ borderColor: "var(--color-sand)" }}
+              >
+                {LANGS.map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => { setLang(l); setLangOpen(false); }}
+                    className={`text-xl leading-none rounded px-1 py-0.5 transition-colors ${lang === l ? "bg-[var(--color-soca-light)]" : "hover:bg-[var(--color-cream)]"}`}
+                    aria-label={`Switch to ${l}`}
+                  >
+                    {FLAGS[l]}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            style={{ color: "var(--color-charcoal)" }}
+          >
+            <Menu size={24} />
+          </button>
+        </div>
       </nav>
 
       {open && (
         <div className="md:hidden bg-white border-t" style={{ borderColor: "var(--color-sand)" }}>
-          <div className="flex items-center gap-3 px-6 pt-4">
-            {LANGS.map((l, i) => (
-              <span key={l} className="flex items-center gap-3">
-                <button
-                  onClick={() => setLang(l)}
-                  className={`uppercase tracking-wider font-semibold transition-colors ${lang === l ? "underline" : ""}`}
-                  style={{ color: lang === l ? "var(--color-soca)" : "var(--color-text-muted)" }}
-                  aria-label={`Switch to ${l}`}
-                >
-                  {l}
-                </button>
-                {i < LANGS.length - 1 && <span style={{ color: "var(--color-sand)" }}>·</span>}
-              </span>
-            ))}
-          </div>
           <ul className="flex flex-col px-6 py-4 gap-4">
             {links.map((l) => (
               <li key={l.href}>
