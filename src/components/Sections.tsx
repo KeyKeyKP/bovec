@@ -122,6 +122,7 @@ export function HeroSection() {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
+    v.muted = true;
     const onPlay = () => setPlaying(true);
     v.addEventListener("play", onPlay);
     v.play().catch(() => {});
