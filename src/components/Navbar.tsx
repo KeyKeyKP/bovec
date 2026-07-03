@@ -34,7 +34,7 @@ export function Navbar() {
           <a href="#home" className="text-lg sm:text-xl font-bold whitespace-nowrap" style={{ color: "var(--color-forest)" }}>
             Cottage Kobarid
           </a>
-          <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+          <div className="hidden md:flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
             {LANGS.map((l, i) => (
               <span key={l} className="flex items-center gap-1.5 sm:gap-2">
                 <button
