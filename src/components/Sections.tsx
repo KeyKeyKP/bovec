@@ -146,7 +146,7 @@ export function HeroSection() {
       window.removeEventListener("wheel", start, true);
       window.removeEventListener("pointerdown", start, true);
     };
-    function start() {
+    const start = () => {
       if (done) return;
       // Synchronously within the gesture: unmute + play.
       a.muted = false;
