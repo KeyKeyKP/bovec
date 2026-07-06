@@ -1,0 +1,9 @@
+# Cottage Kobarid
+
+> Luksuzna hiša za najem v Kobaridu, v srcu doline Soče in Triglavskega narodnega parka. Idealno izhodišče za rafting, pohodništvo in pustolovščine v Julijskih Alpah.
+
+Cottage Kobarid je zasebna hiša v dolini Soče v Sloveniji. Spletna stran je večjezična (slovenščina, hrvaščina, italijanščina, angleščina, nemščina) in predstavlja hišo, okolico, dejavnosti in lokacijo.
+
+## Pages
+
+- [Home](/): Predstavitev hiše Cottage Kobarid, galerija, dejavnosti, okoliške znamenitosti in lokacija.
