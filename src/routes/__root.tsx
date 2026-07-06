@@ -76,6 +76,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Cottage Kobarid" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "google-site-verification", content: "L7VGd_NhgSHWuMsu-8bI05stYntyrxSq12yNsbzbdfo" },
     ],
     links: [
       {
