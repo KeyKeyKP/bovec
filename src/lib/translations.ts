@@ -165,10 +165,10 @@ export const translations: Record<Lang, Translation> = {
       body8: "Med najbolj priljubljenimi znamenitostmi so Slap Kozjak, Kobariški muzej ter Italijanska kostnica Kobarid. Širša okolica navdušuje z bogato dediščino prve svetovne vojne, smaragdnimi rekami in neokrnjeno naravo, ki ponuja nešteto možnosti za raziskovanje, športne aktivnosti in popoln oddih.",
     },
     romantic: {
-      title: "Občutite dušo Bovca",
-      body1: "Zjutraj vas zbudi šumenje potoka in vonj gorskega zraka. Na horizontu se zarišejo silhuete Julijskih Alp, Soča pa teče po dolini v svojem nezamenljivem turkizno-zelenem blesku. To je Bovec — in to je vaš dom za te dni.",
+      title: "Občutite dušo Kobarida",
+      body1: "Zjutraj vas zbudi šumenje potoka in vonj gorskega zraka. Na horizontu se zarišejo silhuete Julijskih Alp, Soča pa teče po dolini v svojem nezamenljivem turkizno-zelenem blesku. To je Kobarid — in to je vaš dom za te dni.",
       body2: "Naša hiša je zasnovana za tiste, ki vedo, da pravi počitek ni brez občutka domačnosti. Pohištvo iz naravnih materialov, topla svetloba, prostrani balkoni z razgledom na gore in vrt, kjer čas teče drugače — vse to vas čaka.",
-      body3: "Ponoči, ko lučke ugasnejo in zvezde zasijejo nad Bovškim poljem, boste razumeli, zakaj se sem vedno znova vračamo.",
+      body3: "Ponoči, ko lučke ugasnejo in zvezde zasijejo nad Kobaridom, boste razumeli, zakaj se sem vedno znova vračamo.",
     },
     activities: {
       title: "Kaj lahko počnete",
@@ -199,7 +199,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "© 2025 Cottage Kobarid. Vse pravice pridržane.",
       siteBy: "Spletna stran:",
     },
-    meta: { title: "Cottage Kobarid — Najem hiše v dolini Soče", description: "Luksuzna hiša v Bovcu, v srcu Triglavskega narodnega parka. Idealno izhodišče za rafting, pohodništvo in pustolovščine v dolini Soče." },
+    meta: { title: "Cottage Kobarid — Najem hiše v dolini Soče", description: "Luksuzna hiša v Kobaridu, v srcu Triglavskega narodnega parka. Idealno izhodišče za rafting, pohodništvo in pustolovščine v dolini Soče." },
   },
   hr: {
     nav: { home: "Početna", about: "O kući", activities: "Aktivnosti", gallery: "Galerija", booking: "Rezerviraj", contact: "Kontakt" },
@@ -222,10 +222,10 @@ export const translations: Record<Lang, Translation> = {
       body8: "Među najpopularnijim znamenitostima su slap Kozjak, Kobaridski muzej te Talijanska kostnica u Kobaridu. Šira okolica oduševljava bogatom baštinom Prvog svjetskog rata, smaragdnim rijekama i netaknutom prirodom, koja nudi bezbroj mogućnosti za istraživanje, sportske aktivnosti i potpuni odmor.",
     },
     romantic: {
-      title: "Osjetite dušu Bovca",
-      body1: "Ujutro vas budi žuborenje potoka i miris gorskog zraka. Na horizontu se ocrtavaju siluete Julijskih Alpa, a Soča teče dolinom u svom nezamjenjivom tirkizno-zelenom sjaju. To je Bovec — i to je vaš dom za ove dane.",
+      title: "Osjetite dušu Kobarida",
+      body1: "Ujutro vas budi žuborenje potoka i miris gorskog zraka. Na horizontu se ocrtavaju siluete Julijskih Alpa, a Soča teče dolinom u svom nezamjenjivom tirkizno-zelenom sjaju. To je Kobarid — i to je vaš dom za ove dane.",
       body2: "Naša kuća stvorena je za one koji znaju da pravi odmor nije bez osjećaja doma. Namještaj od prirodnih materijala, topla svjetlost, prostrane terase s pogledom na planine i vrt gdje vrijeme teče drukčije — sve to vas čeka.",
-      body3: "Noću, kada se ugase svjetla i zvijezde zasvijetle nad Bovškim poljem, razumjet ćete zašto se uvijek iznova vraćamo ovamo.",
+      body3: "Noću, kada se ugase svjetla i zvijezde zasvijetle nad Kobaridom, razumjet ćete zašto se uvijek iznova vraćamo ovamo.",
     },
     activities: {
       title: "Što možete raditi",
@@ -256,7 +256,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "© 2025 Cottage Kobarid. Sva prava pridržana.",
       siteBy: "Web stranica:",
     },
-    meta: { title: "Cottage Kobarid — Najam kuće u dolini Soče", description: "Luksuzna kuća u Bovcu, u srcu Triglavskog nacionalnog parka. Idealno polazište za rafting, planinarenje i avanture." },
+    meta: { title: "Cottage Kobarid — Najam kuće u dolini Soče", description: "Luksuzna kuća u Kobaridu, u srcu Triglavskog nacionalnog parka. Idealno polazište za rafting, planinarenje i avanture." },
   },
   it: {
     nav: { home: "Home", about: "La casa", activities: "Attività", gallery: "Galleria", booking: "Prenota", contact: "Contatti" },
@@ -279,10 +279,10 @@ export const translations: Record<Lang, Translation> = {
       body8: "Tra le attrazioni più popolari ci sono la cascata di Kozjak, il Museo di Caporetto e l'Ossario italiano di Caporetto. La zona più ampia affascina con la ricca eredità della Prima guerra mondiale, fiumi color smeraldo e natura incontaminata, che offre infinite possibilità di esplorazione, attività sportive e completo relax.",
     },
     romantic: {
-      title: "Sentite l'anima di Bovec",
-      body1: "Al mattino vi sveglia il mormorio di un ruscello e il profumo dell'aria di montagna. All'orizzonte si stagliano le silhouette delle Alpi Giulie, mentre la Soča scorre nella valle nel suo inconfondibile bagliore turchese-verde. Questa è Bovec — e questa è la vostra casa per questi giorni.",
+      title: "Sentite l'anima di Kobarid",
+      body1: "Al mattino vi sveglia il mormorio di un ruscello e il profumo dell'aria di montagna. All'orizzonte si stagliano le silhouette delle Alpi Giulie, mentre la Soča scorre nella valle nel suo inconfondibile bagliore turchese-verde. Questa è Kobarid — e questa è la vostra casa per questi giorni.",
       body2: "La nostra casa è pensata per chi sa che il vero riposo non può fare a meno del senso di casa. Arredi in materiali naturali, luce calda, ampie terrazze con vista sulle montagne e un giardino dove il tempo scorre diversamente — tutto questo vi aspetta.",
-      body3: "Di notte, quando le luci si spengono e le stelle brillano sopra la piana di Bovec, capirete perché ci si torna sempre.",
+      body3: "Di notte, quando le luci si spengono e le stelle brillano sopra Kobarid, capirete perché ci si torna sempre.",
     },
     activities: {
       title: "Cosa potete fare",
@@ -313,7 +313,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "© 2025 Cottage Kobarid. Tutti i diritti riservati.",
       siteBy: "Sito web:",
     },
-    meta: { title: "Cottage Kobarid — Affitto casa nella Valle della Soča", description: "Casa di lusso a Bovec, nel cuore del Parco Nazionale del Triglav. Punto di partenza ideale per rafting, escursioni e avventure." },
+    meta: { title: "Cottage Kobarid — Affitto casa nella Valle della Soča", description: "Casa di lusso a Kobarid, nel cuore del Parco Nazionale del Triglav. Punto di partenza ideale per rafting, escursioni e avventure." },
   },
   en: {
     nav: { home: "Home", about: "The House", activities: "Activities", gallery: "Gallery", booking: "Book", contact: "Contact" },
@@ -336,10 +336,10 @@ export const translations: Record<Lang, Translation> = {
       body8: "Among the most popular attractions are the Kozjak Waterfall, the Kobarid Museum and the Italian Charnel House in Kobarid. The wider area captivates with its rich First World War heritage, emerald rivers and untouched nature, offering countless opportunities for exploration, sport and complete relaxation.",
     },
     romantic: {
-      title: "Feel the Soul of Bovec",
-      body1: "In the morning you are woken by the murmur of a stream and the scent of mountain air. On the horizon, the silhouettes of the Julian Alps take shape, while the Soča flows through the valley in its unmistakable turquoise-green glow. This is Bovec — and this is your home for these days.",
+      title: "Feel the Soul of Kobarid",
+      body1: "In the morning you are woken by the murmur of a stream and the scent of mountain air. On the horizon, the silhouettes of the Julian Alps take shape, while the Soča flows through the valley in its unmistakable turquoise-green glow. This is Kobarid — and this is your home for these days.",
       body2: "Our house is designed for those who know that true rest needs the feeling of home. Furniture from natural materials, warm light, spacious balconies with mountain views and a garden where time passes differently — all this awaits you.",
-      body3: "At night, when the lights go out and the stars shine over the Bovec plain, you will understand why people always come back.",
+      body3: "At night, when the lights go out and the stars shine over Kobarid, you will understand why people always come back.",
     },
     activities: {
       title: "What You Can Do",
@@ -370,7 +370,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "© 2025 Cottage Kobarid. All rights reserved.",
       siteBy: "Website:",
     },
-    meta: { title: "Cottage Kobarid — House Rental in the Soča Valley", description: "Luxury house in Bovec, in the heart of Triglav National Park. Ideal base for rafting, hiking and adventures in the Soča Valley." },
+    meta: { title: "Cottage Kobarid — House Rental in the Soča Valley", description: "Luxury house in Kobarid, in the heart of Triglav National Park. Ideal base for rafting, hiking and adventures in the Soča Valley." },
   },
   de: {
     nav: { home: "Start", about: "Das Haus", activities: "Aktivitäten", gallery: "Galerie", booking: "Buchen", contact: "Kontakt" },
@@ -393,10 +393,10 @@ export const translations: Record<Lang, Translation> = {
       body8: "Zu den beliebtesten Sehenswürdigkeiten zählen der Kozjak-Wasserfall, das Kobarid-Museum sowie das italienische Beinhaus in Kobarid. Die weitere Umgebung begeistert mit dem reichen Erbe des Ersten Weltkriegs, smaragdgrünen Flüssen und unberührter Natur, die unzählige Möglichkeiten für Erkundung, sportliche Aktivitäten und vollkommene Erholung bietet.",
     },
     romantic: {
-      title: "Spüren Sie die Seele von Bovec",
-      body1: "Am Morgen weckt Sie das Murmeln eines Baches und der Duft der Bergluft. Am Horizont zeichnen sich die Silhouetten der Julischen Alpen ab, während die Soča im Tal in ihrem unverwechselbaren türkis-grünen Leuchten fließt. Das ist Bovec — und das ist Ihr Zuhause für diese Tage.",
+      title: "Spüren Sie die Seele von Kobarid",
+      body1: "Am Morgen weckt Sie das Murmeln eines Baches und der Duft der Bergluft. Am Horizont zeichnen sich die Silhouetten der Julischen Alpen ab, während die Soča im Tal in ihrem unverwechselbaren türkis-grünen Leuchten fließt. Das ist Kobarid — und das ist Ihr Zuhause für diese Tage.",
       body2: "Unser Haus ist für diejenigen gestaltet, die wissen, dass echte Erholung das Gefühl von Zuhause braucht. Möbel aus natürlichen Materialien, warmes Licht, geräumige Balkone mit Bergblick und ein Garten, wo die Zeit anders verläuft — all das erwartet Sie.",
-      body3: "Nachts, wenn die Lichter erlöschen und die Sterne über der Bovec-Ebene leuchten, werden Sie verstehen, warum man immer wieder zurückkommt.",
+      body3: "Nachts, wenn die Lichter erlöschen und die Sterne über Kobarid leuchten, werden Sie verstehen, warum man immer wieder zurückkommt.",
     },
     activities: {
       title: "Was Sie unternehmen können",
@@ -427,7 +427,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "© 2025 Cottage Kobarid. Alle Rechte vorbehalten.",
       siteBy: "Webseite:",
     },
-    meta: { title: "Cottage Kobarid — Hausvermietung im Soča-Tal", description: "Luxushaus in Bovec, im Herzen des Triglav-Nationalparks. Idealer Ausgangspunkt für Rafting, Wandern und Abenteuer im Soča-Tal." },
+    meta: { title: "Cottage Kobarid — Hausvermietung im Soča-Tal", description: "Luxushaus in Kobarid, im Herzen des Triglav-Nationalparks. Idealer Ausgangspunkt für Rafting, Wandern und Abenteuer im Soča-Tal." },
   },
 };
 
