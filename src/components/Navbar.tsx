@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 import { useLang } from "./LanguageContext";
 import type { Lang } from "@/lib/translations";
 
@@ -13,12 +14,25 @@ const FLAGS: Record<Lang, string> = {
   de: "🇩🇪",
 };
 
+const PATH_BY_LANG: Record<Lang, string> = {
+  sl: "/",
+  hr: "/hr",
+  it: "/it",
+  en: "/en",
+  de: "/de",
+};
+
 export function Navbar() {
-  const { lang, setLang, t } = useLang();
+  const { lang, t } = useLang();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
+
+  const goToLang = (l: Lang) => {
+    navigate({ to: PATH_BY_LANG[l] });
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -58,7 +72,7 @@ export function Navbar() {
             {LANGS.map((l, i) => (
               <span key={l} className="flex items-center gap-1.5 sm:gap-2">
                 <button
-                  onClick={() => setLang(l)}
+                  onClick={() => goToLang(l)}
                   className={`uppercase tracking-wider font-semibold transition-colors ${lang === l ? "underline" : ""}`}
                   style={{ color: lang === l ? "var(--color-soca)" : "var(--color-text-muted)" }}
                   aria-label={`Switch to ${l}`}
@@ -97,7 +111,7 @@ export function Navbar() {
                 {LANGS.map((l) => (
                   <button
                     key={l}
-                    onClick={() => { setLang(l); setLangOpen(false); }}
+                    onClick={() => { goToLang(l); setLangOpen(false); }}
                     className={`text-xl leading-none rounded px-1 py-0.5 transition-colors ${lang === l ? "bg-[var(--color-soca-light)]" : "hover:bg-[var(--color-cream)]"}`}
                     aria-label={`Switch to ${l}`}
                   >
