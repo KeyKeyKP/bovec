@@ -26,10 +26,10 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" },
       { rel: "alternate", hrefLang: "sl", href: "https://cottage-kobarid.si/" },
-      { rel: "alternate", hrefLang: "hr", href: "https://cottage-kobarid.si/" },
-      { rel: "alternate", hrefLang: "it", href: "https://cottage-kobarid.si/" },
-      { rel: "alternate", hrefLang: "en", href: "https://cottage-kobarid.si/" },
-      { rel: "alternate", hrefLang: "de", href: "https://cottage-kobarid.si/" },
+      { rel: "alternate", hrefLang: "hr", href: "https://cottage-kobarid.si/hr" },
+      { rel: "alternate", hrefLang: "it", href: "https://cottage-kobarid.si/it" },
+      { rel: "alternate", hrefLang: "en", href: "https://cottage-kobarid.si/en" },
+      { rel: "alternate", hrefLang: "de", href: "https://cottage-kobarid.si/de" },
       { rel: "alternate", hrefLang: "x-default", href: "https://cottage-kobarid.si/" },
     ],
     scripts: [
@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLang="sl">
       <Navbar />
       <main>
         <HeroSection />
