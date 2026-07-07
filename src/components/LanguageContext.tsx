@@ -9,15 +9,22 @@ interface Ctx {
 
 const LanguageContext = createContext<Ctx | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("sl");
+interface LanguageProviderProps {
+  children: ReactNode;
+  initialLang?: Lang;
+  lockLang?: boolean;
+}
+
+export function LanguageProvider({ children, initialLang = "sl", lockLang = false }: LanguageProviderProps) {
+  const [lang, setLangState] = useState<Lang>(initialLang);
 
   useEffect(() => {
+    if (lockLang) return;
     try {
       const stored = sessionStorage.getItem("lang") as Lang | null;
       if (stored && translations[stored]) setLangState(stored);
     } catch {}
-  }, []);
+  }, [lockLang]);
 
   useEffect(() => {
     document.documentElement.lang = lang;
