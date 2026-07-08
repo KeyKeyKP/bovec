@@ -9,16 +9,16 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cottage Kobarid — Najem hiše v dolini Soče" },
-      { name: "description", content: "Luksuzna hiša Cottage Kobarid v srcu doline Soče in Triglavskega narodnega parka. Idealno izhodišče za rafting, pohodništvo in pustolovščine v Julijskih Alpah." },
-      { property: "og:title", content: "Cottage Kobarid — Najem hiše v dolini Soče" },
-      { property: "og:description", content: "Vaš dom v srcu Triglavskega narodnega parka. Luksuzna hiša za najem v Kobaridu, dolina Soče." },
+      { title: "Cottage Kobarid – Počitniška hiša za najem | Dolina Soče, Kobarid" },
+      { name: "description", content: "Počitnice v Kobaridu – luksuzna počitniška hiša za najem v dolini Soče. Cottage Kobarid je idealno izhodišče za rafting, pohodništvo in aktivne počitnice v Julijskih Alpah." },
+      { property: "og:title", content: "Cottage Kobarid – Počitniška hiša za najem | Dolina Soče, Kobarid" },
+      { property: "og:description", content: "Počitnice v Kobaridu – luksuzna počitniška hiša za najem v dolini Soče." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://cottage-kobarid.si/" },
       { property: "og:image", content: "https://cottage-kobarid.si/og-image.jpg" },
       { name: "twitter:image", content: "https://cottage-kobarid.si/og-image.jpg" },
-      { name: "twitter:title", content: "Cottage Kobarid — Najem hiše v dolini Soče" },
-      { name: "twitter:description", content: "Vaš dom v srcu Triglavskega narodnega parka." },
+      { name: "twitter:title", content: "Cottage Kobarid – Počitniška hiša za najem | Dolina Soče, Kobarid" },
+      { name: "twitter:description", content: "Počitnice v Kobaridu – luksuzna počitniška hiša za najem v dolini Soče." },
     ],
     links: [
       { rel: "canonical", href: "https://cottage-kobarid.si/" },
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
           "@type": ["LodgingBusiness", "LocalBusiness"],
           "@id": "https://cottage-kobarid.si/#business",
           name: "Cottage Kobarid",
-          description: "Luksuzna hiša za najem v Kobaridu, v srcu doline Soče in Triglavskega narodnega parka.",
+          description: "Počitnice v Kobaridu – luksuzna počitniška hiša za najem v dolini Soče. Idealno izhodišče za rafting, pohodništvo in aktivne počitnice v Julijskih Alpah.",
           url: "https://cottage-kobarid.si/",
           image: "https://cottage-kobarid.si/og-image.jpg",
           priceRange: "€€",
