@@ -154,7 +154,7 @@ export const translations: Record<Lang, Translation> = {
       cta: "Preveri razpoložljivost",
     },
     about: {
-      title: "Cottage Kobarid — počitniška hiša za najem v Kobaridu",
+      title: "Cottage Kobarid — počitniška hiša za najem",
       body1: "Počitniška hišica se nahaja le 1 km od Kobarida, na mirnem robu vasi ob gozdu. Leta 2021 je bila popolnoma obnovljena in sodobno opremljena, zato gostom nudi popolno udobje za sproščene in nepozabne počitnice.",
       body2: "Njena posebnost je izjemno mirna lega v objemu narave, kjer vas namesto mestnega vrveža spremljajo le petje ptic, šumenje bližnjega potoka in pomirjujoči zvoki gozda. Z zgornje terase se odpira čudovit pogled na Krn ter okoliške hribe in dolino.",
       body3: "V pritličju vas pričaka prostoren dnevni prostor s udobno kotno garnituro, jedilno mizo s klopmi ter klimatsko napravo, ki zagotavlja prijetno temperaturo skozi vse leto. Kuhinja je popolnoma opremljena za pripravo obrokov in vključuje pomivalni stroj, indukcijsko kuhalno ploščo, pečico, napo, grelnik vode ter hladilnik z zamrzovalnikom.",

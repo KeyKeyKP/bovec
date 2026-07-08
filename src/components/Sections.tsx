@@ -220,7 +220,7 @@ export function HeroSection() {
       </button>
 
       <div className="relative h-full flex flex-col items-center text-center px-6 text-white max-w-4xl mx-auto pt-[55vh] md:pt-[60vh]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.45)" }}>
-        <h1 className="sr-only">Cottage Kobarid — Počitniška hiša za najem v Kobaridu, dolina Soče</h1>
+        <h1 className="sr-only">Cottage Kobarid — Počitniška hiša za najem</h1>
         <p className="italic text-xl md:text-2xl font-light opacity-95" style={{ letterSpacing: "0.01em" }}>
           {t.hero.tagline}
         </p>
