@@ -13,6 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ItRouteImport } from './routes/it'
 import { Route as HrRouteImport } from './routes/hr'
 import { Route as EnRouteImport } from './routes/en'
+import { Route as DeRouteImport } from './routes/de'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -35,6 +36,11 @@ const EnRoute = EnRouteImport.update({
   path: '/en',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DeRoute = DeRouteImport.update({
+  id: '/de',
+  path: '/de',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/de': typeof DeRoute
   '/en': typeof EnRoute
   '/hr': typeof HrRoute
   '/it': typeof ItRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/de': typeof DeRoute
   '/en': typeof EnRoute
   '/hr': typeof HrRoute
   '/it': typeof ItRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/de': typeof DeRoute
   '/en': typeof EnRoute
   '/hr': typeof HrRoute
   '/it': typeof ItRoute
@@ -65,14 +74,15 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/en' | '/hr' | '/it' | '/sitemap.xml'
+  fullPaths: '/' | '/de' | '/en' | '/hr' | '/it' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/en' | '/hr' | '/it' | '/sitemap.xml'
-  id: '__root__' | '/' | '/en' | '/hr' | '/it' | '/sitemap.xml'
+  to: '/' | '/de' | '/en' | '/hr' | '/it' | '/sitemap.xml'
+  id: '__root__' | '/' | '/de' | '/en' | '/hr' | '/it' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DeRoute: typeof DeRoute
   EnRoute: typeof EnRoute
   HrRoute: typeof HrRoute
   ItRoute: typeof ItRoute
@@ -109,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/de': {
+      id: '/de'
+      path: '/de'
+      fullPath: '/de'
+      preLoaderRoute: typeof DeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,6 +138,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DeRoute: DeRoute,
   EnRoute: EnRoute,
   HrRoute: HrRoute,
   ItRoute: ItRoute,
@@ -129,3 +147,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
