@@ -24,7 +24,7 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
     };
 
     const video = document.createElement("video");
-    video.src = VIDEO_SRC;
+    video.src = videoSrc;
     video.preload = "auto";
     video.muted = true;
     (video as HTMLVideoElement & { playsInline: boolean }).playsInline = true;
