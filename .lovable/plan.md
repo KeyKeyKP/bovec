@@ -1,32 +1,39 @@
-## Zastavice za izbiro jezika v mobilni vrstici
 
-### Trenutno stanje
-- Na mobilnih napravah so jeziki skriti znotraj hamburger menija (tekstovni gumbi SL · HR · IT · EN · DE).
-- Uporabnik želi zastavice v vrhnji vrstici, med logotipom in hamburger gumbom.
+## Cilj
+Vsaka od 24 slik v galeriji dobi natančen, opisen `alt` z lokalno ključno besedo, v vseh 5 jezikih (SL, HR, IT, EN, DE).
 
-### Spremembe
+## Kako pripravim opise
+Pred pisanjem si pogledam vsako fotografijo (imam dostop do datotek v `src/assets/gallery/`) in opišem točno tisto, kar je na sliki — npr. ali je kuhinja, spalnica, dnevna soba, kopalnica, terasa, pogled na goro itd. Ne izmišljam si detajlov, ki jih na sliki ni. Če za katero sliko ne bo mogoče varno določiti prostora, uporabim splošen a resničen opis (npr. "notranjost počitniške hiše").
 
-1. **Novi mobilni language selector (Navbar.tsx)**
-   - Dodaj med logo "Cottage Kobarid" in hamburger gumb.
-   - Vedno prikaži slovensko zastavico (🇸🇮).
-   - Ob kliku se pod njo razpre vrstica ostalih zastavic: 🇭🇷, 🇮🇹, 🇬🇧, 🇩🇪.
-   - Klik na zastavico zamenja jezik in zapre meni.
-   - Uporabi `useState` za odprt/zaprt.
+Slog: **opisno + ključna beseda**, npr.
+- "Dnevna soba počitniške hiše Cottage Kobarid z lesenim stropom in kaminom"
+- "Zunanjost počitniške hiše v Kobaridu z vrtom in pogledom na Julijske Alpe"
 
-2. **Odstranitev iz mobilnega dropdowna**
-   - Iz mobilnega hamburger menija odstrani tekstovni del z jeziki, ker je zdaj v vrhnji vrstici.
-   - Nav povezave (Domov, O nas, ...) ostanejo v dropdownu.
+## Spremembe v kodi
 
-3. **Stil**
-   - Zastavice prikaži kot emoji, povečane na `text-xl`/`text-2xl` za boljšo vidnost.
-   - Lahko obroba ali zaobljenost za lepši izgled.
-   - Prehod med odprtim in zaprtim stanjem (`transition-all`).
+**1) `src/lib/translations.ts`** — v vsak jezikovni blok (`sl`, `hr`, `it`, `en`, `de`) dodam:
+```ts
+gallery: {
+  title: ...,
+  subtitle: ...,
+  alts: [
+    "…opis slike 1…",
+    "…opis slike 2…",
+    // … 24 opisov, indeksi ujemajoči z vrstnim redom v GALLERY_IMAGES
+  ],
+}
+```
+Slovenske opise napišem ročno po ogledu slik; ostale 4 jezike prevedem konsistentno (in ohranim lokalno ključno besedo v ustreznem jeziku: "vacation house Kobarid", "casa vacanze Kobarid", "kuća za odmor Kobarid", "Ferienhaus Kobarid").
 
-4. **Prevodi in dostopnost**
-   - `aria-label` na gumbu: "Izberi jezik" / "Choose language" (glede na trenutni jezik).
-   - `aria-expanded` za stanje.
+**2) `src/components/Sections.tsx`** (GallerySection, vrstici 537 in 579) — namesto generičnega `alt={`Cottage Kobarid ${i + 1}`}` uporabim:
+```tsx
+alt={t.gallery.alts[i] ?? `Cottage Kobarid ${i + 1}`}
+```
+Enako v lightboxu za `GALLERY_IMAGES[lightboxIndex]`. `aria-label` gumba (vrstica 533) prav tako iz `t.gallery.alts[i]`.
 
-### Implementacija
-- Sprememba samo v `src/components/Navbar.tsx`.
-- Uporabi obstoječi `useLang()` in `setLang()`.
-- Brez novih odvisnosti (lucide že vključen, emoji so sistemski).
+## Preverjanje
+- `bun run build` uspe.
+- V DOM-u (`<img alt="...">`) so vidni novi, edinstveni opisi na vseh jezikovnih poteh (`/`, `/en`, `/de`, `/it`, `/hr`).
+
+## Kaj potrebujem od tebe
+Nič — sam pogledam slike in napišem opise. Če imaš dodatne informacije o konkretnih prostorih (npr. koliko spalnic, poimenovanje sob), lahko napišeš, drugače opišem, kar vidim.

@@ -523,23 +523,27 @@ export function GallerySection() {
           </p>
         </div>
         <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {GALLERY_IMAGES.map((img, i) => (
-            <button
-              type="button"
-              key={i}
-              onClick={() => setLightboxIndex(i)}
-              className="aspect-[4/3] rounded-xl overflow-hidden group cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-offset-2"
-              style={{ background: "var(--color-soca-light)" }}
-              aria-label={`Odpri fotografijo ${i + 1}`}
-            >
-              <img
-                src={img.url}
-                alt={`Cottage Kobarid ${i + 1}`}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </button>
-          ))}
+          {GALLERY_IMAGES.map((img, i) => {
+            const altText = t.gallery.alts[i] ?? `Cottage Kobarid ${i + 1}`;
+
+            return (
+              <button
+                type="button"
+                key={i}
+                onClick={() => setLightboxIndex(i)}
+                className="aspect-[4/3] rounded-xl overflow-hidden group cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-offset-2"
+                style={{ background: "var(--color-soca-light)" }}
+                aria-label={altText}
+              >
+                <img
+                  src={img.url}
+                  alt={altText}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -576,8 +580,9 @@ export function GallerySection() {
           </button>
           <img
             src={GALLERY_IMAGES[lightboxIndex].url}
-            alt={`Cottage Kobarid ${lightboxIndex + 1}`}
+            alt={t.gallery.alts[lightboxIndex] ?? `Cottage Kobarid ${lightboxIndex + 1}`}
             onClick={(e) => e.stopPropagation()}
+
             className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
           />
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm tabular-nums">
