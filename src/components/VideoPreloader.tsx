@@ -3,7 +3,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const VIDEO_SRC_DESKTOP = "/video/bovec-hero.mp4";
 const VIDEO_SRC_MOBILE = "/video/bovec-hero-mobile.mp4";
-const POSTER_DESKTOP = "/video/bovec-hero-poster.jpg";
+const POSTER_DESKTOP = "/video/cottage-kobarid-hero-poster.jpg";
 const POSTER_MOBILE = "/video/bovec-hero-mobile-poster.jpg";
 
 export function VideoPreloader({ children }: { children: ReactNode }) {

@@ -94,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "preload",
         as: "image",
-        href: "/__l5e/assets-v1/c67c9079-9491-4c39-ba47-35c1d3918543/hero-poster.jpg",
+        href: "/__l5e/assets-v1/8f4d4b44-f443-4c6e-b2ee-8ea6fbc32eb4/cottage-kobarid-hero-poster.jpg",
         fetchpriority: "high",
       },
       {
