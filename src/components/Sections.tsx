@@ -123,7 +123,7 @@ export function HeroSection() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [muted, setMuted] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const isMobile = useIsMobile();
+  
   const videoSrc = heroVideo.url;
 
   useEffect(() => {
