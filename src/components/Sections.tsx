@@ -125,6 +125,8 @@ export function HeroSection() {
   const [playing, setPlaying] = useState(false);
   const isMobile = useIsMobile();
   const videoSrc = isMobile ? heroVideoMobile.url : heroVideo.url;
+
+  useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
     const onPlay = () => setPlaying(true);
