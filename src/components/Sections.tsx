@@ -124,7 +124,7 @@ export function HeroSection() {
   const [muted, setMuted] = useState(false);
   const [playing, setPlaying] = useState(false);
   const isMobile = useIsMobile();
-  const videoSrc = isMobile ? heroVideoMobile.url : heroVideo.url;
+  const videoSrc = heroVideo.url;
 
   useEffect(() => {
     const v = videoRef.current;
