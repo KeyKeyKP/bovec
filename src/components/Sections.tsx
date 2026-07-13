@@ -202,8 +202,9 @@ export function HeroSection() {
         }}
       />
       <video
+        key={videoSrc}
         ref={videoRef}
-        src={heroVideo.url}
+        src={videoSrc}
         poster={heroPoster.url}
         autoPlay
         muted
