@@ -78,7 +78,7 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundImage: "url(/video/bovec-hero-poster.jpg)",
+          backgroundImage: `url(${posterSrc})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: "#fff",
