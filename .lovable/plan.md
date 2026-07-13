@@ -1,33 +1,63 @@
+## Cilj
 
-Da, to je izvedljivo. Ko naložiš drugi video (npr. `bovec-hero-mobile.mp4`), spletna stran samodejno prepozna napravo in predvaja ustrezno različico.
+Datoteke fotografij galerije trenutno nosijo generična imena tipa `1000073996-exterior.jpg`, `1000074001.jpg` itd. Google pri iskanju slik upošteva tudi ime datoteke — zato jih preimenujemo tako, da odražajo ALT opise (npr. `cottage-kobarid-zunanjost-terasa-vrt.jpg`). Ob tem postorimo še nekaj drugih SEO stvari za galerijo in slike.
 
-## Kako bo delovalo
+## 1. Preimenovanje 24 fotografij galerije
 
-- **Namizje / tablica** (širina ≥ 768 px): predvaja obstoječi `bovec-hero.mp4`
-- **Mobilne naprave** (širina < 768 px): predvaja novi mobilni video (npr. bolj pokončen / lažji format)
+Vsaka slika bo dobila kratko, opisno, s pomišljaji ločeno ime v angleščini (zaradi mednarodne iskalne uporabnosti — nemški, italijanski, hrvaški in angleški obiskovalci) in z jedrno ključno besedo `cottage-kobarid`.
 
-Uporabimo že obstoječi hook `useIsMobile()` (prag 768 px), ki ga projekt že ima.
+Predlagana imena (usklajena z obstoječimi SL ALT opisi, vrstni red kot v galeriji):
 
-## Kaj potrebujem od tebe
+```
+01 cottage-kobarid-exterior-terrace-garden.jpg
+02 cottage-kobarid-entrance-flowers-seating.jpg
+03 cottage-kobarid-aerial-view-garden-terraces.jpg
+04 cottage-kobarid-aerial-view-upper-terrace.jpg
+05 cottage-kobarid-valley-mountain-view.jpg
+06 cottage-kobarid-view-mountains-neighborhood.jpg
+07 cottage-kobarid-upper-garden-terrace-lounger.jpg
+08 cottage-kobarid-garden-lounge-outdoor-grill.jpg
+09 cottage-kobarid-covered-terrace-dining.jpg
+10 cottage-kobarid-pergola-lounge-mountain-view.jpg
+11 cottage-kobarid-fire-pit-soca-valley-view.jpg
+12 cottage-kobarid-upper-view-terrace-wooden-chairs.jpg
+13 cottage-kobarid-dining-area-kitchen.jpg
+14 cottage-kobarid-living-room-dining-sofa.jpg
+15 cottage-kobarid-bright-living-room-wooden-table.jpg
+16 cottage-kobarid-living-room-attic-stairs.jpg
+17 cottage-kobarid-compact-kitchen-induction-oven.jpg
+18 cottage-kobarid-modern-kitchen-wooden-surfaces.jpg
+19 cottage-kobarid-bathroom-sink-wc.jpg
+20 cottage-kobarid-bathroom-washing-machine.jpg
+21 cottage-kobarid-attic-bedroom-four-beds.jpg
+22 cottage-kobarid-attic-bedroom-cot.jpg
+23 cottage-kobarid-attic-bedroom-single-double.jpg
+24 cottage-kobarid-family-attic-bedroom.jpg
+```
 
-1. **Datoteka mobilnega videa** — naloži jo v `public/video/` (predlog: `bovec-hero-mobile.mp4`).
-2. **Poster slika za mobilno** (neobvezno, priporočljivo) — `public/video/bovec-hero-mobile-poster.jpg`. Če je ne dodaš, uporabimo obstoječega.
+### Tehnična izvedba
 
-Priporočila za mobilni video:
-- Format 9:16 ali 4:5 (pokončno) če želiš drugačno kompozicijo, ali 16:9 če je enak izrez
-- Kodek H.264 (MP4), največ ~5–8 MB za hitro nalaganje
-- Trajanje podobno obstoječemu
+Imena datotek so vgrajena v CDN URL (`/__l5e/assets-v1/{uuid}/{original_filename}`) že ob nalaganju — ne moremo jih spremeniti zgolj s preimenovanjem lokalne `.asset.json` datoteke. Zato:
 
-## Tehnične spremembe
+1. Za vsako od 24 slik ponovno naložim isto vsebino v CDN pod novim imenom (`lovable-assets create ... --filename cottage-kobarid-...jpg`), kar posodobi ustrezno `.asset.json` datoteko z novim URL-jem.
+2. Uvozi v `src/components/Sections.tsx` (`gal1`…`gal24`) že kažejo na `.asset.json`, tako da po ponovnem nalaganju in preimenovanju datotek asset.json ustrezno posodobim tudi importe.
+3. Vrstni red v galeriji in ALT opisi (`translations.ts`) ostanejo enaki — le imena datotek se spremenijo.
 
-- **`src/components/Sections.tsx`** (Hero sekcija): dodam pogoj `const src = isMobile ? "/video/bovec-hero-mobile.mp4" : "/video/bovec-hero.mp4"` in enako za poster.
-- **`src/components/VideoPreloader.tsx`**: uporabi `useIsMobile()` in izbere pravi `VIDEO_SRC` + poster, tako da se predpomni le ustrezna različica (da mobilni uporabniki ne prenašajo namiznega videa in obratno).
-- Med preklopom naprave (npr. rotacija/resize) uporabimo `key={src}` na `<video>` elementu, da se pravilno ponovno naloži.
+## 2. Dodatne SEO izboljšave za slike
 
-## Rezervni scenarij
+- **`loading="lazy"` in `decoding="async"`** na vseh galerijskih `<img>` (če še nista postavljena) za hitrejši LCP.
+- **`width` in `height` atributi** na `<img>` — preprečimo CLS (Cumulative Layout Shift), kar Google upošteva pri Core Web Vitals.
+- **`<figure>` + `<figcaption>`** za lightbox — semantični HTML pomeni bolj razumljivo strukturo za iskalnike (opcijsko; lahko obdržimo skrit `<figcaption>` samo za bralnike zaslonov).
+- **JSON-LD schema `ImageGallery` / `LodgingBusiness` z `photo`**: v `<head>` dodam strukturiran zapis, ki vsaki sliki pripiše URL in opis. Google jih tako lahko poveže z nastanitvijo.
+- **Preveritev poimenovanja ostalih slik** (hero poster, nearby atrakcije `boka.jpg`, `kluze.jpg`, `soca.jpg` itd.) — te so že smiselno poimenovane, dodam samo doslednost s predpono `cottage-kobarid-` kjer smiselno (npr. hero poster).
 
-Če datoteke mobilnega videa ni najti (404), avtomatsko pade nazaj na `bovec-hero.mp4`, tako da stran nikoli ne ostane brez ozadja.
+## 3. Kaj ostane nespremenjeno
 
----
+- ALT besedila (ta so že odlična in prevedena v 5 jezikov).
+- Vrstni red slik v galeriji.
+- Vizualna postavitev in stil.
+- Video, glasba in ostale funkcionalnosti.
 
-Ali potrdiš imeni `bovec-hero-mobile.mp4` in `bovec-hero-mobile-poster.jpg`, ali imaš raje drugi imeni?
+## Vprašanje pred izvedbo
+
+Predlagam imena datotek **v angleščini** (globalno bolje delujejo za Google Images, tudi za slovenske obiskovalce). Če želiš raje **v slovenščini** (npr. `cottage-kobarid-zunanjost-terasa-vrt.jpg`), samo reci in prilagodim seznam pred izvedbo.
