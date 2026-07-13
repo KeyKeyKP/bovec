@@ -1,10 +1,17 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-const VIDEO_SRC = "/video/bovec-hero.mp4";
+const VIDEO_SRC_DESKTOP = "/video/bovec-hero.mp4";
+const VIDEO_SRC_MOBILE = "/video/bovec-hero-mobile.mp4";
+const POSTER_DESKTOP = "/video/bovec-hero-poster.jpg";
+const POSTER_MOBILE = "/video/bovec-hero-mobile-poster.jpg";
 
 export function VideoPreloader({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
   const [progress, setProgress] = useState(0);
+  const isMobile = useIsMobile();
+  const videoSrc = isMobile ? VIDEO_SRC_MOBILE : VIDEO_SRC_DESKTOP;
+  const posterSrc = isMobile ? POSTER_MOBILE : POSTER_DESKTOP;
 
   useEffect(() => {
     let done = false;
@@ -17,7 +24,7 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
     };
 
     const video = document.createElement("video");
-    video.src = VIDEO_SRC;
+    video.src = videoSrc;
     video.preload = "auto";
     video.muted = true;
     (video as HTMLVideoElement & { playsInline: boolean }).playsInline = true;
@@ -56,7 +63,7 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
       video.removeEventListener("progress", onProgress);
       video.removeEventListener("error", onError);
     };
-  }, []);
+  }, [videoSrc]);
 
   return (
     <>
@@ -71,7 +78,7 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundImage: "url(/video/bovec-hero-poster.jpg)",
+          backgroundImage: `url(${posterSrc})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: "#fff",

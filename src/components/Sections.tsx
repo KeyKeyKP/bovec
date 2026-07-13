@@ -3,7 +3,9 @@ import julianAlps from "@/assets/julian-alps.jpg";
 import socaCanyon from "@/assets/soca-canyon.jpg";
 import socaRiver from "@/assets/soca-river.jpg";
 import heroVideo from "@/assets/hero.mp4.asset.json";
+import heroVideoMobile from "@/assets/hero-mobile.mp4.asset.json";
 import heroPoster from "@/assets/hero-poster.jpg.asset.json";
+import { useIsMobile } from "@/hooks/use-mobile";
 import gal1 from "@/assets/gallery/1000073996-exterior.jpg.asset.json";
 import gal2 from "@/assets/gallery/1000074002-exterior.jpg.asset.json";
 import gal3 from "@/assets/gallery/1000074001-exterior.jpg.asset.json";
@@ -121,6 +123,8 @@ export function HeroSection() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [muted, setMuted] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const isMobile = useIsMobile();
+  const videoSrc = isMobile ? heroVideoMobile.url : heroVideo.url;
 
   useEffect(() => {
     const v = videoRef.current;
@@ -198,8 +202,9 @@ export function HeroSection() {
         }}
       />
       <video
+        key={videoSrc}
         ref={videoRef}
-        src={heroVideo.url}
+        src={videoSrc}
         poster={heroPoster.url}
         autoPlay
         muted
