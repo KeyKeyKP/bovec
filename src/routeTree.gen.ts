@@ -15,6 +15,7 @@ import { Route as HrRouteImport } from './routes/hr'
 import { Route as EnRouteImport } from './routes/en'
 import { Route as DeRouteImport } from './routes/de'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DownloadHeroDotmp4RouteImport } from './routes/download.hero[.]mp4'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -46,6 +47,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DownloadHeroDotmp4Route = DownloadHeroDotmp4RouteImport.update({
+  id: '/download/hero.mp4',
+  path: '/download/hero.mp4',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/hr': typeof HrRoute
   '/it': typeof ItRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/download/hero.mp4': typeof DownloadHeroDotmp4Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/hr': typeof HrRoute
   '/it': typeof ItRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/download/hero.mp4': typeof DownloadHeroDotmp4Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,13 +79,36 @@ export interface FileRoutesById {
   '/hr': typeof HrRoute
   '/it': typeof ItRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/download/hero.mp4': typeof DownloadHeroDotmp4Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/de' | '/en' | '/hr' | '/it' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/de'
+    | '/en'
+    | '/hr'
+    | '/it'
+    | '/sitemap.xml'
+    | '/download/hero.mp4'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/de' | '/en' | '/hr' | '/it' | '/sitemap.xml'
-  id: '__root__' | '/' | '/de' | '/en' | '/hr' | '/it' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/de'
+    | '/en'
+    | '/hr'
+    | '/it'
+    | '/sitemap.xml'
+    | '/download/hero.mp4'
+  id:
+    | '__root__'
+    | '/'
+    | '/de'
+    | '/en'
+    | '/hr'
+    | '/it'
+    | '/sitemap.xml'
+    | '/download/hero.mp4'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -87,6 +118,7 @@ export interface RootRouteChildren {
   HrRoute: typeof HrRoute
   ItRoute: typeof ItRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  DownloadHeroDotmp4Route: typeof DownloadHeroDotmp4Route
 }
 
 declare module '@tanstack/react-router' {
@@ -133,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/download/hero.mp4': {
+      id: '/download/hero.mp4'
+      path: '/download/hero.mp4'
+      fullPath: '/download/hero.mp4'
+      preLoaderRoute: typeof DownloadHeroDotmp4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -143,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   HrRoute: HrRoute,
   ItRoute: ItRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  DownloadHeroDotmp4Route: DownloadHeroDotmp4Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
