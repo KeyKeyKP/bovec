@@ -516,8 +516,28 @@ export function GallerySection() {
     };
   }, [lightboxIndex, close, prev, next]);
 
+  const galleryJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    name: t.gallery.title,
+    description: t.gallery.subtitle,
+    associatedMedia: GALLERY_IMAGES.map((img, i) => ({
+      "@type": "ImageObject",
+      contentUrl: `https://cottage-kobarid.si${img.url}`,
+      url: `https://cottage-kobarid.si${img.url}`,
+      name: t.gallery.alts[i] ?? `Cottage Kobarid ${i + 1}`,
+      description: t.gallery.alts[i] ?? `Cottage Kobarid ${i + 1}`,
+      caption: t.gallery.alts[i] ?? `Cottage Kobarid ${i + 1}`,
+    })),
+  };
+
   return (
     <section id="gallery" className="pt-10 pb-24 px-6" style={{ background: "var(--color-cream)" }}>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryJsonLd) }}
+      />
       <div ref={ref} className="fade-up max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl mb-4" style={{ color: "var(--color-forest)" }}>
@@ -544,6 +564,9 @@ export function GallerySection() {
                   src={img.url}
                   alt={altText}
                   loading="lazy"
+                  decoding="async"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </button>
@@ -551,6 +574,7 @@ export function GallerySection() {
           })}
         </div>
       </div>
+
 
       {lightboxIndex !== null && (
         <div
