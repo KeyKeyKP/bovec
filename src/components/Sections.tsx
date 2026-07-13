@@ -610,6 +610,7 @@ export function GallerySection() {
           <img
             src={GALLERY_IMAGES[lightboxIndex].url}
             alt={t.gallery.alts[lightboxIndex] ?? `Cottage Kobarid ${lightboxIndex + 1}`}
+            decoding="async"
             onClick={(e) => e.stopPropagation()}
 
             className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
