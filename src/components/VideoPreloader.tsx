@@ -9,6 +9,9 @@ const POSTER_MOBILE = "/video/bovec-hero-mobile-poster.jpg";
 export function VideoPreloader({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
   const [progress, setProgress] = useState(0);
+  const isMobile = useIsMobile();
+  const videoSrc = isMobile ? VIDEO_SRC_MOBILE : VIDEO_SRC_DESKTOP;
+  const posterSrc = isMobile ? POSTER_MOBILE : POSTER_DESKTOP;
 
   useEffect(() => {
     let done = false;
