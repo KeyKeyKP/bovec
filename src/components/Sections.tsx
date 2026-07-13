@@ -4,7 +4,7 @@ import socaCanyon from "@/assets/soca-canyon.jpg";
 import socaRiver from "@/assets/soca-river.jpg";
 import heroVideo from "@/assets/hero.mp4.asset.json";
 import heroVideoMobile from "@/assets/hero-mobile.mp4.asset.json";
-import heroPoster from "@/assets/hero-poster.jpg.asset.json";
+import heroPoster from "@/assets/cottage-kobarid-hero-poster.jpg.asset.json";
 import { useIsMobile } from "@/hooks/use-mobile";
 import gal1 from "@/assets/gallery/cottage-kobarid-covered-terrace-dining.jpg.asset.json";
 import gal2 from "@/assets/gallery/cottage-kobarid-pergola-lounge-mountain-view.jpg.asset.json";
