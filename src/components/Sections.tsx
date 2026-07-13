@@ -6,30 +6,30 @@ import heroVideo from "@/assets/hero.mp4.asset.json";
 import heroVideoMobile from "@/assets/hero-mobile.mp4.asset.json";
 import heroPoster from "@/assets/hero-poster.jpg.asset.json";
 import { useIsMobile } from "@/hooks/use-mobile";
-import gal1 from "@/assets/gallery/1000073996-exterior.jpg.asset.json";
-import gal2 from "@/assets/gallery/1000074002-exterior.jpg.asset.json";
-import gal3 from "@/assets/gallery/1000074001-exterior.jpg.asset.json";
-import gal4 from "@/assets/gallery/1000074003-exterior.jpg.asset.json";
-import gal5 from "@/assets/gallery/1000074004-exterior.jpg.asset.json";
-import gal6 from "@/assets/gallery/1000074005-exterior.jpg.asset.json";
-import gal7 from "@/assets/gallery/1000074006-exterior.jpg.asset.json";
-import gal8 from "@/assets/gallery/1000074007-exterior.jpg.asset.json";
-import gal9 from "@/assets/gallery/1000074008-exterior.jpg.asset.json";
-import gal10 from "@/assets/gallery/1000074009-exterior.jpg.asset.json";
-import gal11 from "@/assets/gallery/1000074010-exterior.jpg.asset.json";
-import gal12 from "@/assets/gallery/1000074011-exterior.jpg.asset.json";
-import gal13 from "@/assets/gallery/1000073995-interior.jpg.asset.json";
-import gal14 from "@/assets/gallery/1000073988-interior.jpg.asset.json";
-import gal15 from "@/assets/gallery/1000073998-interior.jpg.asset.json";
-import gal16 from "@/assets/gallery/1000073997-interior.jpg.asset.json";
-import gal17 from "@/assets/gallery/1000073991-interior.jpg.asset.json";
-import gal18 from "@/assets/gallery/1000073994-interior.jpg.asset.json";
-import gal19 from "@/assets/gallery/1000073993-interior.jpg.asset.json";
-import gal20 from "@/assets/gallery/1000073992-interior.jpg.asset.json";
-import gal21 from "@/assets/gallery/1000073989-interior.jpg.asset.json";
-import gal22 from "@/assets/gallery/1000073990-interior.jpg.asset.json";
-import gal23 from "@/assets/gallery/1000073999-interior.jpg.asset.json";
-import gal24 from "@/assets/gallery/1000074000-interior.jpg.asset.json";
+import gal1 from "@/assets/gallery/cottage-kobarid-covered-terrace-dining.jpg.asset.json";
+import gal2 from "@/assets/gallery/cottage-kobarid-pergola-lounge-mountain-view.jpg.asset.json";
+import gal3 from "@/assets/gallery/cottage-kobarid-exterior-terrace-garden.jpg.asset.json";
+import gal4 from "@/assets/gallery/cottage-kobarid-entrance-flowers-seating.jpg.asset.json";
+import gal5 from "@/assets/gallery/cottage-kobarid-aerial-view-garden-terraces.jpg.asset.json";
+import gal6 from "@/assets/gallery/cottage-kobarid-aerial-view-upper-terrace.jpg.asset.json";
+import gal7 from "@/assets/gallery/cottage-kobarid-valley-mountain-view.jpg.asset.json";
+import gal8 from "@/assets/gallery/cottage-kobarid-view-mountains-neighborhood.jpg.asset.json";
+import gal9 from "@/assets/gallery/cottage-kobarid-upper-garden-terrace-lounger.jpg.asset.json";
+import gal10 from "@/assets/gallery/cottage-kobarid-garden-lounge-outdoor-grill.jpg.asset.json";
+import gal11 from "@/assets/gallery/cottage-kobarid-fire-pit-soca-valley-view.jpg.asset.json";
+import gal12 from "@/assets/gallery/cottage-kobarid-upper-view-terrace-wooden-chairs.jpg.asset.json";
+import gal13 from "@/assets/gallery/cottage-kobarid-dining-area-kitchen.jpg.asset.json";
+import gal14 from "@/assets/gallery/cottage-kobarid-living-room-dining-sofa.jpg.asset.json";
+import gal15 from "@/assets/gallery/cottage-kobarid-bright-living-room-wooden-table.jpg.asset.json";
+import gal16 from "@/assets/gallery/cottage-kobarid-living-room-attic-stairs.jpg.asset.json";
+import gal17 from "@/assets/gallery/cottage-kobarid-attic-bedroom-four-beds.jpg.asset.json";
+import gal18 from "@/assets/gallery/cottage-kobarid-attic-bedroom-cot.jpg.asset.json";
+import gal19 from "@/assets/gallery/cottage-kobarid-attic-bedroom-single-double.jpg.asset.json";
+import gal20 from "@/assets/gallery/cottage-kobarid-family-attic-bedroom.jpg.asset.json";
+import gal21 from "@/assets/gallery/cottage-kobarid-bathroom-sink-wc.jpg.asset.json";
+import gal22 from "@/assets/gallery/cottage-kobarid-bathroom-washing-machine.jpg.asset.json";
+import gal23 from "@/assets/gallery/cottage-kobarid-compact-kitchen-induction-oven.jpg.asset.json";
+import gal24 from "@/assets/gallery/cottage-kobarid-modern-kitchen-wooden-surfaces.jpg.asset.json";
 import nearbyKobarid from "@/assets/nearby/kobarid.jpg.asset.json";
 import nearbyBoka from "@/assets/nearby/boka.jpg.asset.json";
 import nearbySocaGorge1 from "@/assets/nearby/soca-gorge-1.jpg.asset.json";
@@ -516,8 +516,28 @@ export function GallerySection() {
     };
   }, [lightboxIndex, close, prev, next]);
 
+  const galleryJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    name: t.gallery.title,
+    description: t.gallery.subtitle,
+    associatedMedia: GALLERY_IMAGES.map((img, i) => ({
+      "@type": "ImageObject",
+      contentUrl: `https://cottage-kobarid.si${img.url}`,
+      url: `https://cottage-kobarid.si${img.url}`,
+      name: t.gallery.alts[i] ?? `Cottage Kobarid ${i + 1}`,
+      description: t.gallery.alts[i] ?? `Cottage Kobarid ${i + 1}`,
+      caption: t.gallery.alts[i] ?? `Cottage Kobarid ${i + 1}`,
+    })),
+  };
+
   return (
     <section id="gallery" className="pt-10 pb-24 px-6" style={{ background: "var(--color-cream)" }}>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryJsonLd) }}
+      />
       <div ref={ref} className="fade-up max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl mb-4" style={{ color: "var(--color-forest)" }}>
@@ -544,6 +564,9 @@ export function GallerySection() {
                   src={img.url}
                   alt={altText}
                   loading="lazy"
+                  decoding="async"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </button>
@@ -551,6 +574,7 @@ export function GallerySection() {
           })}
         </div>
       </div>
+
 
       {lightboxIndex !== null && (
         <div
@@ -586,6 +610,7 @@ export function GallerySection() {
           <img
             src={GALLERY_IMAGES[lightboxIndex].url}
             alt={t.gallery.alts[lightboxIndex] ?? `Cottage Kobarid ${lightboxIndex + 1}`}
+            decoding="async"
             onClick={(e) => e.stopPropagation()}
 
             className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
