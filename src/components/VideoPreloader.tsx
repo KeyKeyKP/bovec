@@ -63,7 +63,7 @@ export function VideoPreloader({ children }: { children: ReactNode }) {
       video.removeEventListener("progress", onProgress);
       video.removeEventListener("error", onError);
     };
-  }, []);
+  }, [videoSrc]);
 
   return (
     <>
