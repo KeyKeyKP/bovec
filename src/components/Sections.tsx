@@ -211,7 +211,7 @@ export function HeroSection() {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover scale-[1.6] md:scale-100 origin-center"
+        className="absolute inset-0 w-full h-full object-cover"
       />
       <audio ref={audioRef} src={glasbaAsset.url} loop preload="auto" />
 
