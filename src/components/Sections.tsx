@@ -2,9 +2,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import julianAlps from "@/assets/julian-alps.jpg";
 import socaCanyon from "@/assets/soca-canyon.jpg";
 import socaRiver from "@/assets/soca-river.jpg";
-import heroVideo from "@/assets/hero.mp4.asset.json";
-
-import heroPoster from "@/assets/cottage-kobarid-hero-poster.jpg.asset.json";
 
 import gal1 from "@/assets/gallery/cottage-kobarid-covered-terrace-dining.jpg.asset.json";
 import gal2 from "@/assets/gallery/cottage-kobarid-pergola-lounge-mountain-view.jpg.asset.json";
@@ -115,14 +112,21 @@ function useReveal<T extends HTMLElement>() {
 
 import glasbaAsset from "@/assets/glasba.mp3.asset.json";
 
+// Hero video in poster živita v public/video/ in se servirata naravnost.
+// Mobilna različica je pravi 9:16 izrez (608x1080) — ležeči 16:9 je na telefonu
+// odrezal 74 % širine. Vsak video ima svoj poster, ki je TOČNO njegova prva
+// sličica, zato ob zagonu ni vidnega preskoka.
+const HERO_VIDEO_DESKTOP = "/video/cottage-kobarid-hero-desktop.mp4";
+const HERO_VIDEO_MOBILE = "/video/cottage-kobarid-hero-mobile.mp4";
+const HERO_POSTER_DESKTOP = "/video/cottage-kobarid-hero-desktop-poster.jpg";
+const HERO_POSTER_MOBILE = "/video/cottage-kobarid-hero-mobile-poster.jpg";
+
 export function HeroSection() {
   const { t } = useLang();
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [muted, setMuted] = useState(false);
   const [playing, setPlaying] = useState(false);
-  
-  const videoSrc = heroVideo.url;
 
   useEffect(() => {
     const v = videoRef.current;
@@ -138,11 +142,14 @@ export function HeroSection() {
     if (!a) return;
     a.volume = 0.5;
     a.muted = true;
+    a.play().catch(() => {});
     let done = false;
     const cleanup = () => {
       window.removeEventListener("click", start, true);
       window.removeEventListener("touchstart", start, true);
       window.removeEventListener("keydown", start, true);
+      window.removeEventListener("scroll", start, true);
+      window.removeEventListener("wheel", start, true);
       window.removeEventListener("pointerdown", start, true);
     };
     const start = () => {
@@ -171,6 +178,8 @@ export function HeroSection() {
     window.addEventListener("touchstart", start, true);
     window.addEventListener("keydown", start, true);
     window.addEventListener("pointerdown", start, true);
+    window.addEventListener("scroll", start, true);
+    window.addEventListener("wheel", start, true);
     return cleanup;
   }, []);
 
@@ -187,26 +196,29 @@ export function HeroSection() {
     <section id="home" className="relative h-screen min-h-[600px] w-full overflow-hidden">
       <div
         aria-hidden
-        className={`absolute inset-0 transition-opacity duration-700 ${playing ? "opacity-0" : "opacity-100"}`}
-        style={{
-          backgroundImage: `url(${heroPoster.url})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 md:hidden ${playing ? "opacity-0" : "opacity-100"}`}
+        style={{ backgroundImage: `url(${HERO_POSTER_MOBILE})` }}
+      />
+      <div
+        aria-hidden
+        className={`absolute inset-0 hidden bg-cover bg-center transition-opacity duration-700 md:block ${playing ? "opacity-0" : "opacity-100"}`}
+        style={{ backgroundImage: `url(${HERO_POSTER_DESKTOP})` }}
       />
       <video
-        key={videoSrc}
         ref={videoRef}
-        src={videoSrc}
-        poster={heroPoster.url}
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
-      />
-      <audio ref={audioRef} src={glasbaAsset.url} loop preload="none" />
+      >
+        {/* Brskalnik izbere vir ob nalaganju; media se ob spremembi velikosti okna
+            ne ovrednoti znova, kar je za nastanitveno stran sprejemljivo. */}
+        <source src={HERO_VIDEO_MOBILE} media="(max-width: 767px)" type="video/mp4" />
+        <source src={HERO_VIDEO_DESKTOP} type="video/mp4" />
+      </video>
+      <audio ref={audioRef} src={glasbaAsset.url} loop preload="auto" />
 
       <button
         type="button"

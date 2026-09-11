@@ -99,18 +99,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap",
       },
-      // Hero poster je LCP element, zato ostane prednostno naložen.
+      // Hero poster je LCP element, zato je prednostno naložen — ločeno za vsako
+      // napravo, ker je mobilni hero navpičen (9:16), namizni pa ležeč (16:9).
+      // Poster je točno prva sličica pripadajočega videa, zato je prehod neopazen.
       {
         rel: "preload",
         as: "image",
-        href: "/__l5e/assets-v1/8f4d4b44-f443-4c6e-b2ee-8ea6fbc32eb4/cottage-kobarid-hero-poster.jpg",
+        href: "/video/cottage-kobarid-hero-desktop-poster.jpg",
+        media: "(min-width: 768px)",
         fetchPriority: "high",
       },
-      // Preload hero videa (rel="preload" as="video") je odstranjen: hero.mp4 je
-      // 21,9 MB / 96 s, brskalniki pa as="video" pri medijih večinoma ignorirajo,
-      // ker se video nalaga z range zahtevami — v najboljšem primeru ni pohitril
-      // ničesar, v najslabšem je prenesel 22 MB dvakrat.
-      // Zagon videa poganjata autoPlay in preload="auto" na elementu v HeroSection.
+      {
+        rel: "preload",
+        as: "image",
+        href: "/video/cottage-kobarid-hero-mobile-poster.jpg",
+        media: "(max-width: 767px)",
+        fetchPriority: "high",
+      },
+      // Preload hero videa (rel="preload" as="video") je odstranjen: brskalniki
+      // as="video" pri medijih večinoma ignorirajo, ker se video nalaga z range
+      // zahtevami, v najslabšem primeru pa isto datoteko prenesejo dvakrat.
+      // Zagon poganjata autoPlay in preload="auto" na elementu v HeroSection.
+      // Hitrost zagona določa bitni tok, ne skupna teža: 1,23 Mb/s namizno in
+      // 0,89 Mb/s mobilno pomeni, da je nekaj sekund posnetka naloženih takoj.
     ],
   }),
   shellComponent: RootShell,
