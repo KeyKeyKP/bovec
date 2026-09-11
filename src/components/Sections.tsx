@@ -87,8 +87,6 @@ import {
   Droplets,
   Wind,
   MapPin,
-  Facebook,
-  Instagram,
   X,
   ChevronLeft,
   ChevronRight,
@@ -140,14 +138,11 @@ export function HeroSection() {
     if (!a) return;
     a.volume = 0.5;
     a.muted = true;
-    a.play().catch(() => {});
     let done = false;
     const cleanup = () => {
       window.removeEventListener("click", start, true);
       window.removeEventListener("touchstart", start, true);
       window.removeEventListener("keydown", start, true);
-      window.removeEventListener("scroll", start, true);
-      window.removeEventListener("wheel", start, true);
       window.removeEventListener("pointerdown", start, true);
     };
     const start = () => {
@@ -176,8 +171,6 @@ export function HeroSection() {
     window.addEventListener("touchstart", start, true);
     window.addEventListener("keydown", start, true);
     window.addEventListener("pointerdown", start, true);
-    window.addEventListener("scroll", start, true);
-    window.addEventListener("wheel", start, true);
     return cleanup;
   }, []);
 
@@ -210,10 +203,10 @@ export function HeroSection() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <audio ref={audioRef} src={glasbaAsset.url} loop preload="auto" />
+      <audio ref={audioRef} src={glasbaAsset.url} loop preload="none" />
 
       <button
         type="button"
@@ -225,10 +218,14 @@ export function HeroSection() {
       </button>
 
       <div className="relative h-full flex flex-col items-center text-center px-6 text-white max-w-4xl mx-auto pt-[55vh] md:pt-[60vh]" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.45)" }}>
-        <h1 className="sr-only">Cottage Kobarid — Počitniška hiša za najem</h1>
-        <p className="italic text-xl md:text-2xl font-light opacity-95" style={{ letterSpacing: "0.01em" }}>
-          {t.hero.tagline}
-        </p>
+        <h1 className="flex flex-col items-center gap-3">
+          <span className="text-sm md:text-base uppercase font-semibold opacity-90" style={{ letterSpacing: "0.18em" }}>
+            {t.hero.h1}
+          </span>
+          <span className="italic text-xl md:text-2xl font-light opacity-95" style={{ letterSpacing: "0.01em" }}>
+            {t.hero.tagline}
+          </span>
+        </h1>
         <p className="mt-6 max-w-2xl text-lg md:text-xl font-light" style={{ lineHeight: 1.6 }}>
           {t.hero.subtitle}
         </p>
@@ -643,8 +640,8 @@ export function LocationSection() {
               5222 Kobarid
             </p>
             <p><strong>Email:</strong> <a href="mailto:cottage_kobarid@gmail.com" className="hover:underline">cottage_kobarid@gmail.com</a></p>
-            <p><strong>GSM Alen:</strong> <a href="tel:+38641322720" className="hover:underline">00386 41 322 720</a></p>
-            <p><strong>GSM Danijela:</strong> <a href="tel:+38640789122" className="hover:underline">00386 40 789 122</a></p>
+            <p><strong>GSM Alen:</strong> <a href="tel:+38641322720" className="hover:underline">+386 41 322 720</a></p>
+            <p><strong>GSM Danijela:</strong> <a href="tel:+38640789122" className="hover:underline">+386 40 789 122</a></p>
           </div>
           <div className="flex flex-wrap gap-3">
             {[
@@ -691,7 +688,7 @@ export function Footer() {
   ];
   return (
     <footer style={{ background: "var(--color-charcoal)", color: "var(--color-cream)" }} className="pt-16 pb-6 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <h3 className="text-white font-bold text-lg mb-4">{t.footer.aboutTitle}</h3>
           <p className="text-sm" style={{ color: "var(--color-sand)" }}>
@@ -703,8 +700,8 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             <li>📍 Kobarid, Slovenija</li>
             <li>✉️ <a href="mailto:cottage_kobarid@gmail.com" className="hover:underline">cottage_kobarid@gmail.com</a></li>
-            <li>📞 Alen: <a href="tel:+38641322720" className="hover:underline">00386 41 322 720</a></li>
-            <li>📞 Danijela: <a href="tel:+38640789122" className="hover:underline">00386 40 789 122</a></li>
+            <li>📞 Alen: <a href="tel:+38641322720" className="hover:underline">+386 41 322 720</a></li>
+            <li>📞 Danijela: <a href="tel:+38640789122" className="hover:underline">+386 40 789 122</a></li>
           </ul>
         </div>
         <div>
@@ -719,37 +716,16 @@ export function Footer() {
             ))}
           </ul>
         </div>
-        <div>
-          <h3 className="text-white font-bold text-lg mb-4">{t.footer.socialTitle}</h3>
-          <div className="flex gap-4">
-            {/* TODO: add FB page URL */}
-            <a
-              href="https://facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="text-white hover:text-[var(--color-soca)] transition-colors"
-            >
-              <Facebook size={24} />
-            </a>
-            {/* TODO: add IG handle */}
-            <a
-              href="https://instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-white hover:text-[var(--color-soca)] transition-colors"
-            >
-              <Instagram size={24} />
-            </a>
-          </div>
-        </div>
+        {/* Stolpec "Sledite nam" je odstranjen, dokler stranka ne odpre pravih
+            Facebook in Instagram profilov. Prazna placeholder povezava skodi
+            zaupanju in je bila tudi v JSON-LD sameAs. Ko profila obstajata:
+            vrni ta stolpec s pravima URL-jema in ju dodaj v buildBusinessJsonLd. */}
       </div>
       <div
         className="max-w-7xl mx-auto mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs"
         style={{ borderTop: "1px solid rgba(255,255,255,0.1)", color: "var(--color-text-muted)" }}
       >
-        <p>{t.footer.rights}</p>
+        <p>© {new Date().getFullYear()} {t.footer.rights}</p>
         <p>
           {t.footer.siteBy}{" "}
           <a href="https://keykey.si" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">

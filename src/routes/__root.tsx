@@ -91,18 +91,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      // Pisava je bila prej naložena samo na slovenski strani — /en, /de, /it in /hr
+      // so se izrisovali s sistemsko pisavo. Zdaj velja za vse jezike.
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap",
+      },
+      // Hero poster je LCP element, zato ostane prednostno naložen.
       {
         rel: "preload",
         as: "image",
         href: "/__l5e/assets-v1/8f4d4b44-f443-4c6e-b2ee-8ea6fbc32eb4/cottage-kobarid-hero-poster.jpg",
         fetchpriority: "high",
       },
-      {
-        rel: "preload",
-        as: "video",
-        href: "/__l5e/assets-v1/8f19783e-f025-4f9b-beb9-d7955408b01a/hero.mp4",
-        type: "video/mp4",
-      },
+      // Preload hero videa je odstranjen: hero.mp4 je 21,9 MB / 96 s, kar je pred
+      // prvo interakcijo prenašalo ~5 MB in zamikalo LCP, predvsem na mobilnih.
+      // Video se naloži ob predvajanju (preload="metadata" v HeroSection).
     ],
   }),
   shellComponent: RootShell,

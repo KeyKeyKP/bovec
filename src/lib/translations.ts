@@ -16,7 +16,7 @@ export interface ActivityItem {
 export interface Translation {
   nav: { home: string; about: string; activities: string; gallery: string; booking: string; contact: string };
   gallery: { title: string; subtitle: string; alts: string[] };
-  hero: { title: string; tagline: string; subtitle: string; cta: string };
+  hero: { title: string; h1: string; tagline: string; subtitle: string; cta: string };
 
   about: { title: string; body1: string; body2: string; body3?: string; body4?: string; body5?: string; body6?: string; body7?: string; body8?: string };
   romantic: { title: string; body1: string; body2: string; body3: string };
@@ -179,6 +179,7 @@ export const translations: Record<Lang, Translation> = {
     },
     hero: {
       title: "Cottage Kobarid",
+      h1: "Počitniška hiša Cottage Kobarid — nastanitev v dolini Soče",
       tagline: "Kjer Soča šepeta in gore molčijo",
       subtitle: "Vaš dom v srcu soške doline — izhodišče za pustolovščine, pribežališče za dušo.",
       cta: "Preveri razpoložljivost",
@@ -189,7 +190,7 @@ export const translations: Record<Lang, Translation> = {
       body2: "Njena posebnost je izjemno mirna lega v objemu narave, kjer vas namesto mestnega vrveža spremljajo le petje ptic, šumenje bližnjega potoka in pomirjujoči zvoki gozda. Z zgornje terase se odpira čudovit pogled na Krn ter okoliške hribe in dolino.",
       body3: "V pritličju vas pričaka prostoren dnevni prostor s udobno kotno garnituro, jedilno mizo s klopmi ter klimatsko napravo, ki zagotavlja prijetno temperaturo skozi vse leto. Kuhinja je popolnoma opremljena za pripravo obrokov in vključuje pomivalni stroj, indukcijsko kuhalno ploščo, pečico, napo, grelnik vode ter hladilnik z zamrzovalnikom.",
       body4: "Kopalnica je opremljena s tušem, umivalnikom, WC-jem, pralnim strojem, sušilcem za lase in električnim grelnikom vode.",
-      body5: "V mansardi sta na voljo dve udobni zakonski postelji (150 × 200 cm) in ena enojna postelja (90 × 200 cm), kar omogoča udobno bivanje do petim osebam. Za dodatno udobje so v prostoru klimatska naprava, garderobna omara in otroška posteljica, zato je nastanitev primerna tudi za družine z majhnimi otroki.",
+      body5: "V mansardi sta na voljo dve udobni zakonski postelji (150 × 200 cm) in ena enojna postelja (90 × 200 cm), kar omogoča udobno bivanje do petih oseb. Za dodatno udobje so v prostoru klimatska naprava, garderobna omara in otroška posteljica, zato je nastanitev primerna tudi za družine z majhnimi otroki.",
       body6: "Za prijetno druženje na prostem so na voljo pokrita terasa za hišo, pergola s sedežno garnituro pred hišo, zunanji žar ter prostor za posedanje ob ognju. Na zgornji terasi lahko ob jutranji kavi ali večernem sončnem zahodu uživate v neokrnjeni naravi in osupljivih razgledih.",
       body7: "Kobarid in njegova okolica ponujata številne možnosti za aktivno preživljanje prostega časa: najem koles, rafting, kanjoning, jadralno padalstvo, ribolov in še mnogo več. Ljubitelji mirnejšega oddiha lahko raziskujejo gozdne poti ali se osvežijo v bližnji reki Nadiži.",
       body8: "Med najbolj priljubljenimi znamenitostmi so Slap Kozjak, Kobariški muzej ter Italijanska kostnica Kobarid. Širša okolica navdušuje z bogato dediščino prve svetovne vojne, smaragdnimi rekami in neokrnjeno naravo, ki ponuja nešteto možnosti za raziskovanje, športne aktivnosti in popoln oddih.",
@@ -226,10 +227,10 @@ export const translations: Record<Lang, Translation> = {
       contactTitle: "Kontakt",
       quickLinksTitle: "Hitre povezave",
       socialTitle: "Sledite nam",
-      rights: "© 2025 Cottage Kobarid. Vse pravice pridržane.",
+      rights: "Cottage Kobarid. Vse pravice pridržane.",
       siteBy: "Spletna stran:",
     },
-    meta: { title: "Cottage Kobarid – Počitniška hiša za najem | Dolina Soče, Kobarid", description: "Počitnice v Kobaridu – luksuzna počitniška hiša za najem v dolini Soče. Idealno izhodišče za rafting, pohodništvo in aktivne počitnice v Julijskih Alpah." },
+    meta: { title: "Počitniška hiša Kobarid | Nastanitev v dolini Soče", description: "Počitniška hiša za najem v Kobaridu, dolina Soče — nastanitev za 5 oseb, terasa z razgledom na gore, parkirišče. Izhodišče za rafting, pohodništvo in kolesarjenje." },
   },
   hr: {
     nav: { home: "Početna", about: "O kući", activities: "Aktivnosti", gallery: "Galerija", booking: "Rezerviraj", contact: "Kontakt" },
@@ -265,6 +266,7 @@ export const translations: Record<Lang, Translation> = {
     },
     hero: {
       title: "Cottage Kobarid",
+      h1: "Cottage Kobarid — kuća za odmor i smještaj u dolini Soče",
       tagline: "Gdje Soča šapuće i planine šute",
       subtitle: "Vaš dom u srcu doline Soče — polazište za avanture, utočište za dušu.",
       cta: "Provjeri dostupnost",
@@ -312,10 +314,10 @@ export const translations: Record<Lang, Translation> = {
       contactTitle: "Kontakt",
       quickLinksTitle: "Brze poveznice",
       socialTitle: "Pratite nas",
-      rights: "© 2025 Cottage Kobarid. Sva prava pridržana.",
+      rights: "Cottage Kobarid. Sva prava pridržana.",
       siteBy: "Web stranica:",
     },
-    meta: { title: "Cottage Kobarid — Najam kuće u dolini Soče", description: "Luksuzna kuća u Kobaridu, u srcu Triglavskog nacionalnog parka. Idealno polazište za rafting, planinarenje i avanture." },
+    meta: { title: "Kuća za odmor Kobarid | Smještaj u dolini Soče", description: "Kuća za odmor u Kobaridu, dolina Soče — smještaj za 5 osoba, terasa s pogledom na planine, parking. Idealno polazište za rafting, planinarenje i bicikliranje." },
   },
   it: {
     nav: { home: "Home", about: "La casa", activities: "Attività", gallery: "Galleria", booking: "Prenota", contact: "Contatti" },
@@ -351,6 +353,7 @@ export const translations: Record<Lang, Translation> = {
     },
     hero: {
       title: "Cottage Kobarid",
+      h1: "Cottage Kobarid — casa vacanze a Caporetto, Valle dell'Isonzo",
       tagline: "Dove la Soča sussurra e le montagne tacciono",
       subtitle: "La vostra casa nel cuore della Valle dell'Isonzo — punto di partenza per avventure, rifugio per l'anima.",
       cta: "Verifica disponibilità",
@@ -398,10 +401,10 @@ export const translations: Record<Lang, Translation> = {
       contactTitle: "Contatti",
       quickLinksTitle: "Link rapidi",
       socialTitle: "Seguici",
-      rights: "© 2025 Cottage Kobarid. Tutti i diritti riservati.",
+      rights: "Cottage Kobarid. Tutti i diritti riservati.",
       siteBy: "Sito web:",
     },
-    meta: { title: "Cottage Kobarid — Affitto casa nella Valle della Soča", description: "Casa di lusso a Kobarid, nel cuore del Parco Nazionale del Triglav. Punto di partenza ideale per rafting, escursioni e avventure." },
+    meta: { title: "Casa vacanze Caporetto (Kobarid) | Valle dell'Isonzo", description: "Casa vacanze in affitto a Caporetto (Kobarid), Valle dell'Isonzo — alloggio per 5 persone, terrazza panoramica, parcheggio. Base ideale per rafting ed escursioni." },
   },
   en: {
     nav: { home: "Home", about: "The House", activities: "Activities", gallery: "Gallery", booking: "Book", contact: "Contact" },
@@ -437,6 +440,7 @@ export const translations: Record<Lang, Translation> = {
     },
     hero: {
       title: "Cottage Kobarid",
+      h1: "Cottage Kobarid — holiday house and accommodation in the Soča Valley",
       tagline: "Where the Soča whispers and mountains stand still",
       subtitle: "Your home in the heart of the Soča Valley — a base for adventure, a refuge for the soul.",
       cta: "Check Availability",
@@ -484,10 +488,10 @@ export const translations: Record<Lang, Translation> = {
       contactTitle: "Contact",
       quickLinksTitle: "Quick links",
       socialTitle: "Follow us",
-      rights: "© 2025 Cottage Kobarid. All rights reserved.",
+      rights: "Cottage Kobarid. All rights reserved.",
       siteBy: "Website:",
     },
-    meta: { title: "Cottage Kobarid — House Rental in the Soča Valley", description: "Luxury house in Kobarid, in the heart of Triglav National Park. Ideal base for rafting, hiking and adventures in the Soča Valley." },
+    meta: { title: "Holiday House Kobarid | Accommodation in the Soča Valley", description: "Holiday house for rent in Kobarid, Soča Valley — accommodation for 5 guests, terrace with mountain views, parking. Ideal base for rafting, hiking and cycling." },
   },
   de: {
     nav: { home: "Start", about: "Das Haus", activities: "Aktivitäten", gallery: "Galerie", booking: "Buchen", contact: "Kontakt" },
@@ -523,6 +527,7 @@ export const translations: Record<Lang, Translation> = {
     },
     hero: {
       title: "Cottage Kobarid",
+      h1: "Cottage Kobarid — Ferienhaus und Unterkunft im Soča-Tal",
       tagline: "Wo die Soča flüstert und die Berge schweigen",
       subtitle: "Ihr Zuhause im Herzen des Soča-Tals — Ausgangspunkt für Abenteuer, Zuflucht für die Seele.",
       cta: "Verfügbarkeit prüfen",
@@ -570,10 +575,10 @@ export const translations: Record<Lang, Translation> = {
       contactTitle: "Kontakt",
       quickLinksTitle: "Schnelllinks",
       socialTitle: "Folgen Sie uns",
-      rights: "© 2025 Cottage Kobarid. Alle Rechte vorbehalten.",
+      rights: "Cottage Kobarid. Alle Rechte vorbehalten.",
       siteBy: "Webseite:",
     },
-    meta: { title: "Cottage Kobarid — Hausvermietung im Soča-Tal", description: "Luxushaus in Kobarid, im Herzen des Triglav-Nationalparks. Idealer Ausgangspunkt für Rafting, Wandern und Abenteuer im Soča-Tal." },
+    meta: { title: "Ferienhaus Kobarid | Unterkunft im Soča-Tal, Slowenien", description: "Ferienhaus in Kobarid, Soča-Tal — Unterkunft für 5 Personen, Terrasse mit Bergblick, Parkplatz. Idealer Ausgangspunkt für Rafting, Wandern und Radfahren." },
   },
 };
 

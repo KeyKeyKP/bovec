@@ -50,6 +50,24 @@ function escapeXml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
 }
 
+// Datum zadnje vsebinske spremembe. Posodobi ročno ob spremembi besedil —
+// lastmod, ki se premakne ob vsakem deployu, Google prezre.
+const CONTENT_LAST_MODIFIED = "2026-09-11";
+
+// Jezikovne različice iste strani; uporabljeno za xhtml:link hreflang v vsakem <url>.
+const LANG_PATHS: Array<[string, string]> = [
+  ["sl", "/"],
+  ["hr", "/hr"],
+  ["it", "/it"],
+  ["en", "/en"],
+  ["de", "/de"],
+];
+
+const ALTERNATE_LINKS = [
+  ...LANG_PATHS.map(([lang, path]) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${BASE_URL}${path}"/>`),
+  `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en"/>`,
+].join("\n");
+
 interface SitemapEntry {
   path: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
@@ -70,17 +88,19 @@ export const Route = createFileRoute("/sitemap.xml")({
           .filter((v): v is NonNullable<typeof v> => v !== null);
 
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0", images: galleryImageEntries },
-          { path: "/en", changefreq: "weekly", priority: "0.9" },
-          { path: "/de", changefreq: "weekly", priority: "0.9" },
-          { path: "/it", changefreq: "weekly", priority: "0.9" },
-          { path: "/hr", changefreq: "weekly", priority: "0.9" },
+          { path: "/", changefreq: "monthly", priority: "1.0", images: galleryImageEntries },
+          { path: "/en", changefreq: "monthly", priority: "0.9" },
+          { path: "/de", changefreq: "monthly", priority: "0.9" },
+          { path: "/it", changefreq: "monthly", priority: "0.9" },
+          { path: "/hr", changefreq: "monthly", priority: "0.9" },
         ];
 
         const urls = entries.map((e) => {
           const lines: string[] = [`  <url>`, `    <loc>${BASE_URL}${e.path}</loc>`];
+          lines.push(`    <lastmod>${CONTENT_LAST_MODIFIED}</lastmod>`);
           if (e.changefreq) lines.push(`    <changefreq>${e.changefreq}</changefreq>`);
           if (e.priority) lines.push(`    <priority>${e.priority}</priority>`);
+          lines.push(ALTERNATE_LINKS);
           if (e.images) {
             for (const img of e.images) {
               lines.push(`    <image:image>`);
@@ -96,7 +116,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
-          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`,
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`,
           ...urls,
           `</urlset>`,
         ].join("\n");
