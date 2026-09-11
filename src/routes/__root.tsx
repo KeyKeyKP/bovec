@@ -106,9 +106,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "/__l5e/assets-v1/8f4d4b44-f443-4c6e-b2ee-8ea6fbc32eb4/cottage-kobarid-hero-poster.jpg",
         fetchPriority: "high",
       },
-      // Preload hero videa je odstranjen: hero.mp4 je 21,9 MB / 96 s, kar je pred
-      // prvo interakcijo prenašalo ~5 MB in zamikalo LCP, predvsem na mobilnih.
-      // Video se naloži ob predvajanju (preload="metadata" v HeroSection).
+      // Preload hero videa (rel="preload" as="video") je odstranjen: hero.mp4 je
+      // 21,9 MB / 96 s, brskalniki pa as="video" pri medijih večinoma ignorirajo,
+      // ker se video nalaga z range zahtevami — v najboljšem primeru ni pohitril
+      // ničesar, v najslabšem je prenesel 22 MB dvakrat.
+      // Zagon videa poganjata autoPlay in preload="auto" na elementu v HeroSection.
     ],
   }),
   shellComponent: RootShell,
