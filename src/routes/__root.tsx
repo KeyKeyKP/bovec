@@ -93,6 +93,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       // Pisava je bila prej naložena samo na slovenski strani — /en, /de, /it in /hr
       // so se izrisovali s sistemsko pisavo. Zdaj velja za vse jezike.
+      // Ikona strani. Google jo v rezultatih na mobilnih napravah prikaže poleg naslova;
+      // brez nje je rezultat videti nedokončan. SVG za sodobne brskalnike, ICO za ostale.
+      { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

@@ -116,6 +116,12 @@ import glasbaAsset from "@/assets/glasba.mp3.asset.json";
 // Mobilna različica je pravi 9:16 izrez (608x1080) — ležeči 16:9 je na telefonu
 // odrezal 74 % širine. Vsak video ima svoj poster, ki je TOČNO njegova prva
 // sličica, zato ob zagonu ni vidnega preskoka.
+// Ocena z Bookinga — javen podatek, prikazan kot družbeni dokaz s povezavo na vir.
+// NAMENOMA ni v strukturiranih podatkih: Google ne dovoli, da tuje ocene označiš
+// kot svoje (aggregateRating), in to sankcionira. Ob večji spremembi posodobi ročno.
+const BOOKING_URL = "https://www.booking.com/hotel/si/cosy-cottage-with-views-near-kobarid.html";
+const BOOKING_REVIEWS = 27;
+
 const HERO_VIDEO_DESKTOP = "/video/cottage-kobarid-hero-desktop.mp4";
 const HERO_VIDEO_MOBILE = "/video/cottage-kobarid-hero-mobile.mp4";
 const HERO_POSTER_DESKTOP = "/video/cottage-kobarid-hero-desktop-poster.jpg";
@@ -671,6 +677,28 @@ export function LocationSection() {
               </span>
             ))}
           </div>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-4 rounded-xl px-5 py-4 transition hover:shadow-md"
+            style={{ background: "var(--color-soca-light)", border: "1px solid var(--color-sand)" }}
+          >
+            <span
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-lg font-bold text-white"
+              style={{ background: "var(--color-forest)" }}
+            >
+              {t.bookingRating.score}
+            </span>
+            <span className="text-left leading-tight">
+              <span className="block font-semibold" style={{ color: "var(--color-forest)" }}>
+                {t.bookingRating.label}
+              </span>
+              <span className="block text-sm" style={{ color: "var(--color-text-muted)" }}>
+                {BOOKING_REVIEWS} {t.bookingRating.reviews}
+              </span>
+            </span>
+          </a>
         </div>
         <div className="rounded-2xl overflow-hidden min-h-[320px] h-full shadow-lg">
           <iframe
@@ -711,7 +739,7 @@ export function Footer() {
           <h3 className="text-white font-bold text-lg mb-4">{t.footer.contactTitle}</h3>
           <ul className="space-y-2 text-sm">
             <li>📍 Kobarid, Slovenija</li>
-            <li>✉️ <a href="mailto:cottage_kobarid@gmail.com" className="hover:underline">cottage_kobarid@gmail.com</a></li>
+            <li>✉️ <a href="mailto:cottage.kobarid@gmail.com" className="hover:underline">cottage.kobarid@gmail.com</a></li>
             <li>📞 Alen: <a href="tel:+38641322720" className="hover:underline">+386 41 322 720</a></li>
             <li>📞 Danijela: <a href="tel:+38640789122" className="hover:underline">+386 40 789 122</a></li>
           </ul>

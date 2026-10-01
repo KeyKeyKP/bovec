@@ -24,6 +24,7 @@ export interface Translation {
   seasons: { title: string; body: string; cards: SeasonCard[] };
   booking: { title: string; subtitle: string; cta: string };
   location: { title: string; body: string };
+  bookingRating: { label: string; reviews: string; score: string };
   footer: {
     aboutTitle: string;
     aboutBody: string;
@@ -230,6 +231,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "Cottage Kobarid. Vse pravice pridržane.",
       siteBy: "Spletna stran:",
     },
+    bookingRating: { label: "Ocena gostov na Booking.com", reviews: "mnenj", score: "9,3" },
     meta: { title: "Počitniška hiša Kobarid | Nastanitev v dolini Soče", description: "Počitniška hiša za najem v Kobaridu, dolina Soče — nastanitev za 5 oseb, terasa z razgledom na gore, parkirišče. Izhodišče za rafting, pohodništvo in kolesarjenje." },
   },
   hr: {
@@ -317,6 +319,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "Cottage Kobarid. Sva prava pridržana.",
       siteBy: "Web stranica:",
     },
+    bookingRating: { label: "Ocjena gostiju na Booking.com", reviews: "recenzija", score: "9,3" },
     meta: { title: "Kuća za odmor Kobarid | Smještaj u dolini Soče", description: "Kuća za odmor u Kobaridu, dolina Soče — smještaj za 5 osoba, terasa s pogledom na planine, parking. Idealno polazište za rafting, planinarenje i bicikliranje." },
   },
   it: {
@@ -404,6 +407,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "Cottage Kobarid. Tutti i diritti riservati.",
       siteBy: "Sito web:",
     },
+    bookingRating: { label: "Valutazione degli ospiti su Booking.com", reviews: "recensioni", score: "9,3" },
     meta: { title: "Casa vacanze Caporetto (Kobarid) | Valle dell'Isonzo", description: "Casa vacanze in affitto a Caporetto (Kobarid), Valle dell'Isonzo — alloggio per 5 persone, terrazza panoramica, parcheggio. Base ideale per rafting ed escursioni." },
   },
   en: {
@@ -491,6 +495,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "Cottage Kobarid. All rights reserved.",
       siteBy: "Website:",
     },
+    bookingRating: { label: "Guest rating on Booking.com", reviews: "reviews", score: "9.3" },
     meta: { title: "Holiday House Kobarid | Accommodation in the Soča Valley", description: "Holiday house for rent in Kobarid, Soča Valley — accommodation for 5 guests, terrace with mountain views, parking. Ideal base for rafting, hiking and cycling." },
   },
   de: {
@@ -578,6 +583,7 @@ export const translations: Record<Lang, Translation> = {
       rights: "Cottage Kobarid. Alle Rechte vorbehalten.",
       siteBy: "Webseite:",
     },
+    bookingRating: { label: "Gästebewertung auf Booking.com", reviews: "Bewertungen", score: "9,3" },
     meta: { title: "Ferienhaus Kobarid | Unterkunft im Soča-Tal, Slowenien", description: "Ferienhaus in Kobarid, Soča-Tal — Unterkunft für 5 Personen, Terrasse mit Bergblick, Parkplatz. Idealer Ausgangspunkt für Rafting, Wandern und Radfahren." },
   },
 };

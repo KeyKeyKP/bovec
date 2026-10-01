@@ -33,3 +33,6 @@ dist-ssr
 
 # Lokalna delovna mapa za video (prenosi, prekodiranja) — nikoli v repozitorij
 _video/
+
+# Mapa, kamor Cowork odlaga delovne datoteke (poročila, osnutki) — ni del projekta
+Claude outputs/

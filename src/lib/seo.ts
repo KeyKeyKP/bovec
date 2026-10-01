@@ -63,7 +63,11 @@ export function buildBusinessJsonLd(lang: Lang) {
 
   return {
     "@context": "https://schema.org",
-    "@type": ["VacationRental", "LodgingBusiness"],
+    // Samo LodgingBusiness. VacationRental je bil odstranjen 1. 10. 2026: Google zanj
+    // zahteva polji containsPlace in identifier, brez njiju pa v Search Console javlja
+    // neveljavne elemente (poročilo Holiday rental). Ko dobimo število spalnic in
+    // kopalnic od lastnika, lahko tip vrnemo skupaj s tema poljema.
+    "@type": "LodgingBusiness",
     "@id": `${BASE_URL}/#business`,
     name: "Cottage Kobarid",
     description: t.meta.description,
@@ -71,7 +75,7 @@ export function buildBusinessJsonLd(lang: Lang) {
     url: canonicalUrl(lang),
     image: OG_IMAGE,
     telephone: "+38641322720",
-    email: "cottage_kobarid@gmail.com",
+    email: "cottage.kobarid@gmail.com",
     priceRange: "€€",
     currenciesAccepted: "EUR",
     address: {
@@ -88,6 +92,8 @@ export function buildBusinessJsonLd(lang: Lang) {
       longitude: 13.5789,
     },
     hasMap: "https://www.google.com/maps?q=Mlinsko+18,+5222+Kobarid,+Slovenija",
+    // Potrjen zunanji profil iste nastanitve — Googlu pomaga povezati entiteto.
+    sameAs: ["https://www.booking.com/hotel/si/cosy-cottage-with-views-near-kobarid.html"],
     areaServed: AREA_SERVED[lang],
     occupancy: {
       "@type": "QuantitativeValue",
