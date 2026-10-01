@@ -651,7 +651,7 @@ export function LocationSection() {
               Mlinsko 18<br />
               5222 Kobarid
             </p>
-            <p><strong>Email:</strong> <a href="mailto:cottage_kobarid@gmail.com" className="hover:underline">cottage_kobarid@gmail.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:cottage.kobarid@gmail.com" className="hover:underline">cottage.kobarid@gmail.com</a></p>
             <p><strong>GSM Alen:</strong> <a href="tel:+38641322720" className="hover:underline">+386 41 322 720</a></p>
             <p><strong>GSM Danijela:</strong> <a href="tel:+38640789122" className="hover:underline">+386 40 789 122</a></p>
           </div>
