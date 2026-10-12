@@ -9,32 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ItRouteImport } from './routes/it'
-import { Route as HrRouteImport } from './routes/hr'
-import { Route as EnRouteImport } from './routes/en'
-import { Route as DeRouteImport } from './routes/de'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DeRouteImport } from './routes/de'
+import { Route as EnRouteImport } from './routes/en'
+import { Route as HrRouteImport } from './routes/hr'
+import { Route as ItRouteImport } from './routes/it'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as DownloadHeroDotmp4RouteImport } from './routes/download.hero[.]mp4'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ItRoute = ItRouteImport.update({
-  id: '/it',
-  path: '/it',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HrRoute = HrRouteImport.update({
-  id: '/hr',
-  path: '/hr',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EnRoute = EnRouteImport.update({
-  id: '/en',
-  path: '/en',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DeRoute = DeRouteImport.update({
@@ -42,9 +27,24 @@ const DeRoute = DeRouteImport.update({
   path: '/de',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const EnRoute = EnRouteImport.update({
+  id: '/en',
+  path: '/en',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HrRoute = HrRouteImport.update({
+  id: '/hr',
+  path: '/hr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItRoute = ItRouteImport.update({
+  id: '/it',
+  path: '/it',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DownloadHeroDotmp4Route = DownloadHeroDotmp4RouteImport.update({
@@ -84,22 +84,10 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/de'
-    | '/en'
-    | '/hr'
-    | '/it'
-    | '/sitemap.xml'
-    | '/download/hero.mp4'
+    '/' | '/de' | '/en' | '/hr' | '/it' | '/sitemap.xml' | '/download/hero.mp4'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
-    | '/de'
-    | '/en'
-    | '/hr'
-    | '/it'
-    | '/sitemap.xml'
-    | '/download/hero.mp4'
+    '/' | '/de' | '/en' | '/hr' | '/it' | '/sitemap.xml' | '/download/hero.mp4'
   id:
     | '__root__'
     | '/'
@@ -123,32 +111,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/it': {
-      id: '/it'
-      path: '/it'
-      fullPath: '/it'
-      preLoaderRoute: typeof ItRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hr': {
-      id: '/hr'
-      path: '/hr'
-      fullPath: '/hr'
-      preLoaderRoute: typeof HrRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/en': {
-      id: '/en'
-      path: '/en'
-      fullPath: '/en'
-      preLoaderRoute: typeof EnRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/de': {
@@ -158,11 +125,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/en': {
+      id: '/en'
+      path: '/en'
+      fullPath: '/en'
+      preLoaderRoute: typeof EnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hr': {
+      id: '/hr'
+      path: '/hr'
+      fullPath: '/hr'
+      preLoaderRoute: typeof HrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/it': {
+      id: '/it'
+      path: '/it'
+      fullPath: '/it'
+      preLoaderRoute: typeof ItRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/download/hero.mp4': {
