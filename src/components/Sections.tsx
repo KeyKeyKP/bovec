@@ -770,9 +770,11 @@ export function Footer() {
           </ul>
         </div>
         {/* Stolpec "Sledite nam" je odstranjen, dokler stranka ne odpre pravih
-            Facebook in Instagram profilov. Prazna placeholder povezava skodi
-            zaupanju in je bila tudi v JSON-LD sameAs. Ko profila obstajata:
-            vrni ta stolpec s pravima URL-jema in ju dodaj v buildBusinessJsonLd. */}
+            Instagram profil obstaja in je povezan v "Kje nas najdete" ter v
+            JSON-LD sameAs. Facebook profil še ne obstaja — prazna placeholder
+            povezava bi škodila zaupanju. Ko obstaja Facebook profil: vrni
+            stolpec "Sledite nam" s pravima URL-jema in ju dodaj v
+            buildBusinessJsonLd. */}
       </div>
       <div
         className="max-w-7xl mx-auto mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs"
