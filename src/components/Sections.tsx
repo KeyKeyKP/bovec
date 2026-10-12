@@ -89,6 +89,7 @@ import {
   ChevronRight,
   Volume2,
   VolumeX,
+  Instagram,
 } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { SEASON_COLORS } from "@/lib/translations";
@@ -660,6 +661,18 @@ export function LocationSection() {
             <p><strong>Email:</strong> <a href="mailto:cottage.kobarid@gmail.com" className="hover:underline">cottage.kobarid@gmail.com</a></p>
             <p><strong>GSM Alen:</strong> <a href="tel:+38641322720" className="hover:underline">+386 41 322 720</a></p>
             <p><strong>GSM Danijela:</strong> <a href="tel:+38640789122" className="hover:underline">+386 40 789 122</a></p>
+            <p>
+              <a
+                href="https://instagram.com/cottage_kobarid"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 hover:underline"
+                aria-label="Instagram @cottage_kobarid"
+              >
+                <Instagram size={18} style={{ color: "var(--color-forest)" }} />
+                <span style={{ color: "var(--color-forest)" }}>@cottage_kobarid</span>
+              </a>
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             {[
@@ -757,9 +770,11 @@ export function Footer() {
           </ul>
         </div>
         {/* Stolpec "Sledite nam" je odstranjen, dokler stranka ne odpre pravih
-            Facebook in Instagram profilov. Prazna placeholder povezava skodi
-            zaupanju in je bila tudi v JSON-LD sameAs. Ko profila obstajata:
-            vrni ta stolpec s pravima URL-jema in ju dodaj v buildBusinessJsonLd. */}
+            Instagram profil obstaja in je povezan v "Kje nas najdete" ter v
+            JSON-LD sameAs. Facebook profil še ne obstaja — prazna placeholder
+            povezava bi škodila zaupanju. Ko obstaja Facebook profil: vrni
+            stolpec "Sledite nam" s pravima URL-jema in ju dodaj v
+            buildBusinessJsonLd. */}
       </div>
       <div
         className="max-w-7xl mx-auto mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs"
