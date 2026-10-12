@@ -89,6 +89,7 @@ import {
   ChevronRight,
   Volume2,
   VolumeX,
+  Instagram,
 } from "lucide-react";
 import { useLang } from "./LanguageContext";
 import { SEASON_COLORS } from "@/lib/translations";

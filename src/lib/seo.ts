@@ -92,8 +92,11 @@ export function buildBusinessJsonLd(lang: Lang) {
       longitude: 13.5789,
     },
     hasMap: "https://www.google.com/maps?q=Mlinsko+18,+5222+Kobarid,+Slovenija",
-    // Potrjen zunanji profil iste nastanitve — Googlu pomaga povezati entiteto.
-    sameAs: ["https://www.booking.com/hotel/si/cosy-cottage-with-views-near-kobarid.html"],
+    // Potrjeni zunanji profili iste nastanitve — Googlu pomaga povezati entiteto.
+    sameAs: [
+      "https://www.booking.com/hotel/si/cosy-cottage-with-views-near-kobarid.html",
+      "https://instagram.com/cottage_kobarid",
+    ],
     areaServed: AREA_SERVED[lang],
     occupancy: {
       "@type": "QuantitativeValue",
