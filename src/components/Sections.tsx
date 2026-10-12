@@ -661,6 +661,18 @@ export function LocationSection() {
             <p><strong>Email:</strong> <a href="mailto:cottage.kobarid@gmail.com" className="hover:underline">cottage.kobarid@gmail.com</a></p>
             <p><strong>GSM Alen:</strong> <a href="tel:+38641322720" className="hover:underline">+386 41 322 720</a></p>
             <p><strong>GSM Danijela:</strong> <a href="tel:+38640789122" className="hover:underline">+386 40 789 122</a></p>
+            <p>
+              <a
+                href="https://instagram.com/cottage_kobarid"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 hover:underline"
+                aria-label="Instagram @cottage_kobarid"
+              >
+                <Instagram size={18} style={{ color: "var(--color-forest)" }} />
+                <span style={{ color: "var(--color-forest)" }}>@cottage_kobarid</span>
+              </a>
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             {[
